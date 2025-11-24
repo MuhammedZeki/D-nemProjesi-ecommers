@@ -4,3 +4,27 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
 }
+.custom-dots {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.custom-dots li {
+  width: auto;
+  height: auto;
+}
+
+.custom-dots li button {
+  padding: 0;
+}
+
+.custom-dots li button:before {
+  content: "" !important;
+}
+
+.custom-dots li.slick-active div {
+  background: #ffffff !important;
+}

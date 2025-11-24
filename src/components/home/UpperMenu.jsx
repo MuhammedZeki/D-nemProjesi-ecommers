@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "./Logo";
-import Navbar from "./Navbar";
-import Cards from "./Cards";
+import Logo from "./UpperComponets/Logo";
+import Navbar from "./UpperComponets/Navbar";
+import Cards from "./UpperComponets/Cards";
 
 const UpperMenu = () => {
   return (
-    <div className="flex items-center justify-between border border-black w-[75%] mx-auto py-8">
+    <div className="flex items-center justify-between  w-[75%] mx-auto py-8">
       <Logo />
       <Navbar />
       <Cards />
