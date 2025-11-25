@@ -1,4 +1,4 @@
-import React from "react";
+import SellerItem from "../components/bestSellers/SellerItem";
 
 const BestSellerProducts = () => {
   return (
@@ -10,98 +10,10 @@ const BestSellerProducts = () => {
           </h3>
         </div>
         <div className="py-2 flex gap-2">
-          <div className="flex flex-col grow gap-8">
-            <img
-              src="/bestSeller/p1.png"
-              alt=""
-              className="object-cover h-[280px]"
-            />
-            <div className="flex flex-col gap-4 py-1 font-montserrat">
-              <h5 className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
-                Graphic Design
-              </h5>
-              <p className="font-bold text-sm leading-6 tracking-[0.1px] text-[#737373]">
-                English Department
-              </p>
-              <div className="flex gap-2">
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
-                  $16.48
-                </span>
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#23856D]">
-                  $6.48
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col grow gap-8">
-            <img
-              src="/bestSeller/p2.jpg"
-              alt=""
-              className="object-cover h-[280px]"
-            />
-            <div className="flex flex-col gap-4 py-1 font-montserrat">
-              <h5 className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
-                Graphic Design
-              </h5>
-              <p className="font-bold text-sm leading-6 tracking-[0.1px] text-[#737373]">
-                English Department
-              </p>
-              <div className="flex gap-2">
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
-                  $16.48
-                </span>
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#23856D]">
-                  $6.48
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col grow gap-8">
-            <img
-              src="/bestSeller/p3.jpg"
-              alt=""
-              className="object-cover h-[280px]"
-            />
-            <div className="flex flex-col gap-4 py-1 font-montserrat">
-              <h5 className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
-                Graphic Design
-              </h5>
-              <p className="font-bold text-sm leading-6 tracking-[0.1px] text-[#737373]">
-                English Department
-              </p>
-              <div className="flex gap-2">
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
-                  $16.48
-                </span>
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#23856D]">
-                  $6.48
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col grow gap-8">
-            <img
-              src="/bestSeller/p4.jpg"
-              alt=""
-              className="object-cover h-[280px]"
-            />
-            <div className="flex flex-col gap-4 py-1 font-montserrat">
-              <h5 className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
-                Graphic Design
-              </h5>
-              <p className="font-bold text-sm leading-6 tracking-[0.1px] text-[#737373]">
-                English Department
-              </p>
-              <div className="flex gap-2">
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
-                  $16.48
-                </span>
-                <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#23856D]">
-                  $6.48
-                </span>
-              </div>
-            </div>
-          </div>
+          <SellerItem img={"p1.png"} />
+          <SellerItem img={"p2.jpg"} />
+          <SellerItem img={"p3.jpg"} />
+          <SellerItem img={"p4.jpg"} />
         </div>
       </div>
     </div>
