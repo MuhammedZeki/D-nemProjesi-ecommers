@@ -5,6 +5,7 @@ import ProductsCard1 from "./pages/ProductsCard1";
 import Desserts from "./pages/Desserts";
 import ProductsCard2 from "./pages/ProductsCard2";
 import BestSellerProducts from "./pages/BestSellerProducts";
+import Sponsorship from "./pages/Sponsorship";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Desserts />
       <ProductsCard2 />
       <BestSellerProducts />
+      <Sponsorship />
     </div>
   );
 };
