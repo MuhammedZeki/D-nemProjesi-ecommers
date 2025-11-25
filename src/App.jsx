@@ -1,7 +1,8 @@
-import Breads from "./pages/Breads";
-import Explore from "./pages/Explore";
 import HomePage from "./pages/HomePage";
+import Explore from "./pages/Explore";
+import Breads from "./pages/Breads";
 import ProductsCard1 from "./pages/ProductsCard1";
+import Desserts from "./pages/Desserts";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Explore />
       <Breads />
       <ProductsCard1 />
+      <Desserts />
     </div>
   );
 };
