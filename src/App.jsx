@@ -7,6 +7,7 @@ import ProductsCard2 from "./pages/ProductsCard2";
 import BestSellerProducts from "./pages/BestSellerProducts";
 import Sponsorship from "./pages/Sponsorship";
 import FeaturedPosts from "./pages/FeaturedPosts";
+import Footer from "./pages/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <BestSellerProducts />
       <Sponsorship />
       <FeaturedPosts />
+      <Footer />
     </div>
   );
 };
