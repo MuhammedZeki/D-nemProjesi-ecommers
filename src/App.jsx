@@ -4,6 +4,7 @@ import Breads from "./pages/Breads";
 import ProductsCard1 from "./pages/ProductsCard1";
 import Desserts from "./pages/Desserts";
 import ProductsCard2 from "./pages/ProductsCard2";
+import BestSellerProducts from "./pages/BestSellerProducts";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <ProductsCard1 />
       <Desserts />
       <ProductsCard2 />
+      <BestSellerProducts />
     </div>
   );
 };
