@@ -1,5 +1,3 @@
-import React from "react";
-
 const Explore = () => {
   return (
     <div className="bg-[#FAFAFA] p-6 -mt-2">

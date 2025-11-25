@@ -2,7 +2,7 @@ import BreadItem from "../components/Breads/BreadItem";
 import BreadNav from "../components/Breads/BreadNav";
 const Breads = () => {
   return (
-    <div className=" w-[75%] mx-auto py-8  px-4">
+    <div className="w-[75%] mx-auto py-8  px-4">
       <div className="flex gap-2.5">
         <div className="w-1/3 ">
           <img src="/breads/e.jpg" alt="" className="object-contain w-full" />
