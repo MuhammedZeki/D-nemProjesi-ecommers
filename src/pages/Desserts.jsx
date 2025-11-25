@@ -23,8 +23,16 @@ const Desserts = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 relative">
           <img src="/desserts/d1.jpg" className="object-cover w-full h-full" />
+          <div className="absolute flex flex-col gap-1 font-montserrat top-8 left-8">
+            <h6 className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42]">
+              FURNITURE
+            </h6>
+            <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#737373]">
+              5 Items
+            </p>
+          </div>
         </div>
       </div>
     </div>
