@@ -1,4 +1,4 @@
-import PostItem from "../components/posts/PostItem";
+import PostItem from "../../components/posts/PostItem";
 const FeaturedPosts = () => {
   return (
     <div className=" flex flex-col gap-4 lg:w-[75%] lg:mx-auto lg:py-24 lg:px-4 px-10 my-14 lg:my-0">

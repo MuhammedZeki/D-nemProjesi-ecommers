@@ -1,4 +1,4 @@
-import SellerItem from "../components/bestSellers/SellerItem";
+import SellerItem from "../../components/bestSellers/SellerItem";
 
 const BestSellerProducts = () => {
   return (
