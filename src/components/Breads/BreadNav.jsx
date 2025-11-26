@@ -21,7 +21,7 @@ const BreadNav = () => {
             Accessories
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mb-6 lg:mb-0">
           <div className="border border-[#BDBDBD] rounded-full flex items-center justify-center p-4">
             <IoIosArrowBack className="h-6 w-6 text-[#BDBDBD]" />
           </div>

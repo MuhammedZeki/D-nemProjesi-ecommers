@@ -1,9 +1,9 @@
 import { BsDownload } from "react-icons/bs";
 const ProductsCard2 = () => {
   return (
-    <div className="w-[75%] mx-auto py-8 px-4 flex flex-col gap-4 ">
-      <div className="flex ">
-        <div className=" w-1/3 bg-[#FAFAFA] flex flex-col gap-2 items-center px-12 py-6 justify-center font-montserrat">
+    <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
+      <div className="lg:flex lg:flex-row flex flex-col-reverse">
+        <div className=" lg:w-1/3 w-full bg-[#FAFAFA] flex flex-col gap-2 items-center px-12 py-6 justify-center font-montserrat">
           <div className="flex flex-col gap-2 items-center text-center">
             <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
               MOST POPULAR
@@ -40,7 +40,7 @@ const ProductsCard2 = () => {
             </p>
           </div>
         </div>
-        <div className=" w-2/3">
+        <div className=" lg:w-2/3 w-full">
           <img
             src="/products/yemek.jpg"
             className="object-contain w-full h-full"
