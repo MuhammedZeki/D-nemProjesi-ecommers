@@ -1,7 +1,7 @@
 const ProductCardItem = ({ count }) => {
   return (
     <div className="py-12 px-3.5">
-      <div className="flex items-start gap-2">
+      <div className="flex items-start gap-2 px-8 py-2 lg:px-0 lg:py-0">
         <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#E74040]">
           {count}.
         </h2>
