@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const PostItem = ({ img }) => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col">
       <div className="relative">
         <img
           src={`/post/post${img}.jpg`}
@@ -15,7 +15,7 @@ const PostItem = ({ img }) => {
           NEW
         </div>
       </div>
-      <div className="flex flex-col gap-6 items-start font-montserrat">
+      <div className="flex flex-col gap-6 p-4 items-start font-montserrat shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-3">
           <p className="font-normal text-xs leading-4 tracking-[0.2px] text-[#8EC2F2] ">
             Google
