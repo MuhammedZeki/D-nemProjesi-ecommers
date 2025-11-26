@@ -3,8 +3,8 @@ import BreadNav from "../components/Breads/BreadNav";
 const Breads = () => {
   return (
     <div className="w-[75%] mx-auto py-8  px-4">
-      <div className="flex gap-2.5">
-        <div className="w-1/3 relative ">
+      <div className="lg:flex lg:flex-row gap-2.5 flex flex-col ">
+        <div className="lg:w-1/3 relative w-full ">
           <img
             src="/breads/e.jpg"
             alt=""
@@ -19,7 +19,7 @@ const Breads = () => {
             </p>
           </div>
         </div>
-        <div className="w-2/3  font-montserrat ">
+        <div className="lg:w-2/3 w-full  font-montserrat ">
           <div className=" py-2 border-b-2 border-b-[#ECECEC]">
             <BreadNav />
           </div>
