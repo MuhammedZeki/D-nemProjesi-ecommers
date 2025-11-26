@@ -1,8 +1,8 @@
 const SellerItem = ({ img }) => {
   return (
-    <div className="flex flex-col grow gap-8">
+    <div className="flex flex-col grow gap-8 mx-6 lg:mx-0">
       <img src={`/bestSeller/${img}`} className="object-cover h-[280px]" />
-      <div className="flex flex-col gap-4 py-1 font-montserrat">
+      <div className="flex flex-col items-center lg:items-start gap-4 py-1 font-montserrat">
         <h5 className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
           Graphic Design
         </h5>
