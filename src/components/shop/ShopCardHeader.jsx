@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const ShopCardHeader = () => {
   return (
-    <div className="flex items-center justify-between w-full px-10 lg:w-[75%] mx-auto py-8 font-montserrat">
+    <div className="flex flex-col gap-5 lg:gap-0 lg:flex lg:flex-row items-center lg:justify-between w-full px-10 lg:w-[75%] mx-auto py-8 font-montserrat">
       <h2 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
         Shop
       </h2>
