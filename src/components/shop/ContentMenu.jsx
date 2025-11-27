@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { CiFilter } from "react-icons/ci";
 const ContentMenu = () => {
   return (
-    <div className="border border-red flex items-center justify-between font-montserrat">
+    <div className=" flex items-center mt-4 justify-between font-montserrat">
       <p className="font-bold leading-6 tracking-[0.2px]  text-[#737373]">
         Showing all 12 results
       </p>
