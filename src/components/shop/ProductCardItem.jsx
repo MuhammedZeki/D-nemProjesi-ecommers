@@ -1,6 +1,6 @@
 const ProductCardItem = ({ img }) => {
   return (
-    <div className="flex flex-col grow gap-2 items-center justify-center">
+    <div className="flex flex-col grow gap-2 items-center justify-center font-montserrat">
       <img src={img} className="w-[190px]" />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
         Graphic Design
