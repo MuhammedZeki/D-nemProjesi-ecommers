@@ -1,4 +1,5 @@
 import UpperMenu from "../components/home/UpperMenu";
+import DetailDescription from "../components/productDetail/DetailDescription";
 import ProductDetailContent from "./product/ProductDetailContent";
 
 const ProductDetails = () => {
@@ -6,6 +7,7 @@ const ProductDetails = () => {
     <div>
       <UpperMenu />
       <ProductDetailContent />
+      <DetailDescription />
     </div>
   );
 };
