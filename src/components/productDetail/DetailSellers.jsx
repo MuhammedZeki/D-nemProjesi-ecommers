@@ -10,14 +10,14 @@ const DetailSellers = () => {
           </h3>
         </div>
         <div className="flex flex-col gap-4 items-start">
-          <div className="flex items-center gap-6 ">
+          <div className="lg:flex lg:flex-row flex flex-col items-center gap-6 ">
             <DetailSellerItem img={"/explore/caramel.png"} />
             <DetailSellerItem img={"/explore/elma.jpg"} />
             <DetailSellerItem img={"/explore/et.jpg"} />
             <DetailSellerItem img={"/explore/caramel.png"} />
             <DetailSellerItem img={"/explore/elma.jpg"} />
           </div>
-          <div className="flex items-center gap-6 ">
+          <div className="lg:flex lg:flex-row flex flex-col items-center gap-6 ">
             <DetailSellerItem img={"/explore/caramel.png"} />
             <DetailSellerItem img={"/explore/elma.jpg"} />
             <DetailSellerItem img={"/explore/et.jpg"} />

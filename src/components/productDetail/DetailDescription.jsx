@@ -2,7 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const DetailDescription = () => {
   return (
     <div className=" w-full px-10 lg:w-[75%] mx-auto my-3 py-8 flex flex-col gap-3">
-      <div className=" gap-8  flex items-center justify-center p-4 font-montserrat border-b border-b-[#ECECEC]">
+      <div className=" gap-8 flex items-center justify-center p-4 font-montserrat border-b border-b-[#ECECEC]">
         <div className="font-semibold cursor-pointer leading-6 tracking-[0.2px] text-[#737373] p-2">
           Description
         </div>
@@ -14,14 +14,14 @@ const DetailDescription = () => {
           <span className="text-[#23856D]">(0)</span>
         </div>
       </div>
-      <div className=" mt-8 flex gap-8 font-montserrat">
-        <div className="w-1/3">
+      <div className=" flex flex-col mt-8 lg:flex lg:flex-row gap-8 font-montserrat">
+        <div className="lg:w-1/3 w-full">
           <img
             src="/DetailsImg/desc1.jpg"
             className="object-cover rounded-lg h-full"
           />
         </div>
-        <div className="flex w-1/3 flex-col gap-6 grow">
+        <div className="lg:w-1/3 w-full flex flex-col gap-6 ">
           <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
             the quick fox jumps over{" "}
           </h5>
@@ -46,7 +46,7 @@ const DetailDescription = () => {
             consequent sent nostrum met.
           </p>
         </div>
-        <div className="flex w-1/3 flex-col gap-8 grow">
+        <div className="lg:w-1/3 w-full flex flex-col gap-8 ">
           <div className="flex flex-col gap-4">
             <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
               the quick fox jumps over{" "}
