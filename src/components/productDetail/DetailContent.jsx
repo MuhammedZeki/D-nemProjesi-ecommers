@@ -44,8 +44,8 @@ const DetailContent = () => {
   };
 
   return (
-    <div className=" flex gap-10">
-      <div className="w-1/3 flex flex-col gap-4">
+    <div className="flex flex-col lg:flex lg:flex-row lg:gap-10">
+      <div className="lg:w-1/3 w-full flex flex-col gap-4">
         <div>
           <Slider
             ref={sliderRef}
@@ -57,7 +57,7 @@ const DetailContent = () => {
                 key={i}
                 className="overflow-hidden w-full h-[450px] flex items-center justify-center"
               >
-                <img src={img} className={`w-full h-full object-contain `} />
+                <img src={img} className={`w-full h-full object-cover `} />
               </div>
             ))}
           </Slider>
@@ -80,7 +80,7 @@ const DetailContent = () => {
         </div>
       </div>
 
-      <div className="w-2/3  font-montserrat flex flex-col gap-6">
+      <div className="lg:w-2/3 w-full font-montserrat flex flex-col gap-6">
         <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42]">
           Floating Phone
         </h4>
