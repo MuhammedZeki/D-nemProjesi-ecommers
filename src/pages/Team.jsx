@@ -1,0 +1,61 @@
+import TeamItem from "../components/team/TeamItem";
+
+const Team = () => {
+  return (
+    <div className="lg:w-[75%] flex flex-col gap-12 lg:mx-auto lg:py-8  lg:px-4  font-montserrat">
+      <div className="flex flex-col gap-3 mt-12 items-center justify-center">
+        <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#252B42]">
+          Meet Our Team
+        </h2>
+        <p className="font-normal text-lg leading-5 tracking-[0.2px] text-[#737373]">
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics: Newtonian mechanics{" "}
+        </p>
+      </div>
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-6">
+          <TeamItem img={"/team/team1.jpg"} name={"Jerome Bell"} job={"IBM"} />
+          <TeamItem
+            img={"/team/team2.jpg"}
+            name={"Brooklyn Simmons"}
+            job={"eBay"}
+          />
+          <TeamItem
+            img={"/team/team5.jpg"}
+            name={"Ronald Richards"}
+            job={"Starbucks"}
+          />
+          <TeamItem
+            img={"/team/team4.jpg"}
+            name={"Floyd Miles"}
+            job={"Facebook"}
+          />
+        </div>
+        <div className="flex items-center gap-6">
+          <TeamItem
+            img={"/team/team5.jpg"}
+            name={"Jane Cooper"}
+            job={"Mitsubishi"}
+          />
+          <TeamItem
+            img={"/team/team6.jpg"}
+            name={"Robert Fox"}
+            job={"The Walt Disney Company"}
+          />
+          <TeamItem
+            img={"/team/team7.jpg"}
+            name={"Leslie Alexander"}
+            job={"Starbucks"}
+          />
+          <TeamItem
+            img={"/team/team8.jpg"}
+            name={"Jacob Jones"}
+            job={"Facebook"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Team;
