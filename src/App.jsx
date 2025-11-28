@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ModelOpenProvider from "./context/ModelOpen";
 import ProductDetails from "./pages/ProductDetails";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route exact path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/productDetails" element={<ProductDetails />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </ModelOpenProvider>
     </>
