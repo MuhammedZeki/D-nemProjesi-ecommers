@@ -1,5 +1,3 @@
-import React from "react";
-
 const ShopCards = () => {
   return (
     <div className=" flex gap-4 w-[75%] my-2 mx-auto py-8 px-4  justify-center ">

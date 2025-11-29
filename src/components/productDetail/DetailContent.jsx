@@ -27,7 +27,7 @@ function SamplePrevArrow({ onClick }) {
   );
 }
 
-const IMG = ["/DetailsImg/product1.jpg", "/DetailsImg/product2.jpg"];
+const IMG = ["/DetailsImg/p1.jpg", "/DetailsImg/p2.jpg"];
 
 const DetailContent = () => {
   const [activeImg, setActiveImg] = useState(0);

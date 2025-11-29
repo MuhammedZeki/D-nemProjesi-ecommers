@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const BreadItem = ({ img }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col grow gap-2 items-center justify-center">
+    <div
+      onClick={() => navigate("/productDetails")}
+      className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#FAFAFA]"
+    >
       <img src={img} alt="" className="w-[190px]" />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
         Graphic Design

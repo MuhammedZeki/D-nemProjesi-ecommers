@@ -5,6 +5,7 @@ import ModelOpenProvider from "./context/ModelOpen";
 import ProductDetails from "./pages/ProductDetails";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </ModelOpenProvider>

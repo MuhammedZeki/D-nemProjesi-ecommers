@@ -15,10 +15,10 @@ const Navbar = () => {
           onClick={() => setShopModal(!shopModal)}
         />
       </div>
-      <div>About</div>
-      <div>Blog</div>
-      <div>Contact</div>
-      <div>Pages</div>
+      <div onClick={() => navigate("/about")}>About</div>
+      <div onClick={() => navigate("/blog")}>Blog</div>
+      <div onClick={() => navigate("/contact")}>Contact</div>
+      <div onClick={() => navigate("/team")}>Team</div>
     </div>
   );
 };

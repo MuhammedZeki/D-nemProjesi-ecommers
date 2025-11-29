@@ -17,7 +17,7 @@ const DetailDescription = () => {
       <div className=" flex flex-col mt-8 lg:flex lg:flex-row gap-8 font-montserrat">
         <div className="lg:w-1/3 w-full">
           <img
-            src="/DetailsImg/desc1.jpg"
+            src="/DetailsImg/p3.jpg"
             className="object-cover rounded-lg h-full"
           />
         </div>
