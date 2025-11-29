@@ -1,7 +1,7 @@
 const WorkWithUs = () => {
   return (
     <div className="flex my-10">
-      <div className="w-2/3 bg-[#8f300b] flex flex-col items-center justify-center gap-4">
+      <div className="lg:w-2/3 w-full bg-[#8f300b] flex flex-col items-center justify-center gap-4 p-10 lg:p-0 text-center lg:text-start">
         <div className="flex flex-col gap-10 font-montserrat text-white">
           <h5 className="font-bold leading-6 tracking-[0.1px]">WORK WITH US</h5>
           <h2 className="font-bold text-5xl leading-12 tracking-[0.2px]">
@@ -18,7 +18,7 @@ const WorkWithUs = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/3 flex items-center justify-center">
+      <div className="lg:w-1/3 lg:flex lg:items-center lg:justify-center hidden">
         <img
           src="/about/oldmoney.jpg"
           className="object-cover w-full h-[700px]"

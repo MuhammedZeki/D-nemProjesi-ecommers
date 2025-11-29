@@ -1,7 +1,7 @@
 const AboutDescription = () => {
   return (
     <div className="flex items-center justify-center w-full mt-5 px-10 lg:w-[75%] mx-auto py-8">
-      <div className="flex items-center gap-16 font-montserrat px-20 py-10">
+      <div className="lg:flex lg:flex-row flex flex-col items-center gap-16 font-montserrat lg:px-20 lg:py-10 p-6 text-center lg:text-start">
         <div className="flex flex-col gap-4">
           <p className="text-[#E74040] font-medium leading-5 tracking-[0.2px]">
             Problems trying
