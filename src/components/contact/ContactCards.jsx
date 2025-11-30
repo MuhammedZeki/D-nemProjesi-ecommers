@@ -35,7 +35,7 @@ const ContactCards = () => {
               </button>
             </div>
           </div>
-          <div className="border bg-[#252B42] border-black flex flex-col gap-8 items-center justify-center px-12 py-10">
+          <div className="border bg-[#252B42] border-black flex flex-col gap-8 rounded-sm items-center justify-center px-15 py-17">
             <FaLocationDot className="text-[#23A6F0] h-18 w-18" />
             <div className="flex flex-col gap-2 items-center text-white">
               <p className="font-bold leading-6 tracking-[0.2px] ">
