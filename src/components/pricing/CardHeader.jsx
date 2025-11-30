@@ -1,8 +1,6 @@
-import React from "react";
-
 const CardHeader = () => {
   return (
-    <div className="border border-black flex flex-col  gap-5 font-montserrat">
+    <div className="flex flex-col  gap-5 font-montserrat">
       <div className="flex flex-col items-center justify-center gap-4">
         <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#252B42]">
           Pricing
