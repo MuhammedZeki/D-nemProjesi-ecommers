@@ -1,0 +1,13 @@
+import CardHeader from "./CardHeader";
+
+const PricingCards = () => {
+  return (
+    <div className="bg-[#FAFAFA]">
+      <div className="flex flex-col items-center justify-center w-full px-10 lg:w-[75%] my-8 mx-auto py-8 border border-black">
+        <CardHeader />
+      </div>
+    </div>
+  );
+};
+
+export default PricingCards;
