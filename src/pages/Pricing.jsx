@@ -3,6 +3,7 @@ import PricingCards from "../components/pricing/PricingCards";
 import PricingHeader from "../components/pricing/PricingHeader";
 import Sponsorship from "./home/Sponsorship";
 import PricingDescription from "./../components/pricing/PricingDescription";
+import PricingCallAction from "../components/pricing/PricingCallAction";
 
 const Pricing = () => {
   return (
@@ -12,6 +13,7 @@ const Pricing = () => {
       <PricingCards />
       <Sponsorship />
       <PricingDescription />
+      <PricingCallAction />
     </div>
   );
 };

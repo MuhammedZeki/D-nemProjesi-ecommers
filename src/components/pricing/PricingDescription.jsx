@@ -1,7 +1,7 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 const PricingDescription = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full px-10 lg:w-[75%] my-8 mx-auto py-8 font-montserrat">
+    <div className="flex flex-col items-center justify-center w-full px-10 lg:w-[75%] my-20 mx-auto py-8 font-montserrat">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col items-center justify-center gap-2">
           <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#252B42]">
