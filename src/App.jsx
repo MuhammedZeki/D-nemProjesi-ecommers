@@ -7,6 +7,7 @@ import Contact1 from "./pages/Contact1";
 import Team from "./pages/Team";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Pricing from "./pages/Pricing";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/contact1" element={<Contact1 />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </ModelOpenProvider>
