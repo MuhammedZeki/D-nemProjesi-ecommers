@@ -3,7 +3,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 
 const PricingCallAction = () => {
   return (
-    <div className="flex items-center justify-center my-10">
+    <div className="flex items-center justify-center my-32">
       <div className="font-montserrat flex flex-col gap-12 px-10 lg:px-0">
         <h2 className="font-bold text-center lg:text-start text-5xl leading-12 tracking-[0.2px] text-[#252B42]">
           Start your 14 days free trial

@@ -4,6 +4,7 @@ import PricingHeader from "../components/pricing/PricingHeader";
 import Sponsorship from "./home/Sponsorship";
 import PricingDescription from "./../components/pricing/PricingDescription";
 import PricingCallAction from "../components/pricing/PricingCallAction";
+import Footer from "./home/Footer";
 
 const Pricing = () => {
   return (
@@ -14,6 +15,7 @@ const Pricing = () => {
       <Sponsorship />
       <PricingDescription />
       <PricingCallAction />
+      <Footer />
     </div>
   );
 };
