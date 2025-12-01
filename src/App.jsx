@@ -8,6 +8,7 @@ import Team from "./pages/Team";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
+import Blog from "./pages/Blog";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/team" element={<Team />} />
         </Routes>
       </ModelOpenProvider>
