@@ -19,6 +19,7 @@ const Navbar = () => {
       <div onClick={() => navigate("/blog")}>Blog</div>
       <div onClick={() => navigate("/contact")}>Contact</div>
       <div onClick={() => navigate("/team")}>Team</div>
+      <div onClick={() => navigate("/pricing")}>Pricing</div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa6";
 const CardContents = () => {
   return (
-    <div className="flex items-center justify-center font-montserrat gap-2 py-15">
+    <div className="flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-center font-montserrat gap-2 py-15">
       <div className="flex flex-col gap-6 border border-[#23A6F0] rounded-lg px-10 py-14">
         <h3 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42] text-center">
           FREE
