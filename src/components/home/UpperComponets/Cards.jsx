@@ -2,14 +2,18 @@ import { CiUser, CiSearch, CiShoppingBasket, CiHeart } from "react-icons/ci";
 import { BiMenuAltRight } from "react-icons/bi";
 import { useContext } from "react";
 import { ModelOpenContext } from "../../../context/ModelOpen";
+import { useNavigate } from "react-router-dom";
 const Cards = () => {
   const { changeModal } = useContext(ModelOpenContext);
+  const navigate = useNavigate();
   return (
     <>
       <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] lg:flex lg:items-center lg:gap-4 cursor-pointer">
         <div className="flex items-center gap-1">
           <CiUser className="w-6 h-6" />
-          <span>Login/Register</span>
+          <span onClick={() => navigate("/signIn")}>Login</span>
+          <span>/</span>
+          <span onClick={() => navigate("/signUp")}>Register</span>
         </div>
         <div>
           <CiSearch className="w-6 h-6" />
