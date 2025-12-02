@@ -5,6 +5,7 @@ import { IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { IoIosArrowBack } from "react-icons/io";
 const initialValue = {
   username: "",
   email: "",
@@ -46,11 +47,17 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-[#FCF6D9]  flex items-center justify-center h-screen">
+    <div className="bg-[#FCF6D9] flex items-center justify-center h-screen">
       <form
         onSubmit={handleSubmit(onsubmit)}
-        className="border w-1/3 border-[#fff5e0] bg-[#FAFAFA] rounded-lg shadow-[0px_2px_4px_rgba(0,0,0,0.1)] flex flex-col gap-6 font-montserrat px-10 py-15"
+        className="border lg:w-1/3 w-full mx-2 border-[#fff5e0] bg-[#FAFAFA] rounded-lg shadow-[0px_2px_4px_rgba(0,0,0,0.1)] flex flex-col gap-6 font-montserrat px-10 py-15 relative"
       >
+        <div
+          onClick={() => navigate("/")}
+          className="absolute top-6 left-3 flex items-center justify-between font-bold tracking-[0.2px] leading-6 text-[#CF4B00] hover:border-b hover:border-b-[#CF4B00] cursor-pointer"
+        >
+          <IoIosArrowBack className="w-6 h-6" /> Go Home
+        </div>
         <div className="flex flex-col gap-10 items-center">
           <img src="/vite.svg" className="h-40 w-40" />
           <h1 className="font-bold text-4xl leading-6 tracking-[0.2px] text-[#CF4B00]">

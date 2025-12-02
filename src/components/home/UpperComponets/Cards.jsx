@@ -2,18 +2,32 @@ import { CiUser, CiSearch, CiShoppingBasket, CiHeart } from "react-icons/ci";
 import { BiMenuAltRight } from "react-icons/bi";
 import { useContext } from "react";
 import { ModelOpenContext } from "../../../context/ModelOpen";
+import { MdExitToApp } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Cards = () => {
   const { changeModal } = useContext(ModelOpenContext);
   const navigate = useNavigate();
+  const user = localStorage.getItem("loggedInUser");
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    toast.success("Çıkış başarıyla gerçekleşti!");
+    navigate("/signIn");
+    window.location.reload();
+  };
   return (
     <>
       <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] lg:flex lg:items-center lg:gap-4 cursor-pointer">
         <div className="flex items-center gap-1">
-          <CiUser className="w-6 h-6" />
-          <span onClick={() => navigate("/signIn")}>Login</span>
-          <span>/</span>
-          <span onClick={() => navigate("/signUp")}>Register</span>
+          {!user && (
+            <>
+              <CiUser className="w-6 h-6" />
+              <span onClick={() => navigate("/signIn")}>Login</span>
+              <span>/</span>
+              <span onClick={() => navigate("/signUp")}>Register</span>
+            </>
+          )}
         </div>
         <div>
           <CiSearch className="w-6 h-6" />
@@ -25,6 +39,14 @@ const Cards = () => {
         <div className="flex items-center gap-2">
           <CiHeart className="w-6 h-6" />
           <span className="font-normal">1</span>
+        </div>
+        <div className="flex items-center gap-1">
+          {user && (
+            <>
+              <span className="text-sm">{user.toUpperCase()}</span>
+              <MdExitToApp onClick={handleLogout} className="w-6 h-6" />
+            </>
+          )}
         </div>
       </div>
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">
