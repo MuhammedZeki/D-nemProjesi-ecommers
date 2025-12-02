@@ -1,0 +1,124 @@
+{
+  "Home": {
+    "explores": [
+      {
+        "title": "Your Space",
+        "subTitle": "Indulge in Caramel",
+        "ex": "Explore Items",
+        "img": "/explore/caramel.png"
+      },
+      {
+        "title": "Your Space",
+        "subTitle": "Embrace Natural Beauty",
+        "ex": "Explore Items",
+        "img": "/explore/elma.jpg"
+      },
+      {
+        "title": "Your Space",
+        "subTitle": "Savor the Essence",
+        "ex": "Explore Items",
+        "img": "/explore/et.jpg"
+      }
+    ],
+    "BreadItems": [
+      {
+        "img": "/explore/caramel.png",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 6.48,
+        "oldPrice": 16.48
+      },
+      {
+        "img": "/explore/elma.jpg",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 2.48,
+        "oldPrice": 8.48
+      },
+      {
+        "img": "/explore/et.jpg",
+        "name": "Meat",
+        "department": "Meat Department",
+        "newPrice": 16.48,
+        "oldPrice": 20.48
+      },
+      {
+        "img": "/explore/caramel.png",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 6.48,
+        "oldPrice": 16.48
+      },
+      {
+        "img": "/explore/elma.jpg",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 2.48,
+        "oldPrice": 8.48
+      },
+      {
+        "img": "/explore/et.jpg",
+        "name": "Meat",
+        "department": "Meat Department",
+        "newPrice": 16.48,
+        "oldPrice": 20.48
+      }
+    ],
+    "BestSeler": [
+      {
+        "img": "/bestSeller/p1.png",
+        "name": "plastic",
+        "department": "Plastic",
+        "newPrice": 12.53,
+        "oldPrice": 14.58
+      },
+      {
+        "img": "/bestSeller/p2.jpg",
+        "name": "Dessert",
+        "department": "Dessert",
+        "newPrice": 8.99,
+        "oldPrice": 15.99
+      },
+      {
+        "img": "/bestSeller/p3.jpg",
+        "name": "Detergent",
+        "department": "Cleaning",
+        "newPrice": 5.99,
+        "oldPrice": 9.99
+      },
+      {
+        "img": "/bestSeller/p4.jpg",
+        "name": "Sugar",
+        "department": "Dessert",
+        "newPrice": 12.53,
+        "oldPrice": 14.58
+      }
+    ],
+    "Featured": [
+      {
+        "img": "/post/post1.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "New"],
+        "name": "Loudest à la Madison #1 (L'integral)",
+        "date": "22 April 2025",
+        "comment": "10 comments"
+      },
+      {
+        "img": "/post/post2.jpg",
+        "new": "New",
+        "links": ["Google", "Instagram", "New"],
+        "name": "Loudest à la Istanbul #1 (L'integral)",
+        "date": "8 September 2025",
+        "comment": "15 comments"
+      },
+      {
+        "img": "/post/post3.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
+      }
+    ]
+  }
+}
