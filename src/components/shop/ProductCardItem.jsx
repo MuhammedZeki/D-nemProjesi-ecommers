@@ -1,19 +1,25 @@
-const ProductCardItem = ({ img }) => {
+const ProductCardItem = ({ item, key }) => {
   return (
-    <div className="flex flex-col grow gap-2 items-center justify-center font-montserrat">
-      <img src={img} className="w-[190px]" />
+    <div
+      key={key}
+      className="flex flex-col grow gap-2 items-center justify-center font-montserrat"
+    >
+      <img
+        src={item?.img}
+        className="w-[190px] h-[190px] object-cover rounded-md "
+      />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
-        Graphic Design
+        {item?.name}
       </div>
       <div className="font-bold text-md leading-6 tracking-[0.2px] text-[#737373]">
-        English Department
+        {item?.deparment}
       </div>
       <div className="flex items-center justify-center gap-2">
         <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
-          $16.48
+          ${item?.oldPrice}
         </span>
         <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#23856D]">
-          $6.48
+          ${item?.newPrice}
         </span>
       </div>
     </div>
