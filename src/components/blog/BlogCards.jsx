@@ -1,21 +1,27 @@
+import axios from "axios";
 import BlogCardItem from "./BlogCardItem";
+import { useQuery } from "@tanstack/react-query";
 
 const BlogCards = () => {
+  const getShopCardData = async () => {
+    const res = await axios.get("/db.json");
+    return res.data.Blog.blogItems;
+  };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["blogItems"],
+    queryFn: getShopCardData,
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error...</p>;
+
   return (
     <div className="w-full px-10 lg:w-[75%] mx-auto py-8 my-10">
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col lg:flex lg:flex-row lg:items-center  gap-10 lg:px-10">
-          <BlogCardItem img={1} />
-          <BlogCardItem img={2} />
-        </div>
-        <div className="flex flex-col lg:flex lg:flex-row lg:items-center gap-10 lg:px-10">
-          <BlogCardItem img={3} />
-          <BlogCardItem img={4} />
-        </div>
-        <div className="flex flex-col lg:flex lg:flex-row lg:items-center gap-10 lg:px-10">
-          <BlogCardItem img={5} />
-          <BlogCardItem img={6} />
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {data.map((item, i) => (
+          <BlogCardItem key={i} item={item} />
+        ))}
       </div>
     </div>
   );

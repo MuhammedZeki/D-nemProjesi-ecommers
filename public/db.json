@@ -11,7 +11,7 @@
         "title": "Your Space",
         "subTitle": "Embrace Natural Beauty",
         "ex": "Explore Items",
-        "img": "/shop/item.jpg"
+        "img": "/explore/elma.jpg"
       },
       {
         "title": "Your Space",
@@ -29,7 +29,7 @@
         "oldPrice": 16.48
       },
       {
-        "img": "/shop/item.jpg",
+        "img": "/explore/elma.jpg",
         "name": "Vegetables",
         "department": "Apple",
         "newPrice": 1.99,
@@ -50,7 +50,7 @@
         "oldPrice": 16.48
       },
       {
-        "img": "/shop/item.jpg",
+        "img": "/explore/elma.jpg",
         "name": "Vegetables",
         "department": "Apple",
         "newPrice": 1.99,
@@ -73,7 +73,7 @@
         "oldPrice": 16.48
       },
       {
-        "img": "/shop/item.jpg",
+        "img": "/explore/elma.jpg",
         "name": "Vegetables",
         "department": "Apple",
         "newPrice": 1.99,
@@ -94,7 +94,7 @@
         "oldPrice": 16.48
       },
       {
-        "img": "/shop/item.jpg",
+        "img": "/explore/elma.jpg",
         "name": "Vegetables",
         "department": "Apple",
         "newPrice": 1.99,
@@ -438,6 +438,82 @@
         "department": "Vegetables",
         "newPrice": 16.99,
         "oldPrice": 25.48
+      }
+    ]
+  },
+  "Blog": {
+    "blogItems": [
+      {
+        "img": "/blog/blog1.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "New"],
+        "name": "Loudest à la Madison #1 (L'integral)",
+        "date": "22 April 2025",
+        "comment": "10 comments"
+      },
+      {
+        "img": "/blog/blog2.jpg",
+        "new": "New",
+        "links": ["Google", "Instagram", "New"],
+        "name": "Loudest à la Istanbul #1 (L'integral)",
+        "date": "8 September 2025",
+        "comment": "15 comments"
+      },
+      {
+        "img": "/blog/blog3.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
+      },
+      {
+        "img": "/blog/blog4.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
+      },
+      {
+        "img": "/blog/blog5.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
+      },
+      {
+        "img": "/blog/blog6.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
+      },
+      {
+        "img": "/blog/blog1.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "New"],
+        "name": "Loudest à la Madison #1 (L'integral)",
+        "date": "22 April 2025",
+        "comment": "10 comments"
+      },
+      {
+        "img": "/blog/blog2.jpg",
+        "new": "New",
+        "links": ["Google", "Instagram", "New"],
+        "name": "Loudest à la Istanbul #1 (L'integral)",
+        "date": "8 September 2025",
+        "comment": "15 comments"
+      },
+      {
+        "img": "/blog/blog3.jpg",
+        "new": "New",
+        "links": ["Google", "Trending", "Telegram", "Twitter"],
+        "name": "Loudest à la Vienna #1 (L'integral)",
+        "date": "10 Juny 2025",
+        "comment": "7 comments"
       }
     ]
   }

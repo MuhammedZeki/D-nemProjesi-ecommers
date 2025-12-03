@@ -82,7 +82,7 @@ const DetailContent = () => {
 
       <div className="lg:w-2/3 w-full font-montserrat flex flex-col gap-6">
         <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42]">
-          Floating Phone
+          Cooked Meat
         </h4>
         <div className="flex items-center gap-3 ">
           <div className="flex items-center">
