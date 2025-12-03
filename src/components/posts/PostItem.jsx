@@ -1,34 +1,30 @@
 import { CiClock1 } from "react-icons/ci";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-const PostItem = ({ img }) => {
+const PostItem = ({ key, item }) => {
   return (
-    <div className="flex flex-col">
+    <div key={key} className="flex flex-col">
       <div className="relative">
-        <img
-          src={`/post/post${img}.jpg`}
-          className="object-cover h-[300px] w-full"
-          alt=""
-        />
+        <img src={item?.img} className="object-cover h-[300px] w-full" alt="" />
         <div className=" absolute p-1 top-5 left-5 bg-[#E74040] text-white font-montserrat font-bold leading-6 tracking-[0.2px] rounded-lg">
-          NEW
+          {item?.new}
         </div>
       </div>
       <div className="flex flex-col gap-6 p-4 items-start font-montserrat shadow-[0px_2px_4px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-3">
-          <p className="font-normal text-xs leading-4 tracking-[0.2px] text-[#8EC2F2] ">
-            Google
-          </p>
-          <p className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
-            Trending
-          </p>
-          <p className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
-            New
-          </p>
+          {item.links.map((link, i) => (
+            <p
+              key={i}
+              className="font-normal text-xs leading-4 tracking-[0.2px] text-[#8EC2F2] "
+            >
+              {link}
+            </p>
+          ))}
         </div>
         <div className="font-normal text-xl leading-8 tracking-[0.2px] text-[#252B42]">
-          Loudest à la Madison #1 (L'integral)
+          {item?.name}
         </div>
         <div className="font-normal leading-5 tracking-[0.2px] text-[#737373]">
           We focus on ergonomics and meeting you where you work. It's only a
@@ -38,22 +34,22 @@ const PostItem = ({ img }) => {
           <div className="flex items-center justify-between  gap-3">
             <CiClock1 className="text-[#23A6F0] w-4 h-4" />
             <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
-              22 April 2021
+              {item?.date}
             </span>
           </div>
           <div className="flex items-center gap-3">
             <FaRegCommentAlt className="text-[#23856D] w-4 h-4" />
             <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
-              10 comments
+              {item?.comment}
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373]">
+        <Link to={"/blog"} className="flex items-center cursor-pointer">
+          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] hover:text-[#252B42] transition duration-300">
             Learn More
           </p>
-          <IoIosArrowForward className="text-[#23A6F0] w-4 h-4" />
-        </div>
+          <IoIosArrowForward className="text-[#23A6F0] w-5 h-5" />
+        </Link>
       </div>
     </div>
   );
