@@ -1,16 +1,29 @@
+import axios from "axios";
 import ProductItem from "./ProductItem";
+import { useQuery } from "@tanstack/react-query";
 
 const ProductItemCard = () => {
+  const getShopCardData = async () => {
+    const res = await axios.get("/db.json");
+    return res.data.Shop.shopCards;
+  };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["shopCards"],
+    queryFn: getShopCardData,
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error...</p>;
+
   return (
     <div
       className="flex flex-col gap-8
     lg:flex lg:flex-row lg:gap-4 w-full px-10 lg:w-[75%] mx-auto py-8"
     >
-      <ProductItem img={"/shop/shop1.jpg"} name={"Vegetables"} />
-      <ProductItem img={"/shop/shop2.jpg"} name={"Ice Cream"} />
-      <ProductItem img={"/shop/shop3.jpg"} name={"Meat"} />
-      <ProductItem img={"/shop/shop4.jpg"} name={"Chocolate"} />
-      <ProductItem img={"/shop/shop5.jpg"} name={"Soup"} />
+      {data.map((item, i) => (
+        <ProductItem key={i} item={item} />
+      ))}
     </div>
   );
 };

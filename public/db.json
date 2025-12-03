@@ -172,5 +172,29 @@
         "comment": "7 comments"
       }
     ]
+  },
+  "Shop": {
+    "shopCards": [
+      {
+        "img": "/shop/shop1.jpg",
+        "name": "Vegetables"
+      },
+      {
+        "img": "/shop/shop2.jpg",
+        "name": "Ice Cream"
+      },
+      {
+        "img": "/shop/shop3.jpg",
+        "name": "Meat"
+      },
+      {
+        "img": "/shop/shop4.jpg",
+        "name": "Chocolate"
+      },
+      {
+        "img": "/shop/shop5.jpg",
+        "name": "Soup"
+      }
+    ]
   }
 }
