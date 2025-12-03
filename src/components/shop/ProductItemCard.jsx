@@ -17,10 +17,7 @@ const ProductItemCard = () => {
   if (isError) return <p>Error...</p>;
 
   return (
-    <div
-      className="flex flex-col gap-8
-    lg:flex lg:flex-row lg:gap-4 w-full px-10 lg:w-[75%] mx-auto py-8"
-    >
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full px-10 lg:w-[75%] mx-auto py-8">
       {data.map((item, i) => (
         <ProductItem key={i} item={item} />
       ))}

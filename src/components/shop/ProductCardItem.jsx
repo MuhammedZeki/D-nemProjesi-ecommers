@@ -1,12 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 const ProductCardItem = ({ item, key }) => {
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => navigate("/productDetails")}
       key={key}
-      className="flex flex-col grow gap-2 items-center justify-center font-montserrat"
+      className="flex flex-col grow gap-2 items-center justify-center font-montserrat cursor-pointer"
     >
       <img
         src={item?.img}
-        className="w-[190px] h-[190px] object-cover rounded-md "
+        className="lg:w-[250px] h-[220px] w-full object-cover rounded-md"
       />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
         {item?.name}

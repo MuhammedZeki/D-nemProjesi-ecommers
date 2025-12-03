@@ -38,12 +38,11 @@ const ShopProductCards = () => {
       <div className="w-full flex items-center justify-center">
         <div className="border border-[#BDBDBD] font-montserrat rounded-lg flex items-center">
           <div
-            onClick={() => setPage(1)}
+            onClick={() => setPage((p) => (p > 1 ? p - 1 : p))}
             className="flex cursor-pointer rounded-tl-lg rounded-bl-lg items-center justify-between font-bold leading-6 text-[#BDBDBD] bg-[#F3F3F3] p-5"
           >
             Previous
           </div>
-
           {[...Array(totalPages)].map((_, i) => {
             const pageNum = i + 1;
             const isActive = page === pageNum;

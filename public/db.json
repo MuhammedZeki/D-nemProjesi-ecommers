@@ -366,5 +366,79 @@
         "oldPrice": 25.48
       }
     ]
+  },
+  "ProductDetails": {
+    "detailSellerItem": [
+      {
+        "img": "/shop/item15.jpg",
+        "name": "Meat",
+        "department": "Meat",
+        "newPrice": 15.99,
+        "oldPrice": 65.48
+      },
+      {
+        "img": "/shop/item16.jpg",
+        "name": "Dessert",
+        "department": "Dessert",
+        "newPrice": 21.99,
+        "oldPrice": 35.48
+      },
+      {
+        "img": "/shop/item17.jpg",
+        "name": "Cake",
+        "department": "Cake",
+        "newPrice": 5.99,
+        "oldPrice": 25.48
+      },
+      {
+        "img": "/shop/item18.jpg",
+        "name": "Soup",
+        "department": "Soup",
+        "newPrice": 11.99,
+        "oldPrice": 15.48
+      },
+      {
+        "img": "/shop/item19.jpg",
+        "name": "Vegetables",
+        "department": "Vegetables",
+        "newPrice": 21.99,
+        "oldPrice": 35.48
+      },
+      {
+        "img": "/shop/item20.jpg",
+        "name": "Vegetables",
+        "department": "Vegetables",
+        "newPrice": 6.99,
+        "oldPrice": 14.48
+      },
+      {
+        "img": "/shop/item21.jpg",
+        "name": "Meat",
+        "department": "Meat",
+        "newPrice": 11.99,
+        "oldPrice": 25.48
+      },
+      {
+        "img": "/shop/item22.jpg",
+        "name": "Chocolate ice cream",
+        "department": "Ice Cream",
+        "newPrice": 6.99,
+        "oldPrice": 18.48
+      },
+      {
+        "img": "/shop/item23.jpg",
+        "name": "Dessert",
+        "department": "Dessert",
+        "newPrice": 14.99,
+        "oldPrice": 18.48
+      },
+      {
+        "img": "/shop/item24.jpg",
+        "name": "Vegetables",
+        "department": "Vegetables",
+        "newPrice": 16.99,
+        "oldPrice": 25.48
+      }
+    ]
   }
 }
