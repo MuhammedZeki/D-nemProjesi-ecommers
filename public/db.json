@@ -20,7 +20,7 @@
         "img": "/explore/et.jpg"
       }
     ],
-    "BreadItems": [
+    "breadItems": [
       {
         "img": "/explore/caramel.png",
         "name": "Caramel",
@@ -30,10 +30,10 @@
       },
       {
         "img": "/explore/elma.jpg",
-        "name": "Caramel",
-        "department": "Chocolate Department",
-        "newPrice": 2.48,
-        "oldPrice": 8.48
+        "name": "Vegetables",
+        "department": "Apple",
+        "newPrice": 1.99,
+        "oldPrice": 5.48
       },
       {
         "img": "/explore/et.jpg",
@@ -51,10 +51,10 @@
       },
       {
         "img": "/explore/elma.jpg",
-        "name": "Caramel",
-        "department": "Chocolate Department",
-        "newPrice": 2.48,
-        "oldPrice": 8.48
+        "name": "Vegetables",
+        "department": "Apple",
+        "newPrice": 1.99,
+        "oldPrice": 5.48
       },
       {
         "img": "/explore/et.jpg",
@@ -64,7 +64,7 @@
         "oldPrice": 20.48
       }
     ],
-    "BestSeler": [
+    "bestSeler": [
       {
         "img": "/bestSeller/p1.png",
         "name": "plastic",
@@ -94,7 +94,7 @@
         "oldPrice": 14.58
       }
     ],
-    "Featured": [
+    "featured": [
       {
         "img": "/post/post1.jpg",
         "new": "New",
