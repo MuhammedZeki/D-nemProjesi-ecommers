@@ -19,8 +19,8 @@ const Explore = () => {
   return (
     <div className="bg-[#FAFAFA] p-6 -mt-2">
       <div className="w-[75%] mx-auto flex items-center gap-4 flex-wrap">
-        {data.map((item) => (
-          <ExploreItem item={item} />
+        {data.map((item, i) => (
+          <ExploreItem key={i} item={item} />
         ))}
       </div>
     </div>

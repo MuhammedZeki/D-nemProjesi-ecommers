@@ -1,6 +1,21 @@
+import axios from "axios";
 import SellerItem from "../../components/bestSellers/SellerItem";
+import { useQuery } from "@tanstack/react-query";
 
 const BestSellerProducts = () => {
+  const getDessertData = async () => {
+    const res = await axios.get("/db.json");
+    return res.data.Home.bestSellers;
+  };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["bestSellers"],
+    queryFn: getDessertData,
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error...</p>;
+
   return (
     <div className=" bg-[#FAFAFA]">
       <div className=" flex flex-col gap-4 lg:w-[75%] w-full mx-auto py-8 px-4  font-montserrat">
@@ -10,10 +25,9 @@ const BestSellerProducts = () => {
           </h3>
         </div>
         <div className="py-2 lg:flex lg:flex-row lg:gap-4 flex flex-col gap-10">
-          <SellerItem img={"p1.png"} />
-          <SellerItem img={"p2.jpg"} />
-          <SellerItem img={"p3.jpg"} />
-          <SellerItem img={"p4.jpg"} />
+          {data.map((item, i) => (
+            <SellerItem key={i} item={item} />
+          ))}
         </div>
       </div>
     </div>

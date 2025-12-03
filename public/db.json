@@ -111,7 +111,7 @@
     "bestSellers": [
       {
         "img": "/bestSeller/p1.png",
-        "name": "plastic",
+        "name": "Plastic",
         "department": "Plastic",
         "newPrice": 12.53,
         "oldPrice": 14.58
