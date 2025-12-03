@@ -22,7 +22,7 @@ const Desserts = () => {
     <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
       <div className="lg:flex lg:flex-row flex flex-col-reverse gap-2.5">
         <div className="lg:w-2/3 w-full  font-montserrat ">
-          <div className=" py-2 border-b-2 border-b-[#ECECEC]">
+          <div className=" pb-5 px-1 border-b-2 border-b-[#ECECEC]">
             <BreadNav />
           </div>
           <div className="flex flex-col gap-4 font-montserrat">

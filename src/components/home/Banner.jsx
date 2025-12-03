@@ -40,7 +40,7 @@ const Banner = () => {
       <Slider {...settings}>
         <div className="relative w-full">
           <img
-            src="/home/homeBanner.jpg"
+            src="/home/img1.jpg"
             alt=""
             className="w-full h-[640px] object-cover"
           />
@@ -63,7 +63,7 @@ const Banner = () => {
 
         <div className="relative w-full">
           <img
-            src="/home/homeBanner.jpg"
+            src="/home/img2.jpg"
             alt=""
             className="w-full h-[640px] object-cover"
           />

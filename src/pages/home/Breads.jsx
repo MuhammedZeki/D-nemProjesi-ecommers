@@ -21,25 +21,24 @@ const Breads = () => {
       <div className="lg:flex lg:flex-row gap-2.5 flex flex-col ">
         <div className="lg:w-1/3 relative w-full ">
           <img
-            src="/breads/e.jpg"
-            alt=""
-            className="object-cover w-full h-full"
+            src="/breads/img1.jpg"
+            className="object-cover w-full h-[664px]"
           />
           <div className="absolute flex flex-col gap-1 font-montserrat top-8 left-8">
-            <h6 className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42]">
+            <h6 className="font-bold text-md leading-6 tracking-[0.2px] text-[#FAFAFA]">
               FURNITURE
             </h6>
-            <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#737373]">
+            <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#FAFAFA]">
               5 Items
             </p>
           </div>
         </div>
         <div className="lg:w-2/3 w-full  font-montserrat ">
-          <div className=" py-2 border-b-2 border-b-[#ECECEC]">
+          <div className=" pb-5 px-2 border-b-2 border-b-[#ECECEC]">
             <BreadNav />
           </div>
           <div className="flex flex-col gap-4 font-montserrat">
-            <div className="lg:flex lg:flex-row lg:items-center lg:gap-2 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 lg:mt-0 ">
               {data.map((item, i) => (
                 <BreadItem key={i} item={item} />
               ))}
