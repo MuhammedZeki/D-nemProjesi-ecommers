@@ -64,7 +64,51 @@
         "oldPrice": 20.48
       }
     ],
-    "bestSeler": [
+    "dessertItems": [
+      {
+        "img": "/explore/caramel.png",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 6.48,
+        "oldPrice": 16.48
+      },
+      {
+        "img": "/explore/elma.jpg",
+        "name": "Vegetables",
+        "department": "Apple",
+        "newPrice": 1.99,
+        "oldPrice": 5.48
+      },
+      {
+        "img": "/explore/et.jpg",
+        "name": "Meat",
+        "department": "Meat Department",
+        "newPrice": 16.48,
+        "oldPrice": 20.48
+      },
+      {
+        "img": "/explore/caramel.png",
+        "name": "Caramel",
+        "department": "Chocolate Department",
+        "newPrice": 6.48,
+        "oldPrice": 16.48
+      },
+      {
+        "img": "/explore/elma.jpg",
+        "name": "Vegetables",
+        "department": "Apple",
+        "newPrice": 1.99,
+        "oldPrice": 5.48
+      },
+      {
+        "img": "/explore/et.jpg",
+        "name": "Meat",
+        "department": "Meat Department",
+        "newPrice": 16.48,
+        "oldPrice": 20.48
+      }
+    ],
+    "bestSellers": [
       {
         "img": "/bestSeller/p1.png",
         "name": "plastic",

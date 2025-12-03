@@ -9,7 +9,7 @@ const Breads = () => {
   };
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["bestSellers"],
+    queryKey: ["breadItems"],
     queryFn: getBreadData,
   });
 
