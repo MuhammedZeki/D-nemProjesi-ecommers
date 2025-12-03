@@ -138,6 +138,14 @@
         "oldPrice": 14.58
       }
     ],
+    "sponsorship": [
+      { "icon": "FaHooli" },
+      { "icon": "FaLyft" },
+      { "icon": "DiEnvato" },
+      { "icon": "FaStripe" },
+      { "icon": "FaAws" },
+      { "icon": "FaRedditAlien" }
+    ],
     "featured": [
       {
         "img": "/post/post1.jpg",
