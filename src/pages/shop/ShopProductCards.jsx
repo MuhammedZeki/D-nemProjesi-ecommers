@@ -1,21 +1,12 @@
-import axios from "axios";
 import ProductCardItem from "../../components/shop/ProductCardItem";
-import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import useProducts from "../../hooks/useProducts";
 
 const ShopProductCards = () => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 12;
 
-  const getShopCardItemData = async () => {
-    const res = await axios.get("/db.json");
-    return res.data.Shop.shopItemCard;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["shopItemCard"],
-    queryFn: getShopCardItemData,
-  });
+  const { data, isLoading, isError } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;

@@ -173,6 +173,200 @@
       }
     ]
   },
+  "ProductItems": [
+    {
+      "id": 1,
+      "img": "/shop/item1.jpg",
+      "name": "Cake",
+      "department": "Desserts",
+      "newPrice": 5.99,
+      "oldPrice": 10.48
+    },
+    {
+      "id": 2,
+      "img": "/shop/item2.jpg",
+      "name": "Cake",
+      "department": "Desserts",
+      "newPrice": 12.99,
+      "oldPrice": 25.48
+    },
+    {
+      "id": 3,
+      "img": "/shop/item3.jpg",
+      "name": "Pasta",
+      "department": "Pasta",
+      "newPrice": 14.99,
+      "oldPrice": 23.48
+    },
+    {
+      "id": 4,
+      "img": "/shop/item4.jpg",
+      "name": "Chocolate ice cream",
+      "department": "Ice Cream",
+      "newPrice": 5.99,
+      "oldPrice": 12.48
+    },
+    {
+      "id": 5,
+      "img": "/shop/item5.jpg",
+      "name": "Soup",
+      "department": "Soup",
+      "newPrice": 6.99,
+      "oldPrice": 13.48
+    },
+    {
+      "id": 6,
+      "img": "/shop/item6.jpg",
+      "name": "Ice Cream",
+      "department": "Ice Cream",
+      "newPrice": 4.99,
+      "oldPrice": 14.48
+    },
+    {
+      "id": 7,
+      "img": "/shop/item7.jpg",
+      "name": "Meat",
+      "department": "Meat",
+      "newPrice": 23.99,
+      "oldPrice": 32.48
+    },
+    {
+      "id": 8,
+      "img": "/shop/item8.jpg",
+      "name": "Soup",
+      "department": "Soup",
+      "newPrice": 1.99,
+      "oldPrice": 5.48
+    },
+    {
+      "id": 9,
+      "img": "/shop/item9.jpg",
+      "name": "Soup",
+      "department": "Soup",
+      "newPrice": 6.99,
+      "oldPrice": 14.48
+    },
+    {
+      "id": 10,
+      "img": "/shop/item10.jpg",
+      "name": "Fries",
+      "department": "Fries",
+      "newPrice": 12.99,
+      "oldPrice": 25.48
+    },
+    {
+      "id": 11,
+      "img": "/shop/item11.jpg",
+      "name": "Meat",
+      "department": "Meat ",
+      "newPrice": 1.99,
+      "oldPrice": 5.48
+    },
+    {
+      "id": 12,
+      "img": "/shop/item12.jpg",
+      "name": "Chocolate ice cream",
+      "department": "Ice Cream",
+      "newPrice": 11.99,
+      "oldPrice": 15.48
+    },
+    {
+      "id": 13,
+      "img": "/shop/item13.jpg",
+      "name": "Cake",
+      "department": "Cake",
+      "newPrice": 12.99,
+      "oldPrice": 17.48
+    },
+    {
+      "id": 14,
+      "img": "/shop/item14.jpg",
+      "name": "Meat",
+      "department": "Meat",
+      "newPrice": 15.99,
+      "oldPrice": 55.48
+    },
+    {
+      "id": 15,
+      "img": "/shop/item15.jpg",
+      "name": "Meat",
+      "department": "Meat",
+      "newPrice": 15.99,
+      "oldPrice": 65.48
+    },
+    {
+      "id": 16,
+      "img": "/shop/item16.jpg",
+      "name": "Dessert",
+      "department": "Dessert",
+      "newPrice": 21.99,
+      "oldPrice": 35.48
+    },
+    {
+      "id": 17,
+      "img": "/shop/item17.jpg",
+      "name": "Cake",
+      "department": "Cake",
+      "newPrice": 5.99,
+      "oldPrice": 25.48
+    },
+    {
+      "id": 18,
+      "img": "/shop/item18.jpg",
+      "name": "Soup",
+      "department": "Soup",
+      "newPrice": 11.99,
+      "oldPrice": 15.48
+    },
+    {
+      "id": 19,
+      "img": "/shop/item19.jpg",
+      "name": "Vegetables",
+      "department": "Vegetables",
+      "newPrice": 21.99,
+      "oldPrice": 35.48
+    },
+    {
+      "id": 20,
+      "img": "/shop/item20.jpg",
+      "name": "Vegetables",
+      "department": "Vegetables",
+      "newPrice": 6.99,
+      "oldPrice": 14.48
+    },
+    {
+      "id": 21,
+      "img": "/shop/item21.jpg",
+      "name": "Meat",
+      "department": "Meat",
+      "newPrice": 11.99,
+      "oldPrice": 25.48
+    },
+    {
+      "id": 22,
+      "img": "/shop/item22.jpg",
+      "name": "Chocolate ice cream",
+      "department": "Ice Cream",
+      "newPrice": 6.99,
+      "oldPrice": 18.48
+    },
+    {
+      "id": 23,
+      "img": "/shop/item23.jpg",
+      "name": "Dessert",
+      "department": "Dessert",
+      "newPrice": 14.99,
+      "oldPrice": 18.48
+    },
+    {
+      "id": 24,
+      "img": "/shop/item24.jpg",
+      "name": "Vegetables",
+      "department": "Vegetables",
+      "newPrice": 16.99,
+      "oldPrice": 25.48
+    }
+  ],
   "Shop": {
     "shopCards": [
       {
@@ -198,6 +392,7 @@
     ],
     "shopItemCard": [
       {
+        "id": 1,
         "img": "/shop/item1.jpg",
         "name": "Cake",
         "department": "Desserts",
@@ -205,6 +400,7 @@
         "oldPrice": 10.48
       },
       {
+        "id": 2,
         "img": "/shop/item2.jpg",
         "name": "Cake",
         "department": "Desserts",
@@ -212,6 +408,7 @@
         "oldPrice": 25.48
       },
       {
+        "id": 3,
         "img": "/shop/item3.jpg",
         "name": "Pasta",
         "department": "Pasta",
@@ -219,6 +416,7 @@
         "oldPrice": 23.48
       },
       {
+        "id": 4,
         "img": "/shop/item4.jpg",
         "name": "Chocolate ice cream",
         "department": "Ice Cream",
@@ -226,6 +424,7 @@
         "oldPrice": 12.48
       },
       {
+        "id": 5,
         "img": "/shop/item5.jpg",
         "name": "Soup",
         "department": "Soup",
@@ -233,6 +432,7 @@
         "oldPrice": 13.48
       },
       {
+        "id": 6,
         "img": "/shop/item6.jpg",
         "name": "Ice Cream",
         "department": "Ice Cream",
@@ -240,6 +440,7 @@
         "oldPrice": 14.48
       },
       {
+        "id": 7,
         "img": "/shop/item7.jpg",
         "name": "Meat",
         "department": "Meat",
@@ -247,6 +448,7 @@
         "oldPrice": 32.48
       },
       {
+        "id": 8,
         "img": "/shop/item8.jpg",
         "name": "Soup",
         "department": "Soup",
@@ -254,6 +456,7 @@
         "oldPrice": 5.48
       },
       {
+        "id": 9,
         "img": "/shop/item9.jpg",
         "name": "Soup",
         "department": "Soup",
@@ -261,6 +464,7 @@
         "oldPrice": 14.48
       },
       {
+        "id": 10,
         "img": "/shop/item10.jpg",
         "name": "Fries",
         "department": "Fries",
@@ -268,6 +472,7 @@
         "oldPrice": 25.48
       },
       {
+        "id": 11,
         "img": "/shop/item11.jpg",
         "name": "Meat",
         "department": "Meat ",
@@ -275,6 +480,7 @@
         "oldPrice": 5.48
       },
       {
+        "id": 12,
         "img": "/shop/item12.jpg",
         "name": "Chocolate ice cream",
         "department": "Ice Cream",
@@ -282,6 +488,7 @@
         "oldPrice": 15.48
       },
       {
+        "id": 13,
         "img": "/shop/item13.jpg",
         "name": "Cake",
         "department": "Cake",
@@ -289,6 +496,7 @@
         "oldPrice": 17.48
       },
       {
+        "id": 14,
         "img": "/shop/item14.jpg",
         "name": "Meat",
         "department": "Meat",
@@ -296,6 +504,7 @@
         "oldPrice": 55.48
       },
       {
+        "id": 15,
         "img": "/shop/item15.jpg",
         "name": "Meat",
         "department": "Meat",
@@ -303,6 +512,7 @@
         "oldPrice": 65.48
       },
       {
+        "id": 16,
         "img": "/shop/item16.jpg",
         "name": "Dessert",
         "department": "Dessert",
@@ -310,6 +520,7 @@
         "oldPrice": 35.48
       },
       {
+        "id": 17,
         "img": "/shop/item17.jpg",
         "name": "Cake",
         "department": "Cake",
@@ -317,6 +528,7 @@
         "oldPrice": 25.48
       },
       {
+        "id": 18,
         "img": "/shop/item18.jpg",
         "name": "Soup",
         "department": "Soup",
@@ -324,6 +536,7 @@
         "oldPrice": 15.48
       },
       {
+        "id": 19,
         "img": "/shop/item19.jpg",
         "name": "Vegetables",
         "department": "Vegetables",
@@ -331,6 +544,7 @@
         "oldPrice": 35.48
       },
       {
+        "id": 20,
         "img": "/shop/item20.jpg",
         "name": "Vegetables",
         "department": "Vegetables",
@@ -338,6 +552,7 @@
         "oldPrice": 14.48
       },
       {
+        "id": 21,
         "img": "/shop/item21.jpg",
         "name": "Meat",
         "department": "Meat",
@@ -345,6 +560,7 @@
         "oldPrice": 25.48
       },
       {
+        "id": 22,
         "img": "/shop/item22.jpg",
         "name": "Chocolate ice cream",
         "department": "Ice Cream",
@@ -352,6 +568,7 @@
         "oldPrice": 18.48
       },
       {
+        "id": 23,
         "img": "/shop/item23.jpg",
         "name": "Dessert",
         "department": "Dessert",
@@ -359,6 +576,7 @@
         "oldPrice": 18.48
       },
       {
+        "id": 24,
         "img": "/shop/item24.jpg",
         "name": "Vegetables",
         "department": "Vegetables",

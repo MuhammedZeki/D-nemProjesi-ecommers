@@ -5,10 +5,13 @@ const DessertsItem = ({ key, item }) => {
   return (
     <div
       key={key}
-      onClick={() => navigate("/productDetails")}
+      onClick={() => navigate(`/productDetails/${item?.id}`)}
       className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#FAFAFA] lg:w-[293px]"
     >
-      <img src={item?.img} alt="" className="w-[190px]" />
+      <img
+        src={item?.img}
+        className="w-[270px] h-[200px] rounded-sm object-cover"
+      />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42]">
         {item?.name}
       </div>

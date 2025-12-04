@@ -1,17 +1,8 @@
-import axios from "axios";
 import SellerItem from "../../components/bestSellers/SellerItem";
-import { useQuery } from "@tanstack/react-query";
+import useProducts from "../../hooks/useProducts";
 
 const BestSellerProducts = () => {
-  const getDessertData = async () => {
-    const res = await axios.get("/db.json");
-    return res.data.Home.bestSellers;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["bestSellers"],
-    queryFn: getDessertData,
-  });
+  const { data, isLoading, isError } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -25,7 +16,7 @@ const BestSellerProducts = () => {
           </h3>
         </div>
         <div className="py-2 lg:flex lg:flex-row lg:gap-4 flex flex-col gap-10">
-          {data.map((item, i) => (
+          {data.slice(12, 16).map((item, i) => (
             <SellerItem key={i} item={item} />
           ))}
         </div>

@@ -1,17 +1,8 @@
-import axios from "axios";
 import BreadItem from "../../components/Breads/BreadItem";
 import BreadNav from "../../components/Breads/BreadNav";
-import { useQuery } from "@tanstack/react-query";
+import useProducts from "../../hooks/useProducts";
 const Breads = () => {
-  const getBreadData = async () => {
-    const res = await axios.get("/db.json");
-    return res.data.Home.breadItems;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["breadItems"],
-    queryFn: getBreadData,
-  });
+  const { data, isLoading, isError } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -39,7 +30,7 @@ const Breads = () => {
           </div>
           <div className="flex flex-col gap-4 font-montserrat">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 lg:mt-0 ">
-              {data.map((item, i) => (
+              {data.slice(0, 6).map((item, i) => (
                 <BreadItem key={i} item={item} />
               ))}
             </div>

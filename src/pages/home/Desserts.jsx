@@ -1,19 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-
 import BreadNav from "../../components/Breads/BreadNav";
 import DessertsItem from "../../components/home/Desserts/DessertsItem";
+import useProducts from "../../hooks/useProducts";
 
 const Desserts = () => {
-  const getDessertData = async () => {
-    const res = await axios.get("/db.json");
-    return res.data.Home.dessertItems;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["dessertItems"],
-    queryFn: getDessertData,
-  });
+  const { data, isLoading, isError } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -26,8 +16,8 @@ const Desserts = () => {
             <BreadNav />
           </div>
           <div className="flex flex-col gap-4 font-montserrat">
-            <div className="lg:flex lg:flex-row lg:items-center lg:gap-2 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col">
-              {data.map((item, i) => (
+            <div className="lg:flex lg:flex-row lg:items-center lg:gap-1 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col">
+              {data.slice(5, 11).map((item, i) => (
                 <DessertsItem key={i} item={item} />
               ))}
             </div>

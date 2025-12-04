@@ -1,10 +1,12 @@
 import { useState, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Slider from "react-slick";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { CiHeart, CiShoppingBasket } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import Slider from "react-slick";
+import useProducts from "../../hooks/useProducts";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -27,11 +29,20 @@ function SamplePrevArrow({ onClick }) {
   );
 }
 
-const IMG = ["/DetailsImg/p1.jpg", "/DetailsImg/p2.jpg"];
-
 const DetailContent = () => {
   const [activeImg, setActiveImg] = useState(0);
   const sliderRef = useRef();
+  const { id } = useParams();
+
+  const { data, isLoading, isError } = useProducts();
+
+  const newProduct = data.find((i) => i.id === Number(id));
+
+  const IMG = [newProduct.img, "/DetailsImg/p2.jpg"];
+  console.log(newProduct);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error...</p>;
 
   const settings = {
     dots: false,
@@ -82,7 +93,7 @@ const DetailContent = () => {
 
       <div className="lg:w-2/3 w-full font-montserrat flex flex-col gap-6">
         <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42]">
-          Cooked Meat
+          {newProduct.name}
         </h4>
         <div className="flex items-center gap-3 ">
           <div className="flex items-center">
@@ -97,7 +108,7 @@ const DetailContent = () => {
           </h6>
         </div>
         <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
-          $1,139.33
+          ${newProduct.newPrice}
         </h5>
         <div className="flex items-center gap-1">
           <p className="font-bold leading-6 tracking-[0.2px] text-[#737373]">
