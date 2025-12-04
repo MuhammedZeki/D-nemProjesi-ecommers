@@ -1,17 +1,8 @@
-import axios from "axios";
 import DetailSellerItem from "./DetailSellerItem";
-import { useQuery } from "@tanstack/react-query";
+import useProducts from "../../hooks/useProducts";
 
 const DetailSellers = () => {
-  const getDetailsSellerItemData = async () => {
-    const res = await axios.get("/db.json");
-    return res.data.ProductDetails.detailSellerItem;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["detailSellerItem"],
-    queryFn: getDetailsSellerItemData,
-  });
+  const { data, isLoading, isError } = useProducts();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -25,7 +16,7 @@ const DetailSellers = () => {
           </h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-start">
-          {data.map((item, i) => (
+          {data.slice(0, 10).map((item, i) => (
             <DetailSellerItem key={i} item={item} />
           ))}
         </div>

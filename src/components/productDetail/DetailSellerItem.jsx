@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const DetailSellerItem = ({ key, item }) => {
+  const navigate = useNavigate();
   return (
-    <div key={key} className="flex flex-col cursor-pointer">
+    <div
+      onClick={() => navigate(`/productDetails/${item?.id}`)}
+      key={key}
+      className="flex flex-col cursor-pointer"
+    >
       <img
         src={item?.img}
         className="lg:w-[250px] h-[220px] w-full object-cover rounded-md"
