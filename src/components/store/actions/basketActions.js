@@ -1,0 +1,39 @@
+import axios from "axios";
+
+export const ADD_BASKET = "ADD_BASKET";
+export const GET_BASKET = "GET_BASKET";
+export const DELETE_BASKET = "DELETE_BASKET";
+
+
+export function toBasket(data) {
+    return { type: ADD_BASKET, payload: data };
+}
+export function getBasket(data) {
+    return { type: GET_BASKET, payload: data };
+}
+
+export const toBasketAPI = (data) => (dispatch) => {
+    return axios
+        .post('/db.json', data)
+        .then((res) => {
+            if (res.status === 201) {
+                dispatch(toBasket(res.data));
+            } else {
+                console.log('Basket faild');
+            }
+        })
+        .catch((error) => console.log(error));
+};
+
+export const getBasketAPI = () => (dispatch) => {
+    return axios
+        .get('/db.json')
+        .then((res) => {
+            if (res.status === 200) {
+                dispatch(getBasket(res.data));
+            } else {
+                console.log('Basket faild!');
+            }
+        })
+        .catch((error) => console.log(error));
+};

@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import useProducts from "../../hooks/useProducts";
 import { CounterContextt } from "../../context/CounterContext";
+import { useDispatch, useSelector } from "react-redux";
+import { toBasket } from "../store/actions/basketActions";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -36,9 +38,18 @@ const DetailContent = () => {
   const { id } = useParams();
   const { count, increment, descrement } = useContext(CounterContextt);
   const { data, isLoading, isError } = useProducts();
+  const dispatch = useDispatch();
 
-  const newProduct = data.find((i) => i.id === Number(id));
-
+  const newProduct = data?.find((i) => i.id === Number(id));
+  const addToBasket = (data) => {
+    const basketObj = {
+      ...data,
+      count: count,
+    };
+    dispatch(toBasket(basketObj));
+  };
+  const basket = useSelector((state) => state);
+  console.log("Basket:", basket);
   const IMG = [newProduct.img, "/DetailsImg/p2.jpg"];
 
   if (isLoading) return <p>Loading...</p>;
@@ -144,7 +155,10 @@ const DetailContent = () => {
           <button className="bg-[#23A6F0] cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
             Select Options
           </button>
-          <div className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full">
+          <div
+            onClick={() => addToBasket(newProduct)}
+            className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full"
+          >
             <CiHeart className="w-6 h-6 text-gray-600 group-hover:text-[#CB0404]" />
           </div>
 
