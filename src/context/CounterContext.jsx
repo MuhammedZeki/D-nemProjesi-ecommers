@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 // eslint-disable-next-line react-refresh/only-export-components
 export const CounterContextt = createContext();
 
-const CounterContext = ({ children }) => {
+const CounterContextProvider = ({ children }) => {
   const [count, setCount] = useState(1);
   const increment = () => {
     setCount((p) => p + 1);
@@ -25,4 +25,4 @@ const CounterContext = ({ children }) => {
   );
 };
 
-export default CounterContext;
+export default CounterContextProvider;

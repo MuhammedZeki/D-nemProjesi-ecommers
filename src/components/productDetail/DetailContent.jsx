@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
@@ -7,6 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import useProducts from "../../hooks/useProducts";
+import { CounterContextt } from "../../context/CounterContext";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -33,13 +34,12 @@ const DetailContent = () => {
   const [activeImg, setActiveImg] = useState(0);
   const sliderRef = useRef();
   const { id } = useParams();
-
+  const { count, increment, descrement } = useContext(CounterContextt);
   const { data, isLoading, isError } = useProducts();
 
   const newProduct = data.find((i) => i.id === Number(id));
 
   const IMG = [newProduct.img, "/DetailsImg/p2.jpg"];
-  console.log(newProduct);
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -123,25 +123,37 @@ const DetailContent = () => {
           RELIT official consequent door ENIM RELIT Mollie. Excitation venial
           consequent sent nostrum met.
         </p>
-        <div className="flex items-center gap-3">
-          <div className="w-[30px] h-[30px] bg-[#23A6F0] rounded-full"></div>
-          <div className="w-[30px] h-[30px] bg-[#2DC071] rounded-full"></div>
-          <div className="w-[30px] h-[30px] bg-[#E77C40] rounded-full"></div>
-          <div className="w-[30px] h-[30px] bg-[#252B42] rounded-full"></div>
+        <div className="flex items-center">
+          <button
+            onClick={() => descrement()}
+            className="cursor-pointer bg-[#076297] px-6 py-2 flex items-center justify-center text-[#FAFAFA] text-xl"
+          >
+            -
+          </button>
+          <div className="px-6 text-[#FAFAFA] text-xl py-2 bg-[#23A6F0] flex items-center justify-center">
+            {count}
+          </div>
+          <button
+            onClick={() => increment()}
+            className="cursor-pointer px-6 text-xl py-2 bg-[#233844] flex items-center justify-center text-[#FAFAFA] "
+          >
+            +
+          </button>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-[#23A6F0] rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
+          <button className="bg-[#23A6F0] cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
             Select Options
           </button>
-          <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
-            <CiHeart className="w-6 h-6" />
+          <div className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full">
+            <CiHeart className="w-6 h-6 text-gray-600 group-hover:text-[#CB0404]" />
           </div>
-          <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
-            <CiShoppingBasket className="w-6 h-6" />
+
+          <div className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full">
+            <CiShoppingBasket className="w-6 h-6 text-gray-600 group-hover:text-[#23A6F0]" />
           </div>
-          <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
+          {/* <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
             <FaEye className="w-6 h-6" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
