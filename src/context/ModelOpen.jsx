@@ -6,13 +6,20 @@ export const ModelOpenContext = createContext();
 const ModelOpenProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [shopModal, setShopModal] = useState(false);
+  const [basketModal, setBasketModal] = useState(false);
   const changeModal = () => {
     setOpen(!open);
   };
+  const value = {
+    open,
+    changeModal,
+    shopModal,
+    setShopModal,
+    basketModal,
+    setBasketModal,
+  };
   return (
-    <ModelOpenContext.Provider
-      value={{ open, changeModal, shopModal, setShopModal }}
-    >
+    <ModelOpenContext.Provider value={value}>
       {children}
     </ModelOpenContext.Provider>
   );

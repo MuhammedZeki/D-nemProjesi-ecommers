@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 const Cards = () => {
-  const { changeModal } = useContext(ModelOpenContext);
+  const { changeModal, setBasketModal } = useContext(ModelOpenContext);
   const navigate = useNavigate();
   const user = localStorage.getItem("loggedInUser");
   const { items } = useSelector((state) => state);
@@ -34,7 +34,10 @@ const Cards = () => {
         <div>
           <CiSearch className="w-6 h-6" />
         </div>
-        <div className="flex items-center gap-2 relative group ">
+        <div
+          onClick={() => setBasketModal((p) => !p)}
+          className="flex items-center gap-2 relative group"
+        >
           <CiShoppingBasket className="w-6 h-6 group-hover:text-[#036aa5] transition duration-300" />
           <span className="font-light absolute bg-[#23A6F0] text-[#FAFAFA] transition duration-300 group-hover:bg-[#036aa5] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
             {items.length}
