@@ -6,9 +6,11 @@ import Cards from "./UpperComponets/Cards";
 import MenuBar from "./UpperComponets/MenuBar";
 import ShopCard from "./UpperComponets/ShopCard";
 import BasketItems from "../basket/basketItems";
+import FavoriteItems from "../favorites/FavoriteItems";
 
 const UpperMenu = () => {
-  const { open, shopModal, basketModal } = useContext(ModelOpenContext);
+  const { open, shopModal, basketModal, favModal } =
+    useContext(ModelOpenContext);
   return (
     <div className="relative flex items-center justify-between w-full px-10 lg:w-[75%] mx-auto py-8">
       <Logo />
@@ -22,6 +24,9 @@ const UpperMenu = () => {
       </Activity>
       <Activity mode={basketModal ? "visible" : "hidden"}>
         <BasketItems />
+      </Activity>
+      <Activity mode={favModal ? "visible" : "hidden"}>
+        <FavoriteItems />
       </Activity>
     </div>
   );

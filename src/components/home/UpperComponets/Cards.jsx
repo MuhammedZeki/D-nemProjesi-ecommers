@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 const Cards = () => {
-  const { changeModal, setBasketModal } = useContext(ModelOpenContext);
+  const { changeModal, setBasketModal, setFavModal } =
+    useContext(ModelOpenContext);
   const navigate = useNavigate();
   const user = localStorage.getItem("loggedInUser");
   const { items } = useSelector((state) => state.basket);
+  const { favorites } = useSelector((state) => state.favorite);
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
@@ -43,10 +45,13 @@ const Cards = () => {
             {items.length}
           </span>
         </div>
-        <div className="flex items-center gap-2 relative group">
+        <div
+          onClick={() => setFavModal((p) => !p)}
+          className="flex items-center gap-2 relative group"
+        >
           <CiHeart className="w-6 h-6 group-hover:text-[#CB0404] transition duration-300" />
           <span className="font-light absolute bg-[#23A6F0] text-[#FAFAFA] transition duration-300 group-hover:bg-[#CB0404] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-2">
-            1
+            {favorites.length}
           </span>
         </div>
         <div className="flex items-center gap-1">

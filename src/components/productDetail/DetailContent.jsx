@@ -63,7 +63,7 @@ const DetailContent = () => {
     }
   };
   const IMG = [newProduct?.img, "/DetailsImg/p2.jpg"];
-  const isHeart = favorites.find((i) => i.id === newProduct.id);
+  const isHeart = favorites?.find((i) => i?.id === newProduct?.id);
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
 

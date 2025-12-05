@@ -7,6 +7,7 @@ const ModelOpenProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [shopModal, setShopModal] = useState(false);
   const [basketModal, setBasketModal] = useState(false);
+  const [favModal, setFavModal] = useState(false);
   const changeModal = () => {
     setOpen(!open);
   };
@@ -17,6 +18,8 @@ const ModelOpenProvider = ({ children }) => {
     setShopModal,
     basketModal,
     setBasketModal,
+    favModal,
+    setFavModal,
   };
   return (
     <ModelOpenContext.Provider value={value}>
