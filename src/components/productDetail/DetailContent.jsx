@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import useProducts from "../../hooks/useProducts";
 import { CounterContextt } from "../../context/CounterContext";
-import { useDispatch, useSelector } from "react-redux";
-import { getTotal, toBasket } from "../store/actions/basketActions";
+import { useDispatch } from "react-redux";
+import { toBasket } from "../store/actions/basketActions";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -48,12 +48,7 @@ const DetailContent = () => {
     };
     dispatch(toBasket(basketObj));
   };
-  useEffect(() => {
-    dispatch(getTotal());
-  }, [dispatch]);
-  const { items, total } = useSelector((state) => state);
-  console.log("Basket:", items);
-  console.log("BasketTotal:", total.toFixed(2));
+
   const IMG = [newProduct?.img, "/DetailsImg/p2.jpg"];
 
   if (isLoading) return <p>Loading...</p>;

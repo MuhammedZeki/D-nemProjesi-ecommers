@@ -12,6 +12,9 @@ export function toBasket(data) {
 export function getBasket(data) {
     return { type: GET_BASKET, payload: data };
 }
+export function deleteBasket(id) {
+    return { type: DELETE_BASKET, payload: id };
+}
 export function getTotal() {
     return { type: TOTAL_BASKET };
 }
@@ -35,6 +38,19 @@ export const getBasketAPI = () => (dispatch) => {
         .then((res) => {
             if (res.status === 200) {
                 dispatch(getBasket(res.data));
+            } else {
+                console.log('Basket faild!');
+            }
+        })
+        .catch((error) => console.log(error));
+};
+
+export const getDeleteAPI = () => (dispatch) => {
+    return axios
+        .get('/db.json')
+        .then((res) => {
+            if (res.status === 200) {
+                dispatch(deleteBasket(res.data.id));
             } else {
                 console.log('Basket faild!');
             }

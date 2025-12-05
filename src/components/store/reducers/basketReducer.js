@@ -1,4 +1,5 @@
-import { ADD_BASKET, TOTAL_BASKET } from "../actions/basketActions"
+/* eslint-disable no-fallthrough */
+import { ADD_BASKET, DELETE_BASKET, TOTAL_BASKET } from "../actions/basketActions"
 
 const getFromLocalStorageToBasket = () => {
     const local = localStorage.getItem("basket")
@@ -18,7 +19,9 @@ const initialState = {
 const writeFromLocalStorageToBasket = (product) => {
     localStorage.setItem("basket", JSON.stringify(product))
 }
-
+const writeFromLocalStorageToBasketPrice = (product) => {
+    localStorage.setItem("totalPrice", JSON.stringify(product))
+}
 export const basketReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_BASKET:
@@ -35,7 +38,6 @@ export const basketReducer = (state = initialState, action) => {
 
                 }
             }
-        // eslint-disable-next-line no-fallthrough
         case TOTAL_BASKET: {
             const total = state.items.reduce(
                 (sum, item) => sum + item.count * item.newPrice,
@@ -46,6 +48,22 @@ export const basketReducer = (state = initialState, action) => {
 
             return { ...state, total }
         }
+        case DELETE_BASKET:
+            {
+                const filtered = state.items.filter(i => i.id !== action.payload);
+
+                const newTotal = filtered.reduce(
+                    (sum, item) => sum + item.count * item.newPrice,
+                    0
+                );
+
+                state.items = filtered;
+                state.total = newTotal;
+
+                writeFromLocalStorageToBasket(filtered);
+                writeFromLocalStorageToBasketPrice(newTotal);
+                return { ...state };
+            }
         default:
             return state;
     }

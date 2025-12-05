@@ -10,7 +10,7 @@ const Cards = () => {
   const { changeModal, setBasketModal } = useContext(ModelOpenContext);
   const navigate = useNavigate();
   const user = localStorage.getItem("loggedInUser");
-  const { items } = useSelector((state) => state);
+  const { items } = useSelector((state) => state.basket);
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
@@ -61,7 +61,7 @@ const Cards = () => {
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">
         <div className="flex items-center gap-1">
           {user ? (
-            <MdExitToApp className="w-6 h-6" />
+            <MdExitToApp className="w-6 h-6 hover:text-[#585d72] transition duration-300" />
           ) : (
             <CiUser className="w-6 h-6" />
           )}
@@ -69,14 +69,20 @@ const Cards = () => {
         <div>
           <CiSearch className="w-6 h-6" />
         </div>
-        <div className="flex items-center relative">
-          <CiShoppingBasket className="w-6 h-6" />
-          <span className="font-light absolute bg-[#252B42] text-[#FAFAFA] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
+        <div
+          onClick={() => setBasketModal((p) => !p)}
+          className="flex items-center relative group"
+        >
+          <CiShoppingBasket className="w-6 h-6 group-hover:text-[#585d72] transition duration-300" />
+          <span className="font-light absolute bg-[#252B42] group-hover:bg-[#585d72] text-[#FAFAFA] transition duration-300 rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
             {items.length}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <BiMenuAltRight onClick={() => changeModal()} className="w-6 h-6" />
+          <BiMenuAltRight
+            onClick={() => changeModal()}
+            className="w-6 h-6 hover:text-[#585d72] transition duration-300"
+          />
         </div>
       </div>
     </>
