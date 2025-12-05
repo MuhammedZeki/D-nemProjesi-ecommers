@@ -27,7 +27,7 @@ export const toFavAPI = (data) => (dispatch) => {
 };
 
 
-export const getFavAPI = () => (dispatch) => {
+export const deleteFavAPI = () => (dispatch) => {
     return axios
         .get('/db.json')
         .then((res) => {

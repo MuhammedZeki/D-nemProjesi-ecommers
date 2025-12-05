@@ -8,8 +8,10 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import useProducts from "../../hooks/useProducts";
 import { CounterContextt } from "../../context/CounterContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toBasket } from "../store/actions/basketActions";
+import { deleteFav, toFav } from "../store/actions/favoritesAction";
+import { toast } from "react-toastify";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -39,7 +41,7 @@ const DetailContent = () => {
   const { count, increment, descrement } = useContext(CounterContextt);
   const { data, isLoading, isError } = useProducts();
   const dispatch = useDispatch();
-
+  const { favorites } = useSelector((state) => state.favorite);
   const newProduct = data?.find((i) => i.id === Number(id));
   const addToBasket = (data) => {
     const basketObj = {
@@ -47,10 +49,21 @@ const DetailContent = () => {
       count: count,
     };
     dispatch(toBasket(basketObj));
+    toast.success("Sepetinize eklendi!");
   };
+  const toggleFav = (product) => {
+    const isFav = favorites.find((i) => i.id === product.id);
 
+    if (isFav) {
+      dispatch(deleteFav(product.id));
+      toast.info("Favorilerden çıkarıldı!");
+    } else {
+      dispatch(toFav(product));
+      toast.success("Favorilere eklendi!");
+    }
+  };
   const IMG = [newProduct?.img, "/DetailsImg/p2.jpg"];
-
+  const isHeart = favorites.find((i) => i.id === newProduct.id);
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
 
@@ -151,11 +164,22 @@ const DetailContent = () => {
           </button>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-[#23A6F0] cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
+          <button className="bg-[#23A6F0] hover:bg-[#79c9f8] transition duration-300 cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
             Select Options
           </button>
-          <div className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full transition duration-300">
-            <CiHeart className="w-6 h-6 text-gray-600 group-hover:text-[#CB0404] transition duration-300" />
+          <div
+            onClick={() => toggleFav(newProduct)}
+            className={`group hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full transition duration-300 ${
+              isHeart
+                ? "border border-[#CB0404] bg-[#f8c0c0] "
+                : "border border-[#E8E8E8]"
+            }`}
+          >
+            <CiHeart
+              className={`w-6 h-6 group-hover:text-[#CB0404] transition duration-300 ${
+                isHeart ? "text-[#CB0404]" : "text-gray-600"
+              }`}
+            />
           </div>
 
           <div
