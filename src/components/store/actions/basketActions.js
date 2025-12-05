@@ -3,6 +3,7 @@ import axios from "axios";
 export const ADD_BASKET = "ADD_BASKET";
 export const GET_BASKET = "GET_BASKET";
 export const DELETE_BASKET = "DELETE_BASKET";
+export const TOTAL_BASKET = "TOTAL_BASKET";
 
 
 export function toBasket(data) {
@@ -10,6 +11,9 @@ export function toBasket(data) {
 }
 export function getBasket(data) {
     return { type: GET_BASKET, payload: data };
+}
+export function getTotal() {
+    return { type: TOTAL_BASKET };
 }
 
 export const toBasketAPI = (data) => (dispatch) => {

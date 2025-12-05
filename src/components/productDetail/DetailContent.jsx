@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import useProducts from "../../hooks/useProducts";
 import { CounterContextt } from "../../context/CounterContext";
 import { useDispatch, useSelector } from "react-redux";
-import { toBasket } from "../store/actions/basketActions";
+import { getTotal, toBasket } from "../store/actions/basketActions";
 function SampleNextArrow({ onClick }) {
   return (
     <div
@@ -48,9 +48,13 @@ const DetailContent = () => {
     };
     dispatch(toBasket(basketObj));
   };
-  const basket = useSelector((state) => state);
-  console.log("Basket:", basket);
-  const IMG = [newProduct.img, "/DetailsImg/p2.jpg"];
+  useEffect(() => {
+    dispatch(getTotal());
+  }, [dispatch]);
+  const { items, total } = useSelector((state) => state);
+  console.log("Basket:", items);
+  console.log("BasketTotal:", total.toFixed(2));
+  const IMG = [newProduct?.img, "/DetailsImg/p2.jpg"];
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error...</p>;
@@ -155,15 +159,15 @@ const DetailContent = () => {
           <button className="bg-[#23A6F0] cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
             Select Options
           </button>
-          <div
-            onClick={() => addToBasket(newProduct)}
-            className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full"
-          >
-            <CiHeart className="w-6 h-6 text-gray-600 group-hover:text-[#CB0404]" />
+          <div className="group border border-[#E8E8E8] hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full transition duration-300">
+            <CiHeart className="w-6 h-6 text-gray-600 group-hover:text-[#CB0404] transition duration-300" />
           </div>
 
-          <div className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full">
-            <CiShoppingBasket className="w-6 h-6 text-gray-600 group-hover:text-[#23A6F0]" />
+          <div
+            onClick={() => addToBasket(newProduct)}
+            className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300"
+          >
+            <CiShoppingBasket className="w-6 h-6 text-gray-600 group-hover:text-[#23A6F0] transition duration-300" />
           </div>
           {/* <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
             <FaEye className="w-6 h-6" />

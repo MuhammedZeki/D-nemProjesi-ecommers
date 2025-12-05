@@ -1,34 +1,52 @@
-import { ADD_BASKET } from "../actions/basketActions"
+import { ADD_BASKET, TOTAL_BASKET } from "../actions/basketActions"
+
+const getFromLocalStorageToBasket = () => {
+    const local = localStorage.getItem("basket")
+    return local ? JSON.parse(local) : []
+}
+
+const getFromLocalStorageTotal = () => {
+    const local = localStorage.getItem("totalPrice")
+    return local ? JSON.parse(local) : 0
+}
 
 const initialState = {
-    items: [],
-    total: 0
+    items: getFromLocalStorageToBasket(),
+    total: getFromLocalStorageTotal()
+}
+
+const writeFromLocalStorageToBasket = (product) => {
+    localStorage.setItem("basket", JSON.stringify(product))
 }
 
 export const basketReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_BASKET:
-            // eslint-disable-next-line no-case-declarations
-            const existingItem = state.items.find(i => i.id === action.payload.id)
-            // eslint-disable-next-line no-case-declarations
-            let newItems;
-            if (existingItem) {
-                newItems = state.items.map((item) =>
-                    item.id === action.payload.id
-                        ? { ...item, count: item.count + action.payload.count }
-                        : item
-                );
-            } else {
-                newItems = [...state.items, { ...action.payload, count: action.payload.count }];
-            }
-            // eslint-disable-next-line no-case-declarations
-            const newTotal = newItems.reduce(
-                (sum, item) => sum + item.newPrice * item.count,
-                0
-            );
+            {
+                const basket = state.items.find(i => i.id === action.payload.id)
+                if (basket) {
+                    const find = state.items.filter(i => i.id !== action.payload.id)
+                    basket.count += action.payload.count
+                    state.items = [...find, basket]
+                    writeFromLocalStorageToBasket(state.items)
+                } else {
+                    state.items = [...state.items, action.payload]
+                    writeFromLocalStorageToBasket(state.items)
 
-            return { items: newItems, total: newTotal };
+                }
+            }
+        // eslint-disable-next-line no-fallthrough
+        case TOTAL_BASKET: {
+            const total = state.items.reduce(
+                (sum, item) => sum + item.count * item.newPrice,
+                0
+            )
+
+            localStorage.setItem("totalPrice", JSON.stringify(total))
+
+            return { ...state, total }
+        }
         default:
-            return state
+            return state;
     }
 }

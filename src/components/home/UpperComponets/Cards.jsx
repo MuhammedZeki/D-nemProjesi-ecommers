@@ -5,10 +5,12 @@ import { ModelOpenContext } from "../../../context/ModelOpen";
 import { MdExitToApp } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 const Cards = () => {
   const { changeModal } = useContext(ModelOpenContext);
   const navigate = useNavigate();
   const user = localStorage.getItem("loggedInUser");
+  const { items } = useSelector((state) => state);
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
@@ -32,13 +34,17 @@ const Cards = () => {
         <div>
           <CiSearch className="w-6 h-6" />
         </div>
-        <div className="flex items-center gap-2">
-          <CiShoppingBasket className="w-6 h-6" />
-          <span className="font-normal">1</span>
+        <div className="flex items-center gap-2 relative group ">
+          <CiShoppingBasket className="w-6 h-6 group-hover:text-[#036aa5] transition duration-300" />
+          <span className="font-light absolute bg-[#23A6F0] text-[#FAFAFA] transition duration-300 group-hover:bg-[#036aa5] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
+            {items.length}
+          </span>
         </div>
-        <div className="flex items-center gap-2">
-          <CiHeart className="w-6 h-6" />
-          <span className="font-normal">1</span>
+        <div className="flex items-center gap-2 relative group">
+          <CiHeart className="w-6 h-6 group-hover:text-[#CB0404] transition duration-300" />
+          <span className="font-light absolute bg-[#23A6F0] text-[#FAFAFA] transition duration-300 group-hover:bg-[#CB0404] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-2">
+            1
+          </span>
         </div>
         <div className="flex items-center gap-1">
           {user && (
@@ -60,8 +66,11 @@ const Cards = () => {
         <div>
           <CiSearch className="w-6 h-6" />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center relative">
           <CiShoppingBasket className="w-6 h-6" />
+          <span className="font-light absolute bg-[#252B42] text-[#FAFAFA] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
+            {items.length}
+          </span>
         </div>
         <div className="flex items-center gap-2">
           <BiMenuAltRight onClick={() => changeModal()} className="w-6 h-6" />
