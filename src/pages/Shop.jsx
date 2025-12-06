@@ -7,7 +7,7 @@ import ShopProductCards from "./shop/ShopProductCards";
 
 const Shop = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <ProductsShopCard />
       <ShopContent />

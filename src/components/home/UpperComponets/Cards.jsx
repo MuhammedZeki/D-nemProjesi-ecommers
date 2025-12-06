@@ -6,6 +6,7 @@ import { MdExitToApp } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import { CiLight, CiDark } from "react-icons/ci";
 const Cards = () => {
   const { changeModal, setBasketModal, setFavModal } =
     useContext(ModelOpenContext);
@@ -89,7 +90,11 @@ const Cards = () => {
           onClick={toggle}
           className="p-2 rounded cursor-pointer bg-gray-200 dark:bg-gray-700"
         >
-          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+          {theme === "light" ? (
+            <CiDark className="w-5 h-5" />
+          ) : (
+            <CiLight className="w-5 h-5 text-yellow-600" />
+          )}
         </button>
       </div>
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">

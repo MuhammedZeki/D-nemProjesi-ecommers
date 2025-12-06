@@ -6,7 +6,7 @@ const ProductCardItem = ({ item, key }) => {
     <div
       onClick={() => navigate(`/productDetails/${item?.id}`)}
       key={key}
-      className="flex flex-col grow gap-2 items-center justify-center font-montserrat cursor-pointer"
+      className="flex flex-col grow gap-2 items-center justify-center font-montserrat cursor-pointer dark:bg-[#fafafa] py-2 rounded-md"
     >
       <img
         src={item?.img}
