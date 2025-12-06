@@ -33,11 +33,16 @@ const Sponsorship = () => {
   if (isError) return <p>Error...</p>;
 
   return (
-    <div className=" bg-[#FAFAFA]">
+    <div className=" bg-[#FAFAFA] dark:bg-[#252B42]">
       <div className="lg:flex lg:flex-row lg:gap-4 w-[75%] mx-auto lg:py-24 lg:px-4 flex flex-col py-10 items-center lg:items-start">
         {data.map((item, i) => {
           const Icon = iconMap[item.icon];
-          return <Icon key={i} className="text-[#737373] h-30 w-30 grow" />;
+          return (
+            <Icon
+              key={i}
+              className="text-[#737373] dark:text-[#fafafa] h-30 w-30 grow"
+            />
+          );
         })}
       </div>
     </div>

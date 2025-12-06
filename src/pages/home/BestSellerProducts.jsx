@@ -8,7 +8,7 @@ const BestSellerProducts = () => {
   if (isError) return <p>Error...</p>;
 
   return (
-    <div className=" bg-[#FAFAFA]">
+    <div className=" bg-[#FAFAFA] dark:bg-[#252B42]">
       <div className=" flex flex-col gap-4 lg:w-[75%] w-full mx-auto py-8 px-4  font-montserrat">
         <div className="py-3 border-b-2 border-[#ECECEC]">
           <h3 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42] text-center lg:text-start">

@@ -21,7 +21,7 @@ const FeaturedPosts = () => {
         <h6 className="font-bold leading-6 tracking-[0.2px] text-[#23A6F0]">
           Practice Advice
         </h6>
-        <h3 className="font-bold leading-12 text-4xl tracking-[0.2px] text-[#252B42] text-center lg:text-start">
+        <h3 className="font-bold leading-12 text-4xl tracking-[0.2px] text-[#252B42] dark:text-[#fafafa] text-center lg:text-start">
           Featured Posts
         </h3>
       </div>

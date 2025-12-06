@@ -23,29 +23,29 @@ const PostItem = ({ key, item }) => {
             </p>
           ))}
         </div>
-        <div className="font-normal text-xl leading-8 tracking-[0.2px] text-[#252B42]">
+        <div className="font-normal text-xl leading-8 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
           {item?.name}
         </div>
-        <div className="font-normal leading-5 tracking-[0.2px] text-[#737373]">
+        <div className="font-normal leading-5 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
           We focus on ergonomics and meeting you where you work. It's only a
           keystroke away.
         </div>
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-between  gap-3">
             <CiClock1 className="text-[#23A6F0] w-4 h-4" />
-            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
+            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
               {item?.date}
             </span>
           </div>
           <div className="flex items-center gap-3">
             <FaRegCommentAlt className="text-[#23856D] w-4 h-4" />
-            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
+            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
               {item?.comment}
             </span>
           </div>
         </div>
         <Link to={"/blog"} className="flex items-center cursor-pointer">
-          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] hover:text-[#252B42] transition duration-300">
+          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] dark:text-[#fafafa] hover:text-[#252B42] transition duration-300">
             Learn More
           </p>
           <IoIosArrowForward className="text-[#23A6F0] w-5 h-5" />
