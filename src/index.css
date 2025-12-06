@@ -4,6 +4,15 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
 }
+@custom-variant dark (&:where(.dark, .dark *));
+html {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html * {
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.3s ease;
+}
 .custom-dots {
   position: absolute;
   bottom: 30px;

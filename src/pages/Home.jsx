@@ -11,7 +11,7 @@ import Sponsorship from "./home/Sponsorship";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42] ">
       <HomePage />
       <Explore />
       <Breads />

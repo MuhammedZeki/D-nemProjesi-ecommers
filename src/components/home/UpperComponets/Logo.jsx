@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <h3
       onClick={() => navigate("/")}
-      className="font-montserrat cursor-pointer font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]"
+      className="font-montserrat cursor-pointer font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42] dark:text-[#FAFAFA]"
     >
       Bandage
     </h3>

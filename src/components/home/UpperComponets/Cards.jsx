@@ -1,6 +1,6 @@
 import { CiUser, CiSearch, CiShoppingBasket, CiHeart } from "react-icons/ci";
 import { BiMenuAltRight } from "react-icons/bi";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ModelOpenContext } from "../../../context/ModelOpen";
 import { MdExitToApp } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,29 @@ const Cards = () => {
   const { items } = useSelector((state) => state.basket);
   const { favorites } = useSelector((state) => state.favorite);
 
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTheme(saved);
+      if (saved === "dark") document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggle = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
     toast.success("Çıkış başarıyla gerçekleşti!");
@@ -22,7 +45,7 @@ const Cards = () => {
   };
   return (
     <>
-      <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] lg:flex lg:items-center lg:gap-4 cursor-pointer">
+      <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] dark:text-[#FAFAFA] lg:flex lg:items-center lg:gap-4 cursor-pointer">
         <div className="flex items-center gap-1">
           {!user && (
             <>
@@ -62,6 +85,12 @@ const Cards = () => {
             </>
           )}
         </div>
+        <button
+          onClick={toggle}
+          className="p-2 rounded cursor-pointer bg-gray-200 dark:bg-gray-700"
+        >
+          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+        </button>
       </div>
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">
         <div className="flex items-center gap-1">
