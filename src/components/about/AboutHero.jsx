@@ -1,15 +1,15 @@
 const AboutHero = () => {
   return (
-    <div className="flex items-center w-full px-10 lg:w-[75%] mx-auto py-8 dark:bg-[#fafafa]">
+    <div className="flex items-center w-full px-10 lg:w-[75%] mx-auto py-8 dark:bg-[#252B42]">
       <div className="w-full lg:flex lg:flex-row lg:items-center flex flex-col gap-10 lg:gap-0">
         <div className="font-montserrat flex flex-col items-center lg:items-start gap-8">
-          <h5 className="font-bold  leading-6 tracking-[0.1px] text-[#252B42]">
+          <h5 className="font-bold  leading-6 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
             ABOUT COMPANY
           </h5>
-          <h1 className="font-bold text-center lg:text-start text-6xl leading-20 tracking-[0.2px] text-[#252B42]">
+          <h1 className="font-bold text-center lg:text-start text-6xl leading-20 tracking-[0.2px] dark:text-[#fafafa] text-[#252B42]">
             ABOUT US
           </h1>
-          <p className="font-medium text-xl leading-8 tracking-[0.2px] text-[#737373]">
+          <p className="font-medium text-xl leading-8 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
             We know how large objects will act, but things on a small scale
           </p>
           <div>

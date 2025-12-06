@@ -6,10 +6,10 @@ const ContactTalk = () => {
       <div className="flex flex-col w-full gap-4 items-center justify-center">
         <PiArrowArcRightLight className="text-[#23A6F0] h-24 w-24 rotate-45" />
         <div className="flex flex-col gap-6 items-center font-montserrat">
-          <h5 className="font-bold leading-6 tracking-[0.1px] text-[#252B42]">
+          <h5 className="font-bold leading-6 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
             WE Can't WAIT TO MEET YOU
           </h5>
-          <h2 className="font-bold text-6xl leading-20 tracking-[0.2px] text-[#252B42]">
+          <h2 className="font-bold text-6xl leading-20 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
             Let’s Talk
           </h2>
           <div>

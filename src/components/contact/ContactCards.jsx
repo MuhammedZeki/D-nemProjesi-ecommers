@@ -3,15 +3,15 @@ import { FaLocationDot } from "react-icons/fa6";
 import { TiMessages } from "react-icons/ti";
 const ContactCards = () => {
   return (
-    <div className="bg-[#FAFAFA]">
+    <div className="bg-[#FAFAFA] dark:bg-[#3d445f]">
       <div className="flex items-center w-full px-10 lg:w-[75%] mx-auto my-10 py-8 ">
         <div className="flex flex-col gap-16 p-3 items-center justify-center w-full font-montserrat">
           <div className="">
             <div className="flex flex-col items-center justify-center gap-4">
-              <h6 className="font-bold leading-6 tracking-[0.2px] text-[#252B42]">
+              <h6 className="font-bold leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
                 VISIT OUR OFFICE
               </h6>
-              <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#252B42] text-center lg:text-start">
+              <h2 className="font-bold text-4xl leading-12 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa] text-center lg:text-start">
                 We help small businesses with big ideas
               </h2>
             </div>

@@ -6,7 +6,7 @@ import Footer from "./home/Footer";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <ContactHero />
       <ContactCards />

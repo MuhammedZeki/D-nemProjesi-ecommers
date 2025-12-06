@@ -7,7 +7,7 @@ import TeamCallAction from "./../components/team/TeamCallAction";
 
 const Team = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <TeamHeader />
       <TeamHeroPicture />
