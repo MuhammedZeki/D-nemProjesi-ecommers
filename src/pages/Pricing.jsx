@@ -8,7 +8,7 @@ import Footer from "./home/Footer";
 
 const Pricing = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <PricingHeader />
       <PricingCards />

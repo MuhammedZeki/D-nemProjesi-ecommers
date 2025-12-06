@@ -5,10 +5,10 @@ const PricingCallAction = () => {
   return (
     <div className="flex items-center justify-center my-32">
       <div className="font-montserrat flex flex-col gap-12 px-10 lg:px-0">
-        <h2 className="font-bold text-center lg:text-start text-5xl leading-12 tracking-[0.2px] text-[#252B42]">
+        <h2 className="font-bold text-center lg:text-start text-5xl leading-12 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
           Start your 14 days free trial
         </h2>
-        <h6 className="font-medium text-center lg:text-start leading-5 tracking-[0.2px] text-[#737373]">
+        <h6 className="font-medium text-center lg:text-start leading-5 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           RELIT official consequent.
         </h6>
