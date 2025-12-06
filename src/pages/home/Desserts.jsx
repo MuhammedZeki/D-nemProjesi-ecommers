@@ -16,7 +16,7 @@ const Desserts = () => {
             <BreadNav />
           </div>
           <div className="flex flex-col gap-4 font-montserrat">
-            <div className="lg:flex lg:flex-row lg:items-center lg:gap-1 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col">
+            <div className="lg:flex lg:flex-row lg:items-center lg:gap-1 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col py-2 ">
               {data.slice(5, 11).map((item, i) => (
                 <DessertsItem key={i} item={item} />
               ))}

@@ -6,10 +6,10 @@ const ProductCardItem = ({ count }) => {
           {count}.
         </h2>
         <div className="flex flex-col gap-2">
-          <h6 className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42]">
+          <h6 className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
             Easy to use
           </h6>
-          <p className="font-normal text-sm leading-4 tracking-[0.2px] text-[#737373]">
+          <p className="font-normal text-sm leading-4 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
             Things on a very small that you have any direct
           </p>
         </div>

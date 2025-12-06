@@ -6,7 +6,7 @@ const DessertsItem = ({ key, item }) => {
     <div
       key={key}
       onClick={() => navigate(`/productDetails/${item?.id}`)}
-      className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#FAFAFA] lg:w-[293px]"
+      className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#FAFAFA] lg:w-[293px] dark:bg-[#fafafa] rounded-md"
     >
       <img
         src={item?.img}
