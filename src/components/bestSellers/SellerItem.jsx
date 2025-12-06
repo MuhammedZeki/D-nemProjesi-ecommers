@@ -6,7 +6,7 @@ const SellerItem = ({ key, item }) => {
     <div
       onClick={() => navigate(`/productDetails/${item?.id}`)}
       key={key}
-      className="flex flex-col grow gap-4 mx-6 lg:mx-0 cursor-pointer "
+      className="flex flex-col grow gap-4 mx-6 lg:mx-0 cursor-pointer dark:bg-[#3d445f] rounded-md p-2"
     >
       <img
         src={item?.img}

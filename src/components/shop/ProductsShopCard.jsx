@@ -3,7 +3,7 @@ import ShopCardHeader from "./ShopCardHeader";
 
 const ProductsShopCard = () => {
   return (
-    <div className="flex flex-col gap-4 bg-[#FAFAFA] dark:bg-[#252B42]">
+    <div className="flex flex-col gap-4 bg-[#FAFAFA] dark:bg-[#3d445f]">
       <ShopCardHeader />
       <ProductItemCard />
     </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const PostItem = ({ key, item }) => {
   return (
-    <div key={key} className="flex flex-col">
+    <div key={key} className="flex flex-col dark:bg-[#3d445f]">
       <div className="relative">
         <img src={item?.img} className="object-cover h-[300px] w-full" alt="" />
         <div className=" absolute p-1 top-5 left-5 bg-[#E74040] text-white font-montserrat font-bold leading-6 tracking-[0.2px] rounded-lg">

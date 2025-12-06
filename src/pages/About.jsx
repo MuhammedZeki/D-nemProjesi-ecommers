@@ -11,7 +11,7 @@ import WorkWithUs from "../components/about/WorkWithUs";
 
 const About = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <AboutHero />
       <AboutDescription />

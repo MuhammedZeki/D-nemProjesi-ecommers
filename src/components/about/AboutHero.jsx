@@ -1,6 +1,6 @@
 const AboutHero = () => {
   return (
-    <div className="flex items-center w-full px-10 lg:w-[75%] mx-auto py-8">
+    <div className="flex items-center w-full px-10 lg:w-[75%] mx-auto py-8 dark:bg-[#fafafa]">
       <div className="w-full lg:flex lg:flex-row lg:items-center flex flex-col gap-10 lg:gap-0">
         <div className="font-montserrat flex flex-col items-center lg:items-start gap-8">
           <h5 className="font-bold  leading-6 tracking-[0.1px] text-[#252B42]">

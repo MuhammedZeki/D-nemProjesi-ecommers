@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const BlogCardItem = ({ item, key }) => {
   return (
-    <div key={key} className="flex flex-col">
+    <div key={key} className="flex flex-col dark:bg-[#3d445f]">
       <div className="relative">
         <img src={item?.img} className="object-cover h-[300px] w-full" alt="" />
         <div className=" absolute p-1 top-5 left-5 bg-[#E74040] text-white font-montserrat font-bold leading-6 tracking-[0.2px] rounded-lg">
@@ -22,29 +22,29 @@ const BlogCardItem = ({ item, key }) => {
             </p>
           ))}
         </div>
-        <div className="font-normal text-xl leading-8 tracking-[0.2px] text-[#252B42]">
+        <div className="font-normal text-xl leading-8 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
           {item?.name}
         </div>
-        <div className="font-normal leading-5 tracking-[0.2px] text-[#737373]">
+        <div className="font-normal leading-5 tracking-[0.2px] text-[#737373] dark:text-[#e6e5e5]">
           We focus on ergonomics and meeting you where you work. It's only a
           keystroke away.
         </div>
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-between  gap-3">
             <CiClock1 className="text-[#23A6F0] w-4 h-4" />
-            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
+            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
               {item?.date}
             </span>
           </div>
           <div className="flex items-center gap-3">
             <FaRegCommentAlt className="text-[#23856D] w-4 h-4" />
-            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373]">
+            <span className="font-normal text-xs leading-4 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
               {item?.comment}
             </span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373]">
+          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
             Learn More
           </p>
           <IoIosArrowForward className="text-[#23A6F0] w-4 h-4" />
