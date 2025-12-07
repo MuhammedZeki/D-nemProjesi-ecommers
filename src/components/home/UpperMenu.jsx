@@ -5,9 +5,8 @@ import Navbar from "./UpperComponets/Navbar";
 import Cards from "./UpperComponets/Cards";
 import MenuBar from "./UpperComponets/MenuBar";
 import ShopCard from "./UpperComponets/ShopCard";
-import BasketItems from "../basket/basketItems";
 import FavoriteItems from "../favorites/FavoriteItems";
-
+import BasketItems from "../basket/BasketItems";
 const UpperMenu = () => {
   const { open, shopModal, basketModal, favModal } =
     useContext(ModelOpenContext);
