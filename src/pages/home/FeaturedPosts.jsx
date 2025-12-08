@@ -21,10 +21,10 @@ const FeaturedPosts = () => {
     <div className=" flex flex-col gap-4 lg:w-[75%] lg:mx-auto lg:py-24 lg:px-4 px-10 my-14 lg:my-0">
       <div className="flex flex-col gap-6 items-center justify-center font-montserrat">
         <h6 className="font-bold leading-6 tracking-[0.2px] text-[#23A6F0]">
-          Practice Advice
+          {lang === "en" ? "Practice Advice" : "Pratik Önerileri"}
         </h6>
         <h3 className="font-bold leading-12 text-4xl tracking-[0.2px] text-[#252B42] dark:text-[#fafafa] text-center lg:text-start">
-          Featured Posts
+          {lang === "en" ? "Featured Posts" : "Öne Çıkan Gönderiler"}
         </h3>
       </div>
       <div className="lg:flex lg:flex-row lg:items-center lg:gap-6 flex flex-col gap-16">

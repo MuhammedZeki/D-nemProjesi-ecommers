@@ -1,16 +1,36 @@
 import { BsDownload } from "react-icons/bs";
+import { useLang } from "../../context/LangContext";
 const ProductsCard2 = () => {
+  const { lang } = useLang();
+
+  const texts = {
+    en: {
+      title: "MOST POPULAR",
+      content:
+        "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      department: "Meat Department",
+      sales: "sales",
+    },
+    tr: {
+      title: "EN POPÜLER",
+      content:
+        "Ergonomiye odaklanıyor ve çalıştığınız yerde size eşlik ediyoruz. Sadece bir tuş uzağınızda.",
+      department: "Et Bölümü",
+      sales: "Satış",
+    },
+  };
+
+  const t = texts[lang];
   return (
     <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
       <div className="lg:flex lg:flex-row flex flex-col-reverse">
         <div className=" lg:w-1/3 w-full bg-[#FAFAFA] flex flex-col gap-2 items-center px-12 py-6 justify-center font-montserrat">
           <div className="flex flex-col gap-2 items-center text-center">
             <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
-              MOST POPULAR
+              {t.title}
             </h5>
             <p className="font-normal text-md leading-5  tracking-[0.2px] text-[#737373]">
-              We focus on ergonomics and meeting you where you work. It's only a
-              keystroke away.
+              {t.content}
             </p>
           </div>
           <div className="py-1">
@@ -18,11 +38,11 @@ const ProductsCard2 = () => {
           </div>
           <div className="flex flex-col gap-6 items-center text-center">
             <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42]">
-              English Department
+              {t.department}
             </p>
             <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#737373] flex items-center gap-2">
               <BsDownload className="w-5 h-5" />
-              <p>15 Sales</p>
+              <p>15 {t.sales}</p>
             </p>
             <div className="flex items-center justify-center gap-2">
               <span className="font-bold text-lg leading-6 tracking-[0.1px] text-[#BDBDBD]">
