@@ -2,7 +2,7 @@ import { CiClock1 } from "react-icons/ci";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 
-const BlogCardItem = ({ item, key }) => {
+const BlogCardItem = ({ item, key, lang }) => {
   return (
     <div key={key} className="flex flex-col dark:bg-[#3d445f]">
       <div className="relative">
@@ -26,8 +26,9 @@ const BlogCardItem = ({ item, key }) => {
           {item?.name}
         </div>
         <div className="font-normal leading-5 tracking-[0.2px] text-[#737373] dark:text-[#e6e5e5]">
-          We focus on ergonomics and meeting you where you work. It's only a
-          keystroke away.
+          {lang === "en"
+            ? "We focus on ergonomics and meeting you where you work. It's only a keystroke away."
+            : "Ergonomiye ve sizinle çalıştığınız yerde buluşmaya odaklanıyoruz. Sadece bir tuş vuruşu kadar yakın."}
         </div>
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-between  gap-3">
@@ -43,9 +44,9 @@ const BlogCardItem = ({ item, key }) => {
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 cursor-pointer">
           <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
-            Learn More
+            {lang === "en" ? "Learn More" : "Daha fazla bilgi edin"}
           </p>
           <IoIosArrowForward className="text-[#23A6F0] w-4 h-4" />
         </div>

@@ -22,7 +22,7 @@ const BlogCards = () => {
     <div className="w-full px-10 lg:w-[75%] mx-auto py-8 my-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {data.map((item, i) => (
-          <BlogCardItem key={i} item={item} />
+          <BlogCardItem lang={lang} key={i} item={item} />
         ))}
       </div>
     </div>
