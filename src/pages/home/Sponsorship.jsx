@@ -8,6 +8,7 @@ import {
 import { DiEnvato } from "react-icons/di";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { useLang } from "../../context/LangContext";
 
 const iconMap = {
   FaAws,
@@ -19,9 +20,10 @@ const iconMap = {
 };
 
 const Sponsorship = () => {
+  const { lang } = useLang();
   const getSponsorshipData = async () => {
     const res = await axios.get("/db.json");
-    return res.data.Home.sponsorship;
+    return res.data[lang].Home.sponsorship;
   };
 
   const { data, isLoading, isError } = useQuery({

@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ExploreItem from "./ExploreItem";
+import { useLang } from "../../context/LangContext";
 
 const Explore = () => {
+  const { lang } = useLang();
   const getExploreData = async () => {
     const res = await axios.get("/db.json");
-    return res.data.Home.explores;
+    return res.data[lang].Home.explores;
   };
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["explores"],
+    queryKey: ["explores", lang],
     queryFn: getExploreData,
   });
 

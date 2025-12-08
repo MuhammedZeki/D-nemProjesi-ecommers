@@ -1,15 +1,17 @@
 import axios from "axios";
 import ProductItem from "./ProductItem";
 import { useQuery } from "@tanstack/react-query";
+import { useLang } from "../../context/LangContext";
 
 const ProductItemCard = () => {
+  const { lang } = useLang();
   const getShopCardData = async () => {
     const res = await axios.get("/db.json");
-    return res.data.Shop.shopCards;
+    return res.data[lang].Shop.shopCards;
   };
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["shopCards"],
+    queryKey: ["shopCards", lang],
     queryFn: getShopCardData,
   });
 

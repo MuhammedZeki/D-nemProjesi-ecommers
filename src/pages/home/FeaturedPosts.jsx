@@ -1,14 +1,16 @@
 import axios from "axios";
 import PostItem from "../../components/posts/PostItem";
 import { useQuery } from "@tanstack/react-query";
+import { useLang } from "../../context/LangContext";
 const FeaturedPosts = () => {
+  const { lang } = useLang();
   const getFeaturedData = async () => {
     const res = await axios.get("/db.json");
-    return res.data.Home.featured;
+    return res.data[lang].Home.featured;
   };
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["featured"],
+    queryKey: ["featured", lang],
     queryFn: getFeaturedData,
   });
 

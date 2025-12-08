@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { CiLight, CiDark } from "react-icons/ci";
+import { useLang } from "../../../context/LangContext";
 const Cards = () => {
   const { changeModal, setBasketModal, setFavModal } =
     useContext(ModelOpenContext);
@@ -16,7 +17,7 @@ const Cards = () => {
   const { favorites } = useSelector((state) => state.favorite);
 
   const [theme, setTheme] = useState("light");
-
+  const { lang, setLang } = useLang();
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     if (saved) {
@@ -51,9 +52,13 @@ const Cards = () => {
           {!user && (
             <>
               <CiUser className="w-6 h-6" />
-              <span onClick={() => navigate("/signIn")}>Login</span>
+              <span onClick={() => navigate("/signIn")}>
+                {lang === "en" ? "Login" : "Giriş yap"}
+              </span>
               <span>/</span>
-              <span onClick={() => navigate("/signUp")}>Register</span>
+              <span onClick={() => navigate("/signUp")}>
+                {lang === "en" ? "Register" : "Kayıt ol"}
+              </span>
             </>
           )}
         </div>
@@ -96,6 +101,25 @@ const Cards = () => {
             <CiLight className="w-5 h-5 text-yellow-600" />
           )}
         </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setLang("en")}
+            className={`px-3 py-1 rounded cursor-pointer ${
+              lang === "en" ? "bg-blue-500 text-white" : "border"
+            }`}
+          >
+            EN
+          </button>
+
+          <button
+            onClick={() => setLang("tr")}
+            className={`px-3 py-1 rounded cursor-pointer ${
+              lang === "tr" ? "bg-blue-500 text-white" : "border"
+            }`}
+          >
+            TR
+          </button>
+        </div>
       </div>
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">
         <div className="flex items-center gap-1">
