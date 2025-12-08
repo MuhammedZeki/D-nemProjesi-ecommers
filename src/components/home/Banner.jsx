@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useLang } from "../../context/LangContext";
 
 function SampleNextArrow({ onClick }) {
   return (
@@ -24,7 +25,8 @@ function SamplePrevArrow({ onClick }) {
 }
 
 const Banner = () => {
-  var settings = {
+  const { lang } = useLang();
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -35,6 +37,21 @@ const Banner = () => {
     customPaging: () => <div className="w-16 h-1 bg-white/50"></div>,
     dotsClass: "slick-dots custom-dots",
   };
+  const texts = {
+    en: {
+      title: "GROCERIES DELIVERY",
+      content:
+        "We know how large objects will act, but things on a small scale just do not act that way.",
+      btn: "Start Now",
+    },
+    tr: {
+      title: "BAKKAL TESLİMAT",
+      content:
+        "Büyük nesnelerin nasıl davranacağını biliyoruz, ancak küçük ölçekteki şeyler bu şekilde davranmıyor.",
+      btn: "Şimdi Başla",
+    },
+  };
+  const t = texts[lang];
   return (
     <div className="w-full relative">
       <Slider {...settings}>
@@ -49,14 +66,13 @@ const Banner = () => {
 
           <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white flex flex-col gap-4 items-center">
             <h1 className="font-montserrat font-bold text-6xl leading-20 tracking-[0.2px]">
-              GROCERIES DELIVERY
+              {t.title}
             </h1>
             <span className="font-montserrat font-normal text-xl leading-7 tracking-[0.2px]">
-              We know how large objects will act, but things on a small scale
-              just do not act that way.
+              {t.content}
             </span>
             <button className="font-montserrat font-bold text-2xl leading-8 tracking-[0.1px] p-6 cursor-pointer rounded-xl bg-[#23A6F0]">
-              Start Now
+              {t.btn}
             </button>
           </h3>
         </div>
