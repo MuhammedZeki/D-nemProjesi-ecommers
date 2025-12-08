@@ -1,23 +1,39 @@
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io5";
+import { useLang } from "../../context/LangContext";
 
 const PricingCallAction = () => {
+  const { lang } = useLang();
+
+  const texts = {
+    en: {
+      title: "Start your 14 days free trial",
+      subtitle:
+        "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent.",
+      button: "Try it free now",
+    },
+    tr: {
+      title: "14 günlük ücretsiz denemenize başlayın",
+      subtitle:
+        "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT resmi sonuçlarla devam eder.",
+      button: "Ücretsiz deneyin",
+    },
+  };
+
+  const t = texts[lang];
+
   return (
     <div className="flex items-center justify-center my-32">
       <div className="font-montserrat flex flex-col gap-12 px-10 lg:px-0">
         <h2 className="font-bold text-center lg:text-start text-5xl leading-12 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
-          Start your 14 days free trial
+          {t.title}
         </h2>
         <h6 className="font-medium text-center lg:text-start leading-5 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
-          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-          RELIT official consequent.
+          {t.subtitle}
         </h6>
         <div className="flex items-center justify-center">
-          <button
-            className="font-bold leading-6 tracking-[0.2px] text-white bg-[#23A6F0]
-           rounded-lg px-2 py-4"
-          >
-            Try it free now
+          <button className="font-bold leading-6 tracking-[0.2px] text-white bg-[#23A6F0] rounded-lg px-2 py-4">
+            {t.button}
           </button>
         </div>
         <div className="flex items-center justify-center gap-4 my-6 lg:my-0">
