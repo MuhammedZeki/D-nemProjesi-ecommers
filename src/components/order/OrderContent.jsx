@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { FaCheckCircle, FaCarSide, FaTrash } from "react-icons/fa";
 import { CounterContextt } from "../../context/CounterContext";
-import { CiHeart } from "react-icons/ci";
+import { CiHeart, CiSquarePlus } from "react-icons/ci";
+import { IoIosArrowForward } from "react-icons/io";
 const OrderContent = () => {
   const { count, increment, descrement } = useContext(CounterContextt);
   return (
@@ -140,7 +141,50 @@ const OrderContent = () => {
           </div>
         </div>
       </div>
-      <div className="border border-black w-1/4">asdas</div>
+      <div className=" w-1/4 flex flex-col font-montserrat gap-4">
+        <div className="rounded-md border border-[#737373] flex flex-col gap-10 px-3 py-5">
+          <div className="">
+            <h2 className="font-medium text-2xl leading-6 tracking-[0.1px] text-[#252B42]">
+              Sipariş Özeti
+            </h2>
+          </div>
+          <div className=" flex flex-col gap-6">
+            <div className="flex items-center justify-between">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373]">
+                Ürünün Toplamı
+              </p>
+              <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42]">
+                8.448,99TL
+              </span>
+            </div>
+            <div className="flex items-center justify-between">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373]">
+                Kargo Toplam
+              </p>
+              <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42]">
+                29,99TL
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between border-t border-t-[#737373] py-2">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373]">
+                Toplam
+              </p>
+              <span className="font-bold leading-6 tracking-[0.1px] text-2xl text-[#23a6f0]">
+                29,99TL
+              </span>
+            </div>
+          </div>
+        </div>
+        <button className="px-2 py-3 flex items-center justify-center font-montserrat font-bold  leading-6 text-[#737373] cursor-pointer border border-[#737373] rounded-md gap-1">
+          <CiSquarePlus className="w-7 h-7 text-[#23a6f0]" />
+          <span>İndirim Kodunu Gir</span>
+        </button>
+        <button className="px-2 py-3 flex items-center justify-center font-montserrat font-bold  leading-6  gap-2tracking-[0.1px] text-[#fafafa] cursor-pointer bg-[#23a6f0]  rounded-md">
+          <span>Sepeti Onayla</span>
+          <IoIosArrowForward className="w-6 h-6 text-[#fafafa]" />
+        </button>
+      </div>
     </div>
   );
 };
