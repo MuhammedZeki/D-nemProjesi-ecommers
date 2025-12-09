@@ -6,7 +6,7 @@ import { deleteBasket } from "../store/actions/basketActions";
 import { useNavigate } from "react-router-dom";
 const BasketItems = () => {
   const { setBasketModal } = useContext(ModelOpenContext);
-  const { items, total } = useSelector((state) => state.basket);
+  const { items } = useSelector((state) => state.basket);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -28,12 +28,12 @@ const BasketItems = () => {
           <div
             onClick={() => navigate(`/productDetails/${item?.id}`)}
             key={i}
-            className="flex gap-3 px-1 py-3 hover:bg-[#f1f1f1] transition duration-300 cursor-pointer"
+            className="flex gap-3 px-1 py-3 hover:bg-[#f1f1f1] transition duration-300 cursor-pointer font-montserrat"
           >
             <div>
               <img
                 src={item?.img}
-                className="w-35 h-25 object-cover rounded-sm"
+                className="w-40 h-25 object-cover rounded-sm"
               />
             </div>
 
@@ -54,7 +54,7 @@ const BasketItems = () => {
 
               <button
                 onClick={() => dispatch(deleteBasket(item?.id))}
-                className="bg-red-600 hover:bg-red-700 text-white text-sm py-1 rounded-md w-16"
+                className="bg-red-600 hover:bg-red-700 text-white text-sm py-1 rounded-md w-16 cursor-pointer"
               >
                 Sil
               </button>
@@ -62,8 +62,19 @@ const BasketItems = () => {
           </div>
         ))}
 
-      <div className="border-t pt-3 text-right font-semibold text-[#252B42]">
-        Toplam: ${total && total}
+      <div className="border-t border-t-[#737373] pt-3 text-right font-semibold text-[#252B42] flex items-center font-montserrat justify-between">
+        <button
+          onClick={() => navigate("/order")}
+          className="py-3 px-6 border rounded-md bg-[#c9c8c8] text-[#fafafa] cursor-pointer"
+        >
+          Sepete Git
+        </button>
+        <button
+          onClick={() => navigate("/order")}
+          className="py-3 px-1 border rounded-md bg-[#24a5f0] text-[#fafafa] cursor-pointer"
+        >
+          Siparişi Tamamla
+        </button>
       </div>
     </div>
   );

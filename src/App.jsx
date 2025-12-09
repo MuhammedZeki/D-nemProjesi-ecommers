@@ -13,6 +13,7 @@ import Blog from "./pages/Blog";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import ScrollToTop from "./components/ScrollToTop";
+import Order from "./pages/Order";
 import { LangProvider } from "./context/LangContext";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/order" element={<Order />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/team" element={<Team />} />
             <Route path="/signIn" element={<SignIn />} />
