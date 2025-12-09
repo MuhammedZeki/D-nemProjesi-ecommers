@@ -10,9 +10,9 @@ const DetailSellerItem = ({ key, item }) => {
     >
       <img
         src={item?.img}
-        className="lg:w-[250px] h-[220px] w-full object-cover rounded-md"
+        className="lg:w-[250px] h-[220px] w-full object-cover rounded-tl-md rounded-tr-md"
       />
-      <div className="flex flex-col gap-5 px-6 py-8 bg-white">
+      <div className="flex flex-col gap-5 px-6 py-8 bg-white lg:w-[250px]">
         <h5 className="font-bold leading-6 tracking-[0.1px] text-[#252B42]">
           {item?.name}
         </h5>
