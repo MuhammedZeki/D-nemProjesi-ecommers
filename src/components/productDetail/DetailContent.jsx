@@ -115,7 +115,7 @@ const DetailContent = () => {
       </div>
 
       <div className="lg:w-2/3 w-full font-montserrat flex flex-col gap-6">
-        <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42]">
+        <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
           {newProduct.name}
         </h4>
         <div className="flex items-center gap-3 ">
@@ -126,22 +126,22 @@ const DetailContent = () => {
             <MdOutlineStar className="w-6 h-6 text-[#F3CD03]" />
             <MdOutlineStarBorder className="w-6 h-6 text-[#F3CD03]" />
           </div>
-          <h6 className="font-bold leading-6 tracking-[0.2px] text-[#737373]">
+          <h6 className="font-bold leading-6 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
             10 Reviews
           </h6>
         </div>
-        <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
+        <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
           ${newProduct.newPrice}
         </h5>
         <div className="flex items-center gap-1">
-          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373]">
+          <p className="font-bold leading-6 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
             Availability :
           </p>
           <p className="font-bold leading-6 tracking-[0.2px] text-[#23A6F0]">
             In Stock
           </p>
         </div>
-        <p className="font-normal border-b py-6 border-b-[#BDBDBD] leading-5 tracking-[0.2px] text-[#858585] max-w-2/3">
+        <p className="font-normal border-b py-6 border-b-[#BDBDBD] leading-5 tracking-[0.2px] text-[#858585] dark:text-[#dbdbdb] max-w-2/3">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           RELIT official consequent door ENIM RELIT Mollie. Excitation venial
           consequent sent nostrum met.
@@ -177,7 +177,9 @@ const DetailContent = () => {
           >
             <CiHeart
               className={`w-6 h-6 group-hover:text-[#CB0404] transition duration-300 ${
-                isHeart ? "text-[#CB0404]" : "text-gray-600"
+                isHeart
+                  ? "text-[#CB0404]"
+                  : "text-[#737373] dark:text-[#fafafa]"
               }`}
             />
           </div>
@@ -186,7 +188,7 @@ const DetailContent = () => {
             onClick={() => addToBasket(newProduct)}
             className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300"
           >
-            <CiShoppingBasket className="w-6 h-6 text-gray-600 group-hover:text-[#23A6F0] transition duration-300" />
+            <CiShoppingBasket className="w-6 h-6 text-[#737373] dark:text-[#fafafa] group-hover:text-[#23A6F0] transition duration-300" />
           </div>
           {/* <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
             <FaEye className="w-6 h-6" />
