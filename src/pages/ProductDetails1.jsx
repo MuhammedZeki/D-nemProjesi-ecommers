@@ -8,7 +8,7 @@ import CounterContextProvider from "../context/CounterContext";
 
 const ProductDetails = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-[#252B42]">
       <UpperMenu />
       <CounterContextProvider>
         <ProductDetailContent />

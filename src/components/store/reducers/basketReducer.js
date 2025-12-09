@@ -1,5 +1,5 @@
 /* eslint-disable no-fallthrough */
-import { ADD_BASKET, DELETE_BASKET, TOTAL_BASKET } from "../actions/basketActions"
+import { ADD_BASKET, DECREMENT_ITEM, DELETE_BASKET, INCREMENT_ITEM, TOTAL_BASKET } from "../actions/basketActions"
 
 const getFromLocalStorageToBasket = () => {
     const local = localStorage.getItem("basket")
@@ -64,6 +64,40 @@ export const basketReducer = (state = initialState, action) => {
                 writeFromLocalStorageToBasketPrice(newTotal);
                 return { ...state };
             }
+        case INCREMENT_ITEM: {
+            const updated = state.items.map((item) =>
+                item.id === action.payload
+                    ? { ...item, count: item.count + 1 }
+                    : item
+            );
+
+            const total = updated.reduce(
+                (sum, item) => sum + item.count * item.newPrice,
+                0
+            );
+
+            writeFromLocalStorageToBasket(updated);
+            writeFromLocalStorageToBasketPrice(total);
+
+            return { ...state, items: updated, total };
+        }
+        case DECREMENT_ITEM: {
+            const updated = state.items.map((item) =>
+                item.id === action.payload && item.count > 1
+                    ? { ...item, count: item.count - 1 }
+                    : item
+            );
+
+            const total = updated.reduce(
+                (sum, item) => sum + item.count * item.newPrice,
+                0
+            );
+
+            writeFromLocalStorageToBasket(updated);
+            writeFromLocalStorageToBasketPrice(total);
+
+            return { ...state, items: updated, total };
+        }
         default:
             return state;
     }

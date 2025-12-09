@@ -1,17 +1,27 @@
-import { useContext } from "react";
-import { FaCheckCircle, FaCarSide, FaTrash } from "react-icons/fa";
-import { CounterContextt } from "../../context/CounterContext";
-import { CiHeart, CiSquarePlus } from "react-icons/ci";
+import { FaCheckCircle } from "react-icons/fa";
+import { CiSquarePlus } from "react-icons/ci";
 import { IoIosArrowForward } from "react-icons/io";
+import { useSelector } from "react-redux";
+import OrderItem from "./OrderItem";
 const OrderContent = () => {
-  const { count, increment, descrement } = useContext(CounterContextt);
+  const { items, total } = useSelector((state) => state.basket);
+  const cargoFee = 9.99;
+  const freeCargoLimit = 9.99;
+
+  const productTotal = total;
+
+  const cargo =
+    items.length === 0 ? 0 : productTotal >= freeCargoLimit ? cargoFee : 0;
+
+  const totalAmount = productTotal + cargo;
+
   return (
     <div className="bg-[#fafafa] dark:bg-[#3d445f]">
       <div className=" w-full px-10 lg:w-[75%] mx-auto py-8 my-10  lg:flex lg:flex-row gap-4 flex flex-col ">
         <div className="w-full lg:w-3/4 flex flex-col gap-6 font-montserrat">
           <div className=" flex flex-col gap-4">
             <h2 className="font-medium text-2xl leading-6 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
-              Sepetim (2 Ürün)
+              Sepetim ({items.length} Ürün)
             </h2>
             <div className="sm:flex sm:flex-row items-center flex flex-col bg-[#f5f8ff] py-4 px-2 rounded-sm gap-2">
               <div>
@@ -24,122 +34,13 @@ const OrderContent = () => {
             </div>
           </div>
           <div className=" flex flex-col gap-10">
-            <div className="md:flex md:flex-row md:items-center flex flex-col md:gap-4 gap-6 ">
-              <div className=" grow sm:flex sm:flex-row md:items-start flex flex-col gap-4 ">
-                <div className="flex  justify-center sm:justify-start">
-                  <img
-                    src="/shop/item1.jpg"
-                    className="object-cover w-[200px] sm:w-[200px] rounded-md"
-                  />
-                </div>
-                <div className=" grow flex flex-col items-center sm:items-start gap-2">
-                  <p className="font-normal text-[#737373] leading-6 tracking-[0.1px] max-w-[350px] dark:text-[#fafafa]">
-                    <span className="font-bold text-[#252B42] text-lg leading-6 tracking-[0.1px] dark:text-[#fafafa]">
-                      Sütlü çikolatlı kek
-                    </span>
-                  </p>
-                  <p className=" text-[#737373] leading-6 tracking-[0.1px] dark:text-[#c0bebe]">
-                    Malzemeler: Süt, kakao, un, şeker...
-                  </p>
-                  <p className=" text-[#0bbf5c] leading-6 tracking-[0.1px]">
-                    Stokta: 5 ürün kaldı
-                  </p>
-                  <div className="flex items-center gap-1">
-                    <FaCarSide className="text-[#0bbf5c] w-6 h-6 " />
-                    <p className="font-normal text-[#737373] leading-6 tracking-[0.1px] dark:text-[#c0bebe]">
-                      <span className="font-bold text-[#252B42] leading-6 tracking-[0.1px] dark:text-[#fafafa]">
-                        35 dakika
-                      </span>{" "}
-                      içinde siparişiniz geliyor!
-                    </p>
-                  </div>
-                </div>
+            {items.length === 0 && (
+              <div className="text-center text-[#252B42] font-semibold py-6">
+                Sepetiniz boş
               </div>
-              <div className=" grow flex gap-5 items-center justify-between px-2">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => descrement()}
-                    className="cursor-pointer bg-[#076297] px-4 py-1 flex items-center justify-center text-[#FAFAFA] text-xl "
-                  >
-                    -
-                  </button>
-                  <div className="px-5 text-[#FAFAFA] text-xl py-1 bg-[#23A6F0] flex items-center justify-center">
-                    {count}
-                  </div>
-                  <button
-                    onClick={() => increment()}
-                    className="cursor-pointer px-4 text-xl py-1 bg-[#233844] flex items-center justify-center text-[#FAFAFA] "
-                  >
-                    +
-                  </button>
-                </div>
-                <div className="font-bold text-2xl tracking-[0.1px] leading-6 text-[#252b42] dark:text-[#fafafa]">
-                  $15
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaTrash className="w-5 h-5 text-[#252b42] cursor-pointer hover:text-red-700 dark:text-[#fafafa]" />
-                  <CiHeart className="w-7 h-7 text-[#252b42] transition duration-300 cursor-pointer hover:text-red-700 dark:text-[#fafafa]" />
-                </div>
-              </div>
-            </div>
-            <div className="md:flex md:flex-row md:items-center flex flex-col md:gap-4 gap-6 ">
-              <div className=" grow sm:flex sm:flex-row md:items-start flex flex-col gap-4 ">
-                <div className="flex  justify-center sm:justify-start">
-                  <img
-                    src="/shop/item1.jpg"
-                    className="object-cover w-[200px] sm:w-[200px] rounded-md"
-                  />
-                </div>
-                <div className=" grow flex flex-col items-center sm:items-start gap-2">
-                  <p className="font-normal text-[#737373] leading-6 tracking-[0.1px] max-w-[350px] dark:text-[#fafafa]">
-                    <span className="font-bold text-[#252B42] text-lg leading-6 tracking-[0.1px] dark:text-[#fafafa]">
-                      Sütlü çikolatlı kek
-                    </span>
-                  </p>
-                  <p className=" text-[#737373] leading-6 tracking-[0.1px] dark:text-[#c0bebe]">
-                    Malzemeler: Süt, kakao, un, şeker...
-                  </p>
-                  <p className=" text-[#0bbf5c] leading-6 tracking-[0.1px]">
-                    Stokta: 5 ürün kaldı
-                  </p>
-                  <div className="flex items-center gap-1">
-                    <FaCarSide className="text-[#0bbf5c] w-6 h-6 " />
-                    <p className="font-normal text-[#737373] leading-6 tracking-[0.1px] dark:text-[#c0bebe]">
-                      <span className="font-bold text-[#252B42] leading-6 tracking-[0.1px] dark:text-[#fafafa]">
-                        35 dakika
-                      </span>{" "}
-                      içinde siparişiniz geliyor!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className=" grow flex gap-5 items-center justify-between px-2">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => descrement()}
-                    className="cursor-pointer bg-[#076297] px-4 py-1 flex items-center justify-center text-[#FAFAFA] text-xl "
-                  >
-                    -
-                  </button>
-                  <div className="px-5 text-[#FAFAFA] text-xl py-1 bg-[#23A6F0] flex items-center justify-center">
-                    {count}
-                  </div>
-                  <button
-                    onClick={() => increment()}
-                    className="cursor-pointer px-4 text-xl py-1 bg-[#233844] flex items-center justify-center text-[#FAFAFA] "
-                  >
-                    +
-                  </button>
-                </div>
-                <div className="font-bold text-2xl tracking-[0.1px] leading-6 text-[#252b42] dark:text-[#fafafa]">
-                  $15
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaTrash className="w-5 h-5 text-[#252b42] cursor-pointer hover:text-red-700 dark:text-[#fafafa]" />
-                  <CiHeart className="w-7 h-7 text-[#252b42] transition duration-300 cursor-pointer hover:text-red-700 dark:text-[#fafafa]" />
-                </div>
-              </div>
-            </div>
+            )}
+            {items.length > 0 &&
+              items.map((item, i) => <OrderItem key={i} item={item} />)}
           </div>
         </div>
         <div className="w-full lg:w-1/4 flex flex-col font-montserrat gap-4">
@@ -155,7 +56,7 @@ const OrderContent = () => {
                   Ürünün Toplamı
                 </p>
                 <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42] dark:text-[#fafafa]">
-                  8.448,99TL
+                  ${total.toFixed(2)}
                 </span>
               </div>
               <div className="flex items-center justify-between">
@@ -163,7 +64,7 @@ const OrderContent = () => {
                   Kargo Toplam
                 </p>
                 <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42] dark:text-[#fafafa]">
-                  29,99TL
+                  ${cargo === 0 ? "0" : `${cargo.toFixed(2)}`}
                 </span>
               </div>
 
@@ -172,7 +73,7 @@ const OrderContent = () => {
                   Toplam
                 </p>
                 <span className="font-bold leading-6 tracking-[0.1px] text-2xl text-[#23a6f0]">
-                  29,99TL
+                  ${totalAmount.toFixed(2)}
                 </span>
               </div>
             </div>
