@@ -121,8 +121,8 @@ const Cards = () => {
           </button>
         </div>
       </div>
-      <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] flex items-center gap-4 cursor-pointer lg:hidden">
-        <div className="flex items-center gap-1">
+      <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#FAFAFA] flex  items-center gap-4 cursor-pointer lg:hidden">
+        <div className="sm:flex sm:flex-row sm:items-center hidden gap-1">
           {user ? (
             <MdExitToApp className="w-6 h-6 hover:text-[#585d72] transition duration-300" />
           ) : (
@@ -137,9 +137,55 @@ const Cards = () => {
           className="flex items-center relative group"
         >
           <CiShoppingBasket className="w-6 h-6 group-hover:text-[#585d72] transition duration-300" />
-          <span className="font-light absolute bg-[#252B42] group-hover:bg-[#585d72] text-[#FAFAFA] transition duration-300 rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
+          <span className="font-light absolute bg-[#252B42] dark:bg-[#FAFAFA] dark:text-[#252b42] group-hover:bg-[#585d72] text-[#FAFAFA] transition duration-300 rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-1">
             {items.length}
           </span>
+        </div>
+        <div
+          onClick={() => setFavModal((p) => !p)}
+          className="flex items-center gap-2 relative group"
+        >
+          <CiHeart className="w-6 h-6 group-hover:text-[#CB0404] transition duration-300" />
+          <span className="font-light absolute bg-[#23A6F0] dark:bg-[#fafafa] dark:text-[#252b42] text-[#FAFAFA] transition duration-300 group-hover:bg-[#CB0404] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-2">
+            {favorites.length}
+          </span>
+        </div>
+        <div className="flex items-center gap-1">
+          {user && (
+            <>
+              <span className="text-sm">{user.toUpperCase()}</span>
+              <MdExitToApp onClick={handleLogout} className="w-6 h-6" />
+            </>
+          )}
+        </div>
+        <button
+          onClick={toggle}
+          className="p-2 rounded cursor-pointer bg-gray-200 dark:bg-gray-700"
+        >
+          {theme === "light" ? (
+            <CiDark className="w-5 h-5" />
+          ) : (
+            <CiLight className="w-5 h-5 text-yellow-600" />
+          )}
+        </button>
+        <div className="sm:flex sm:flex-row hidden gap-2">
+          <button
+            onClick={() => setLang("en")}
+            className={`px-3 py-1 rounded cursor-pointer ${
+              lang === "en" ? "bg-blue-500 text-white" : "border"
+            }`}
+          >
+            EN
+          </button>
+
+          <button
+            onClick={() => setLang("tr")}
+            className={`px-3 py-1 rounded cursor-pointer ${
+              lang === "tr" ? "bg-blue-500 text-white" : "border"
+            }`}
+          >
+            TR
+          </button>
         </div>
         <div className="flex items-center gap-2">
           <BiMenuAltRight

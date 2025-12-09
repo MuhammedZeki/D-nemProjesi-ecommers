@@ -11,7 +11,7 @@ const UpperMenu = () => {
   const { open, shopModal, basketModal, favModal } =
     useContext(ModelOpenContext);
   return (
-    <div className="relative flex items-center justify-between w-full px-10 lg:w-[75%] mx-auto py-8">
+    <div className="relative flex items-center justify-between gap-6 sm:gap-0  w-full px-10 lg:w-[75%] mx-auto py-8">
       <Logo />
       <Navbar />
       <Cards />
