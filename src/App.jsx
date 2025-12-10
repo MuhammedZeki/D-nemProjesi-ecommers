@@ -15,6 +15,7 @@ import SignUp from "./pages/auth/SignUp";
 import ScrollToTop from "./components/ScrollToTop";
 import Order from "./pages/Order";
 import { LangProvider } from "./context/LangContext";
+import { CreateOrder } from "./pages/CreateOrder";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/contact1" element={<Contact1 />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/createOrder" element={<CreateOrder />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/order" element={<Order />} />
             <Route path="/blog" element={<Blog />} />

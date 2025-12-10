@@ -32,7 +32,7 @@ const OrderItem = ({ item }) => {
         <div className="flex  justify-center sm:justify-start">
           <img
             src={item?.img}
-            className="object-cover w-[200px] h-[250px] sm:w-[200px] rounded-md"
+            className="object-cover w-[270px] h-[250px]  rounded-md"
           />
         </div>
         <div className=" grow flex flex-col items-center sm:items-start gap-2">

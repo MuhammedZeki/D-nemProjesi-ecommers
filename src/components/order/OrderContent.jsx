@@ -3,8 +3,10 @@ import { CiSquarePlus } from "react-icons/ci";
 import { IoIosArrowForward } from "react-icons/io";
 import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
+import { useNavigate } from "react-router-dom";
 const OrderContent = () => {
   const { items, total } = useSelector((state) => state.basket);
+  const navigate = useNavigate();
   const cargoFee = 9.99;
   const freeCargoLimit = 9.99;
 
@@ -82,7 +84,10 @@ const OrderContent = () => {
             <CiSquarePlus className="w-7 h-7 text-[#23a6f0]" />
             <span>İndirim Kodunu Gir</span>
           </button>
-          <button className="px-2 py-3 flex items-center justify-center font-montserrat font-bold  leading-6  gap-2tracking-[0.1px] text-[#fafafa] cursor-pointer bg-[#23a6f0]  rounded-md">
+          <button
+            onClick={() => navigate("/createOrder")}
+            className="px-2 py-3 flex items-center justify-center font-montserrat font-bold  leading-6  gap-2tracking-[0.1px] text-[#fafafa] cursor-pointer bg-[#23a6f0]  rounded-md"
+          >
             <span>Sepeti Onayla</span>
             <IoIosArrowForward className="w-6 h-6 text-[#fafafa]" />
           </button>

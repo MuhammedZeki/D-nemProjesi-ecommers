@@ -186,9 +186,10 @@ const DetailContent = () => {
 
           <div
             onClick={() => addToBasket(newProduct)}
-            className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300"
+            className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300 gap-2 text-[#737373] tracking-[0.1px] leading-6 hover:text-[#23A6F0]"
           >
             <CiShoppingBasket className="w-6 h-6 text-[#737373] dark:text-[#fafafa] group-hover:text-[#23A6F0] transition duration-300" />
+            Sepete Ekle
           </div>
           {/* <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
             <FaEye className="w-6 h-6" />
