@@ -56,7 +56,7 @@ const CreateOrderContent = () => {
                   Ev
                 </h5>
                 <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6">
-                  {getAddress.address}
+                  {getAddress?.address}
                 </p>
               </div>
             </div>
