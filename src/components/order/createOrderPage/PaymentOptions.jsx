@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useMemo } from "react";
 
 const cards = [
   {
@@ -25,11 +24,54 @@ const cards = [
   },
 ];
 
-const PaymentOptions = () => {
-  const [selectedCard, setSelectedCard] = useState(cards[1].id); // default seçili
-  const [selectedInstallment, setSelectedInstallment] = useState("Tek Çekim");
+const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
+  const [selectedCard, setSelectedCard] = useState(cards[0].id);
+
+  const installments = useMemo(
+    () => [
+      {
+        name: "Tek Çekim",
+        months: 1,
+        rate: 0,
+        monthlyPayment: totalAmount * 1,
+      },
+      {
+        name: "3 Taksit",
+        months: 3,
+        rate: 0.02,
+        monthlyPayment: (totalAmount * 1.02) / 3,
+      },
+      {
+        name: "6 Taksit",
+        months: 6,
+        rate: 0.05,
+        monthlyPayment: (totalAmount * 1.05) / 6,
+      },
+      {
+        name: "12 Taksit",
+        months: 12,
+        rate: 0.1,
+        monthlyPayment: (totalAmount * 1.1) / 12,
+      },
+    ],
+    [totalAmount]
+  );
+
+  const [selectedInstallment, setSelectedInstallment] = useState(
+    installments[0]
+  );
   const [secure3D, setSecure3D] = useState(false);
-  const { total } = useSelector((state) => state.basket);
+
+  const handleSelectInstallment = (item) => {
+    setSelectedInstallment(item);
+    const totalWithInstallment = item.months * item.monthlyPayment;
+
+    onInstallmentChange(totalWithInstallment);
+  };
+
+  const totalPayable =
+    selectedInstallment.months * selectedInstallment.monthlyPayment;
+
   return (
     <div className="border border-[#737373] p-4 rounded-md font-montserrat flex flex-col gap-4">
       <h2 className="font-bold text-lg text-[#252b42]">Kart ile Öde</h2>
@@ -40,37 +82,32 @@ const PaymentOptions = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
-          <h3 className="font-semibold mb-2">Kart Bilgileri</h3>
+          <h3 className="font-semibold mb-2 text-2xl">Kart Bilgileri</h3>
           <div className="flex flex-col gap-2">
-            {cards &&
-              cards.map((card) => (
-                <div
-                  key={card.id}
-                  onClick={() => setSelectedCard(card.id)}
-                  className={`border rounded-md py-5 px-8 flex flex-col gap-3 cursor-pointer ${
-                    selectedCard === card.id
-                      ? "border-[#24a5f0] bg-[#24a5f0]/10"
-                      : "border-[#737373]"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <img src={card.img} className="object-cover w-25" />
-                    <img
-                      src="/order/mastercard.svg"
-                      className="object-cover w-15"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <span className="font-bold">{card.type} kartım</span>
-                    <span className="text-sm text-[#737373]">
-                      {card.number}
-                    </span>
-                    <span className="text-xs text-[#737373]">
-                      {card.expiry}
-                    </span>
-                  </div>
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                onClick={() => setSelectedCard(card.id)}
+                className={`border rounded-md py-5 px-8 flex flex-col gap-3 cursor-pointer ${
+                  selectedCard === card.id
+                    ? "border-[#24a5f0] bg-[#24a5f0]/10"
+                    : "border-[#737373]"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <img src={card.img} className="object-cover w-25" />
+                  <img
+                    src="/order/mastercard.svg"
+                    className="object-cover w-15"
+                  />
                 </div>
-              ))}
+                <div className="flex flex-col gap-2">
+                  <span className="font-bold">{card.type} kartım</span>
+                  <span className="text-sm text-[#737373]">{card.number}</span>
+                  <span className="text-xs text-[#737373]">{card.expiry}</span>
+                </div>
+              </div>
+            ))}
           </div>
           <label className="flex items-center gap-2 mt-2">
             <input
@@ -82,19 +119,65 @@ const PaymentOptions = () => {
           </label>
         </div>
 
-        <div>
-          <h3 className="font-semibold mb-2">Taksit Seçenekleri</h3>
-          <div className="flex flex-col gap-2">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="radio"
-                name="installment"
-                checked={selectedInstallment === "Tek Çekim"}
-                onChange={() => setSelectedInstallment("Tek Çekim")}
-              />
-              Tek Çekim -{" "}
-              <span className="font-bold text-[#24a5f0]">${total}</span>
-            </label>
+        <div className="flex flex-col gap-4">
+          <h2 className="font-semibold text-2xl text-[#252b42]">
+            Taksit Seçenekleri
+          </h2>
+          <h5 className="font-semibold text-sm text-[#737373]">
+            Kartınıza uygun taksit seçeneğini seçiniz.
+          </h5>
+
+          <table className="w-full text-left border border-[#d1d5db] rounded-md">
+            <thead className="bg-[#f5f5f5]">
+              <tr>
+                <th className="py-2 px-4 border-b border-[#d1d5db]">
+                  Taksit Sayısı
+                </th>
+                <th className="py-2 px-4 border-b border-[#d1d5db]">
+                  Aylık Ödeme
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {installments.map((item) => (
+                <tr
+                  key={item.name}
+                  className={`hover:bg-[#f0f8ff] cursor-pointer ${
+                    selectedInstallment.name === item.name ? "bg-[#e0f2ff]" : ""
+                  }`}
+                  onClick={() => handleSelectInstallment(item)}
+                >
+                  <td className="py-2 px-4 border-b border-[#d1d5db] cursor-pointer">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="installment"
+                        className="cursor-pointer"
+                        checked={selectedInstallment.name === item.name}
+                        onChange={() => handleSelectInstallment(item)}
+                      />
+                      {item.name}
+                    </label>
+                  </td>
+                  <td className="py-2 px-4 border-b border-[#d1d5db] font-bold text-[#24a5f0] flex gap-2 items-center cursor-pointer">
+                    <span>${item.monthlyPayment.toFixed(2)}</span>
+
+                    <span className="text-xs font-medium text-[#737373]">
+                      {item.rate === 0
+                        ? "Faizsiz"
+                        : `+%${(item.rate * 100).toFixed(0)} vade farkı`}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="mt-2 text-right text-sm text-[#252b42]">
+            Toplam Ödenecek:{" "}
+            <span className="font-bold text-[#24a5f0]">
+              ${totalPayable.toFixed(2)}{" "}
+            </span>
           </div>
         </div>
       </div>

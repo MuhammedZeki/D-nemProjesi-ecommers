@@ -20,6 +20,7 @@ const CreateOrderContent = () => {
 
   const getIndex = JSON.parse(localStorage.getItem("selectedIndex"));
   const getAddress = addresses[getIndex];
+  const [installmentTotal, setInstallmentTotal] = useState(null);
 
   return (
     <div className=" w-full px-10 lg:w-[75%] mx-auto py-8 my-10  lg:flex lg:flex-row gap-4 flex flex-col ">
@@ -119,7 +120,12 @@ const CreateOrderContent = () => {
           </span>
         </div>
         {tabs === 1 && <AddressInformation />}
-        {tabs === 2 && <PaymentOptions />}
+        {tabs === 2 && (
+          <PaymentOptions
+            totalAmount={totalAmount}
+            onInstallmentChange={setInstallmentTotal}
+          />
+        )}
       </div>
       <div className="w-full lg:w-1/4 flex flex-col font-montserrat gap-4">
         <div className="rounded-md border border-[#737373] flex flex-col gap-10 px-3 py-5 dark:border-[#fafafa]">
@@ -171,7 +177,7 @@ const CreateOrderContent = () => {
                 Toplam
               </p>
               <span className="font-bold leading-6 tracking-[0.1px] text-2xl text-[#23a6f0]">
-                ${totalAmount.toFixed(2)}
+                ${(installmentTotal ?? totalAmount).toFixed(2)}
               </span>
             </div>
           </div>
