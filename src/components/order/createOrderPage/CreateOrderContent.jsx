@@ -1,23 +1,26 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { IoIosInformationCircle } from "react-icons/io";
 import { useState } from "react";
 import AddressInformation from "./AddressInformation";
 import PaymentOptions from "./PaymentOptions";
+import { useNavigate } from "react-router-dom";
 const CreateOrderContent = () => {
   const { items, total } = useSelector((state) => state.basket);
-  const [tabs, setTabs] = useState(1);
-  const navigate = useNavigate();
+  const { addresses } = useSelector((state) => state.address);
+  const [tabs, setTabs] = useState(0);
   const cargoFee = 9.99;
   const freeCargoLimit = 9.99;
-
+  const navigate = useNavigate();
   const productTotal = total;
-
   const cargo =
     items.length === 0 ? 0 : productTotal >= freeCargoLimit ? cargoFee : 0;
 
   const totalAmount = productTotal + cargo;
+
+  const getIndex = JSON.parse(localStorage.getItem("selectedIndex"));
+  const getAddress = addresses[getIndex];
+
   return (
     <div className=" w-full px-10 lg:w-[75%] mx-auto py-8 my-10  lg:flex lg:flex-row gap-4 flex flex-col ">
       <div className="w-full lg:w-3/4 flex flex-col gap-4 font-montserrat ">
@@ -26,33 +29,66 @@ const CreateOrderContent = () => {
             onClick={() => setTabs(1)}
             className=" w-1/2 flex flex-col justify-between cursor-pointer"
           >
-            <div className="flex gap-3 border border-[#24a5f0] rounded-tl-md rounded-tr-md font-montserrat p-2">
-              <h1 className="font-bold text-3xl text-[#24a5f0] -mt-1">1.</h1>
+            <div
+              className={`flex gap-3 border border-[#24a5f0] grow rounded-tl-md rounded-tr-md font-montserrat p-2 h-[140px] ${
+                tabs === 1
+                  ? " border-[#24a5f0] bg-[#24a5f0]/10"
+                  : "border-[#737373] bg-[#737373]/10"
+              }`}
+            >
+              <h1
+                className={`font-bold text-3xl text-[#24a5f0] -mt-1 ${
+                  tabs === 1 ? "text-[#24a5f0]" : "text-[#737373]"
+                }`}
+              >
+                1.
+              </h1>
               <div className="flex flex-col gap-1.5">
-                <h2 className="font-bold text-xl text-[#24a5f0] leading-6 tracking-[0.1px]">
+                <h2
+                  className={`font-bold text-xl  leading-6 tracking-[0.1px] ${
+                    tabs === 1 ? "text-[#24a5f0]" : "text-[#737373]"
+                  }`}
+                >
                   Adres Bilgileri
                 </h2>
                 <h5 className="font-medium  text-[#737373] tracking-[0.1px] leading-6">
                   Ev
                 </h5>
                 <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6">
-                  Evin adresim Lorem ipsum dolor sit amet.
-                </p>
-                <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6">
-                  53020 - Istanbul-beyoglu adresim Lorem ipsum dolor sit amet.
+                  {getAddress.address}
                 </p>
               </div>
             </div>
-            <div className="w-full h-0.5 bg-[#24a5f0]"></div>
+            <div
+              className={`w-full h-0.5  ${
+                tabs === 1 ? "bg-[#24a5f0]" : "bg-[#737373]"
+              }`}
+            ></div>
           </div>
           <div
             onClick={() => setTabs(2)}
             className="w-1/2 flex flex-col cursor-pointer"
           >
-            <div className="flex gap-3 border border-[#737373] grow bg-[#f8f8f8] rounded-tl-md rounded-tr-md font-montserrat p-2">
-              <h1 className="font-bold text-3xl text-[#737373] -mt-1">2.</h1>
+            <div
+              className={`flex gap-3 border grow  rounded-tl-md rounded-tr-md font-montserrat p-2  h-[140px]${
+                tabs === 2
+                  ? " border-[#24a5f0] bg-[#24a5f0]/10"
+                  : "border-[#737373] bg-[#737373]/10"
+              }`}
+            >
+              <h1
+                className={`font-bold text-3xl  -mt-1 ${
+                  tabs === 2 ? "text-[#24a5f0]" : "text-[#737373]"
+                }`}
+              >
+                2.
+              </h1>
               <div className="flex flex-col gap-2">
-                <h2 className="font-bold text-xl text-[#737373] leading-6 tracking-[0.1px]">
+                <h2
+                  className={`font-bold text-xl leading-6 tracking-[0.1px] ${
+                    tabs === 2 ? "text-[#24a5f0]" : "text-[#737373]"
+                  }`}
+                >
                   Ödeme Seçenekleri
                 </h2>
                 <div className="text-[#737373] leading-6 tracking-[0.1px]">
@@ -67,7 +103,11 @@ const CreateOrderContent = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-0.5 bg-[#737373]"></div>
+            <div
+              className={`w-full h-0.5  ${
+                tabs === 2 ? "bg-[#24a5f0]" : "bg-[#737373]"
+              }`}
+            ></div>
           </div>
         </div>
         <div className="flex gap-2 border border-[#737373] rounded-md p-2">
@@ -137,11 +177,17 @@ const CreateOrderContent = () => {
           </div>
         </div>
         <button
-          onClick={() => navigate("/createOrder")}
+          onClick={() => setTabs(2)}
           className="px-2 py-3 flex items-center justify-center font-montserrat font-bold  leading-6  gap-2tracking-[0.1px] text-[#fafafa] cursor-pointer bg-[#23a6f0]  rounded-md"
         >
-          <span>Kaydet ve Devam Et</span>
-          <IoIosArrowForward className="w-6 h-6 text-[#fafafa]" />
+          {tabs !== 2 ? (
+            <>
+              <span>Kaydet ve Devam Et</span>
+              <IoIosArrowForward className="w-6 h-6 text-[#fafafa]" />
+            </>
+          ) : (
+            <span onClick={() => navigate("/successOrder")}>Ödeme Yap</span>
+          )}
         </button>
       </div>
     </div>
