@@ -10,7 +10,7 @@ import {
   setDefaultAddress,
   loadAddresses,
 } from "../../store/actions/addressActions";
-import AutoTranslate from "../../AutoTranslate";
+import AutoTranslate from "../../translate/AutoTranslate";
 
 const AddressInformation = () => {
   const [showForm, setShowForm] = useState(false);

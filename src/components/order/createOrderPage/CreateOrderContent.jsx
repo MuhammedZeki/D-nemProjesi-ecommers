@@ -5,7 +5,7 @@ import { useState } from "react";
 import AddressInformation from "./AddressInformation";
 import PaymentOptions from "./PaymentOptions";
 import { useNavigate } from "react-router-dom";
-import AutoTranslate from "../../AutoTranslate";
+import AutoTranslate from "../../translate/AutoTranslate";
 
 const CreateOrderContent = () => {
   const { items, total } = useSelector((state) => state.basket);

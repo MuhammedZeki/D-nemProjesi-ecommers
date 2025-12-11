@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import AutoTranslate from "../../AutoTranslate";
+import AutoTranslate from "../../translate/AutoTranslate";
 
 const cards = [
   {
