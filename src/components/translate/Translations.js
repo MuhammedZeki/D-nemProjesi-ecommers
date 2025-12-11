@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 export const translations = {
     en: {
         "Banka/Kredi Kartı": "Credit/Debit Card",
@@ -40,6 +41,25 @@ export const translations = {
         "6 Taksit": "6 Installments",
         "12 Taksit": "12 Installments",
         "vade farkı": "interest rate",
+        "Sipariş Alındı!": "Order Received!",
+        "Teşekkürler! Siparişin hazırlanmaya başladı.": "Thank you! Your order is being prepared.",
+        "Sipariş No:": "Order No:",
+        "Kart": "Cart",
+        "Satın Alma": "Checkout",
+        "Tahmini Teslimat": "Estimated Arrival",
+        "Sipariş Detayları": "Order Details",
+        "Fişi İndir": "Download Receipt",
+        "Dakika": "Min",
+        "Sipariş Özeti": "Order Summary",
+        "Adet": "Items",
+        "Ara Toplam": "Subtotal",
+        "Kargo Ücreti": "Delivery Fee",
+        "Toplam": "Total",
+        "Adet": "Items",
+        "Ana Sayfa": "Home",
+        "Alışverişe Devam Et": "Keep shopping",
+        "Sipariş Onayı": "Confirmation",
+        "Ücretsiz": "Free",
     },
     tr: {},
 };

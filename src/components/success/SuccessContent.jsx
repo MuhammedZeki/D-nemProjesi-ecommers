@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { FaCheckCircle, FaFileDownload, FaMotorcycle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Confetti from "react-confetti";
+import AutoTranslate from "../translate/AutoTranslate";
 
 const SuccessContent = () => {
   const { total, items } = useSelector((state) => state.basket);
@@ -39,11 +40,17 @@ const SuccessContent = () => {
       />
 
       <div className="w-full max-w-3xl mb-8 hidden sm:flex justify-between text-sm font-semibold text-gray-400">
-        <span className="text-[#52c492]">1. Cart</span>
+        <span className="text-[#52c492]">
+          1. <AutoTranslate>Kart</AutoTranslate>
+        </span>
         <span className="h-0.5 flex-1 bg-[#52c492] mx-4 self-center"></span>
-        <span className="text-[#52c492]">2. Checkout</span>
+        <span className="text-[#52c492]">
+          2.<AutoTranslate>Satın Alma</AutoTranslate>{" "}
+        </span>
         <span className="h-0.5 flex-1 bg-[#52c492] mx-4 self-center"></span>
-        <span className="text-[#252b42] dark:text-white">3. Confirmation</span>
+        <span className="text-[#252b42] dark:text-white">
+          3.<AutoTranslate>Sipariş Onayı</AutoTranslate>{" "}
+        </span>
       </div>
 
       <div className="bg-white dark:bg-[#1e2130] shadow-2xl rounded-2xl p-8 w-full max-w-3xl text-center border-t-4 border-[#52c492]">
@@ -52,10 +59,14 @@ const SuccessContent = () => {
         </div>
 
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#252b42] dark:text-white mb-2 tracking-tight">
-          Sipariş Alındı!
+          <AutoTranslate>Sipariş Alındı!</AutoTranslate>
         </h1>
+
         <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-lg mx-auto">
-          Teşekkürler! Siparişin hazırlanmaya başladı. Sipariş No:{" "}
+          <AutoTranslate>
+            Teşekkürler! Siparişin hazırlanmaya başladı.
+          </AutoTranslate>{" "}
+          <AutoTranslate>Sipariş No:</AutoTranslate>{" "}
           <span className="text-[#252b42] dark:text-white font-bold">
             #B6CT3
           </span>
@@ -68,14 +79,14 @@ const SuccessContent = () => {
             </div>
             <div>
               <p className="text-xs text-gray-500 uppercase font-bold tracking-wide">
-                Estimated Arrival
+                <AutoTranslate>Tahmini Teslimat</AutoTranslate>
               </p>
               <div className="flex items-center gap-2">
                 <p className="text-[#252b42] dark:text-white font-bold text-lg">
                   {getDeliveryTimeRange()}
                 </p>
                 <span className="bg-blue-200 text-blue-800 text-[10px] px-1.5 py-0.5 rounded font-bold">
-                  ~30 min
+                  ~30 <AutoTranslate>Dakika</AutoTranslate>
                 </span>
               </div>
             </div>
@@ -87,19 +98,22 @@ const SuccessContent = () => {
             </div>
             <div>
               <p className="text-xs text-gray-500 uppercase font-bold tracking-wide">
-                Order Details
+                <AutoTranslate>Sipariş Detayları</AutoTranslate>
               </p>
               <p className="text-[#252b42] dark:text-white font-semibold cursor-pointer hover:underline">
-                Download Receipt
+                <AutoTranslate>Fişi İndir</AutoTranslate>
               </p>
             </div>
           </div>
         </div>
+
         <div className="bg-gray-50 dark:bg-[#2a2f4a] p-6 rounded-xl border border-gray-100 dark:border-gray-700 mb-8">
           <h2 className="text-xl font-bold text-[#252b42] dark:text-white mb-4 flex justify-between items-center">
-            <span>Order Summary</span>
+            <span>
+              <AutoTranslate>Sipariş Özeti</AutoTranslate>
+            </span>
             <span className="text-sm font-normal text-gray-500">
-              {items.length} Items
+              {items.length} <AutoTranslate>Adet</AutoTranslate>
             </span>
           </h2>
 
@@ -136,15 +150,23 @@ const SuccessContent = () => {
 
           <div className="border-t border-gray-200 dark:border-gray-600 mt-4 pt-4 space-y-2">
             <div className="flex justify-between text-gray-500 dark:text-gray-400 text-sm">
-              <span>Subtotal</span>
+              <span>
+                <AutoTranslate>Ara Toplam</AutoTranslate>
+              </span>
               <span>${total.toFixed(2)}</span>
             </div>
+
             <div className="flex justify-between text-gray-500 dark:text-gray-400 text-sm">
-              <span>Delivery Fee</span>
+              <span>
+                <AutoTranslate>Kargo Ücreti</AutoTranslate>
+              </span>
               <span>{cargo === 0 ? "Free" : `$${cargo.toFixed(2)}`}</span>
             </div>
+
             <div className="flex justify-between items-center text-xl font-bold text-[#252b42] dark:text-white pt-2">
-              <span>Total</span>
+              <span>
+                <AutoTranslate>Toplam</AutoTranslate>
+              </span>
               <span className="text-[#52c492]">${finalTotal.toFixed(2)}</span>
             </div>
           </div>
@@ -155,13 +177,14 @@ const SuccessContent = () => {
             onClick={() => navigate("/")}
             className="cursor-pointer flex-1 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-semibold hover:bg-gray-50 dark:hover:bg-[#2a2f4a] transition"
           >
-            Home
+            <AutoTranslate>Ana Sayfa</AutoTranslate>
           </button>
+
           <button
             onClick={() => navigate("/shop")}
             className="cursor-pointer flex-1 px-6 py-3 rounded-lg bg-[#52c492] text-white font-semibold hover:bg-[#45b37f] shadow-lg shadow-green-200 dark:shadow-none transition"
           >
-            Keep shopping
+            <AutoTranslate>Alışverişe Devam Et</AutoTranslate>
           </button>
         </div>
       </div>
