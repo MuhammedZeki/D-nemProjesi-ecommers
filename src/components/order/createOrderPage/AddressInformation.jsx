@@ -50,7 +50,7 @@ const AddressInformation = () => {
         <h2 className="font-bold text-xl text-[#252b42] leading-6 tracking-[0.1px]">
           Teslimat Adresi
         </h2>
-        <div className="text-[#737373]">
+        <div className="text-[#737373] dark:text-[#e6e6e6]">
           <label htmlFor="check1" className="flex gap-2 cursor-pointer">
             <input type="checkbox" name="check1" id="check1" />
             Faturama Aynı Adrese Gönder
@@ -68,7 +68,9 @@ const AddressInformation = () => {
           className="h-40 border-2 border-dashed border-[#23a6f0] flex flex-col items-center justify-center cursor-pointer rounded-md gap-2"
         >
           <span className="text-4xl text-[#23a6f0] font-bold">+</span>
-          <span className="text-[#252b42] font-medium">Yeni Adres Ekle</span>
+          <span className="text-[#252b42] font-medium dark:text-[#e6e6e6]">
+            Yeni Adres Ekle
+          </span>
         </div>
       ) : (
         <AddNewAddress
@@ -91,11 +93,15 @@ const AddressInformation = () => {
           } `}
         >
           <div className="cursor-pointer">
-            <h4 className="font-bold text-[#252b42]">
+            <h4 className="font-bold text-[#252b42] dark:text-[#e6e6e6]">
               {item.name} {item.surname}
             </h4>
-            <p className="text-sm text-[#737373]">{item.city}</p>
-            <p className="text-sm text-[#737373]">{item.address}</p>
+            <p className="text-sm text-[#737373] dark:text-[#bbb9b9]">
+              {item.city}
+            </p>
+            <p className="text-sm text-[#737373] dark:text-[#bbb9b9]">
+              {item.address}
+            </p>
 
             {defaultIndex === index && (
               <span className="text-xs my-2 text-[#f0b000] font-bold flex items-center gap-2">

@@ -41,8 +41,8 @@ const AddNewAddress = ({
   };
 
   return (
-    <div className="border border-[#737373] p-6 rounded-md flex flex-col gap-4 bg-[#fafafa]">
-      <h3 className="text-xl font-bold text-[#252b42]">
+    <div className="border border-[#737373] p-6 rounded-md flex flex-col gap-4 bg-[#fafafa] dark:bg-[#252b42]">
+      <h3 className="text-xl font-bold text-[#252b42] dark:text-[#e6e6e6]">
         {editIndex !== null ? "Adresi Güncelle" : "Yeni Adres Ekle"}
       </h3>
 
@@ -53,10 +53,10 @@ const AddNewAddress = ({
               type="text"
               placeholder="Ad"
               {...register("name", { required: "Ad zorunlu" })}
-              className="w-full border border-[#737373] p-3 rounded-md"
+              className="w-full border border-[#737373] p-3 rounded-md dark:text-[#e6e6e6]"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
+              <p className="text-[#df2c2c] text-sm">{errors.name.message}</p>
             )}
           </div>
 
@@ -65,10 +65,10 @@ const AddNewAddress = ({
               type="text"
               placeholder="Soyad"
               {...register("surname", { required: "Soyad zorunlu" })}
-              className="w-full border border-[#737373] p-3 rounded-md"
+              className="w-full border border-[#737373] p-3 rounded-md dark:text-[#e6e6e6]"
             />
             {errors.surname && (
-              <p className="text-red-500 text-sm">{errors.surname.message}</p>
+              <p className="text-[#df2c2c] text-sm">{errors.surname.message}</p>
             )}
           </div>
         </div>
@@ -78,10 +78,10 @@ const AddNewAddress = ({
             type="text"
             placeholder="Şehir"
             {...register("city", { required: "Şehir zorunlu" })}
-            className="w-full border border-[#737373] p-3 rounded-md"
+            className="w-full border border-[#737373] p-3 rounded-md dark:text-[#e6e6e6]"
           />
           {errors.city && (
-            <p className="text-red-500 text-sm">{errors.city.message}</p>
+            <p className="text-[#df2c2c] text-sm">{errors.city.message}</p>
           )}
         </div>
 
@@ -90,10 +90,10 @@ const AddNewAddress = ({
             rows="3"
             placeholder="Adres"
             {...register("address", { required: "Adres zorunlu" })}
-            className="w-full border border-[#737373] p-3 rounded-md"
+            className="w-full border border-[#737373] p-3 rounded-md dark:text-[#e6e6e6]"
           />
           {errors.address && (
-            <p className="text-red-500 text-sm">{errors.address.message}</p>
+            <p className="text-[#df2c2c] text-sm">{errors.address.message}</p>
           )}
         </div>
 
@@ -111,7 +111,7 @@ const AddNewAddress = ({
               reset();
               setShowForm(false);
             }}
-            className="border border-[#737373] px-6 py-2 rounded-md font-bold text-[#252b42] cursor-pointer"
+            className="border border-[#737373] px-6 py-2 rounded-md font-bold text-[#252b42] cursor-pointer dark:text-[#e6e6e6]"
           >
             İptal
           </button>

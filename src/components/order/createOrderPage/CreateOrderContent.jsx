@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const CreateOrderContent = () => {
   const { items, total } = useSelector((state) => state.basket);
   const { addresses } = useSelector((state) => state.address);
-  const [tabs, setTabs] = useState(0);
+  const [tabs, setTabs] = useState(1);
   const cargoFee = 9.99;
   const freeCargoLimit = 9.99;
   const navigate = useNavigate();
@@ -39,7 +39,9 @@ const CreateOrderContent = () => {
             >
               <h1
                 className={`font-bold text-3xl text-[#24a5f0] -mt-1 ${
-                  tabs === 1 ? "text-[#24a5f0]" : "text-[#737373]"
+                  tabs === 1
+                    ? "text-[#24a5f0]"
+                    : "text-[#737373] dark:text-[#bebebe]"
                 }`}
               >
                 1.
@@ -47,15 +49,17 @@ const CreateOrderContent = () => {
               <div className="flex flex-col gap-1.5">
                 <h2
                   className={`font-bold text-xl  leading-6 tracking-[0.1px] ${
-                    tabs === 1 ? "text-[#24a5f0]" : "text-[#737373]"
+                    tabs === 1
+                      ? "text-[#24a5f0]"
+                      : "text-[#737373] dark:text-[#bebebe]"
                   }`}
                 >
                   Adres Bilgileri
                 </h2>
-                <h5 className="font-medium  text-[#737373] tracking-[0.1px] leading-6">
+                <h5 className="font-medium  text-[#737373] tracking-[0.1px] leading-6 dark:text-[#bebebe]">
                   Ev
                 </h5>
-                <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6">
+                <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6 dark:text-[#bebebe]">
                   {getAddress?.address}
                 </p>
               </div>
@@ -79,7 +83,9 @@ const CreateOrderContent = () => {
             >
               <h1
                 className={`font-bold text-3xl  -mt-1 ${
-                  tabs === 2 ? "text-[#24a5f0]" : "text-[#737373]"
+                  tabs === 2
+                    ? "text-[#24a5f0]"
+                    : "text-[#737373] dark:text-[#bebebe]"
                 }`}
               >
                 2.
@@ -87,17 +93,19 @@ const CreateOrderContent = () => {
               <div className="flex flex-col gap-2">
                 <h2
                   className={`font-bold text-xl leading-6 tracking-[0.1px] ${
-                    tabs === 2 ? "text-[#24a5f0]" : "text-[#737373]"
+                    tabs === 2
+                      ? "text-[#24a5f0]"
+                      : "text-[#737373] dark:text-[#bebebe]"
                   }`}
                 >
                   Ödeme Seçenekleri
                 </h2>
-                <div className="text-[#737373] leading-6 tracking-[0.1px]">
-                  <span className="text-[#252b42]  font-medium underline  tracking-[0.1px] leading-6">
+                <div className="text-[#737373] leading-6 tracking-[0.1px] dark:text-[#bebebe]">
+                  <span className="text-[#252b42]  font-medium underline  tracking-[0.1px] leading-6 dark:text-[#e6e6e6]">
                     Banka/Kredi Kartı
                   </span>{" "}
                   veya{" "}
-                  <span className="text-[#252b42]  font-medium underline tracking-[0.1px] leading-6">
+                  <span className="text-[#252b42]  font-medium underline tracking-[0.1px] leading-6 dark:text-[#e6e6e6]">
                     Alışveriş Kredisi
                   </span>{" "}
                   ile ödemenizi güvenle yapabilirsiniz.
@@ -113,7 +121,7 @@ const CreateOrderContent = () => {
         </div>
         <div className="flex gap-2 border border-[#737373] rounded-md p-2">
           <IoIosInformationCircle className="text-[#24a5f0] w-9 h-9" />
-          <span className="text-[#252b42]  leading-6 tracking-[0.2px] font-bold">
+          <span className="text-[#252b42]  leading-6 tracking-[0.2px] font-bold dark:text-[#e6e6e6]">
             Kurumsal faturalı alışveriş yapmak için "Faturamı Aynı Adrese
             Gönder" tikini kaldırın ve Fatura adresi olarak kayıtlı Kurumsal
             Fatura adresinizi seçin.
@@ -137,11 +145,11 @@ const CreateOrderContent = () => {
               className="cursor-pointer"
             />
             <label htmlFor="check" className="cursor-pointer">
-              <span className="text-[#252b42] underline font-bold  tracking-[0.1px] leading-6">
+              <span className="text-[#252b42] underline font-bold  tracking-[0.1px] leading-6 dark:text-[#e6e6e6]">
                 Ön Bilgilendirme Koşulları
               </span>
               'nı ve{" "}
-              <span className="text-[#252b42] underline font-bold  tracking-[0.1px] leading-6">
+              <span className="text-[#252b42] underline font-bold  tracking-[0.1px] leading-6 dark:text-[#e6e6e6]">
                 Mesafeli Satış Sözleşmesi
               </span>
               'ni okudum, onaylıyorum.
@@ -156,7 +164,7 @@ const CreateOrderContent = () => {
           </div>
           <div className=" flex flex-col gap-6">
             <div className="flex items-center justify-between">
-              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373] dark:text-[#c0bebe]">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373]  dark:text-[#dfdfdf]">
                 Ürünün Toplamı
               </p>
               <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42] dark:text-[#fafafa]">
@@ -164,7 +172,7 @@ const CreateOrderContent = () => {
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373] dark:text-[#c0bebe]">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373] dark:text-[#dfdfdf]">
                 Kargo Toplam
               </p>
               <span className="font-bold leading-6 tracking-[0.1px] text-[#252b42] dark:text-[#fafafa]">
@@ -173,7 +181,7 @@ const CreateOrderContent = () => {
             </div>
 
             <div className="flex items-center justify-between border-t border-t-[#737373] dark:border-t-[#fafafa] py-2 dark:text-[#fafafa]">
-              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373] dark:text-[#c0bebe]">
+              <p className="font-normal leading-6 tracking-[0.1px] text-[#737373] dark:text-[#dfdfdf]">
                 Toplam
               </p>
               <span className="font-bold leading-6 tracking-[0.1px] text-2xl text-[#23a6f0]">
