@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { CiCircleInfo } from "react-icons/ci";
 import { IoIosArrowBack, IoMdEye } from "react-icons/io";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const initialValue = {
   email: "",
@@ -18,6 +18,7 @@ const SignIn = () => {
   const [isShow, setIsShow] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     formState: { errors, isSubmitting, isValid },
@@ -61,7 +62,8 @@ const SignIn = () => {
       localStorage.removeItem("rememberUser");
     }
     toast.success("Giriş başarılı!");
-    navigate("/");
+    const redirectPath = location.state?.from || "/";
+    navigate(redirectPath);
   };
   return (
     <div className="bg-[#FCF6D9] flex items-center justify-center h-screen">
