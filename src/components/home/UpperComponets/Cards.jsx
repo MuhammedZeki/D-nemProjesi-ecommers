@@ -6,8 +6,10 @@ import { MdExitToApp } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import { MdLightMode } from "react-icons/md";
 import { CiLight, CiDark } from "react-icons/ci";
 import { useLang } from "../../../context/LangContext";
+import { FaMoon } from "react-icons/fa6";
 const Cards = () => {
   const { changeModal, setBasketModal, setFavModal } =
     useContext(ModelOpenContext);
@@ -96,9 +98,9 @@ const Cards = () => {
           className="p-2 rounded cursor-pointer bg-gray-200 dark:bg-gray-700"
         >
           {theme === "light" ? (
-            <CiDark className="w-5 h-5" />
+            <FaMoon className="w-5 h-5" />
           ) : (
-            <CiLight className="w-5 h-5 text-yellow-600" />
+            <MdLightMode className="w-5 h-5 text-[#fafafa]" />
           )}
         </button>
         <div className="flex gap-2">

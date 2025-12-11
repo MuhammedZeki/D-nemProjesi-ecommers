@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import AutoTranslate from "../../AutoTranslate";
 
 const cards = [
   {
@@ -26,6 +27,7 @@ const cards = [
 
 const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
   const [selectedCard, setSelectedCard] = useState(cards[0].id);
+  const [secure3D, setSecure3D] = useState(false);
 
   const installments = useMemo(
     () => [
@@ -60,12 +62,10 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
   const [selectedInstallment, setSelectedInstallment] = useState(
     installments[0]
   );
-  const [secure3D, setSecure3D] = useState(false);
 
   const handleSelectInstallment = (item) => {
     setSelectedInstallment(item);
     const totalWithInstallment = item.months * item.monthlyPayment;
-
     onInstallmentChange(totalWithInstallment);
   };
 
@@ -75,17 +75,19 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
   return (
     <div className="border border-[#737373] p-4 rounded-md font-montserrat flex flex-col gap-4">
       <h2 className="font-bold text-lg text-[#252b42] dark:text-[#fafafa]">
-        Kart ile Öde
+        <AutoTranslate>Kart ile Öde</AutoTranslate>
       </h2>
       <p className="text-sm text-[#737373] dark:text-[#bebebe]">
-        Kart ile ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi
-        güvenle yapabilirsiniz.
+        <AutoTranslate>
+          Kart ile ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi
+          güvenle yapabilirsiniz.
+        </AutoTranslate>
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div>
           <h3 className="font-semibold mb-2 text-2xl dark:text-[#fafafa]">
-            Kart Bilgileri
+            <AutoTranslate>Kart Bilgileri</AutoTranslate>
           </h3>
           <div className="flex flex-col gap-2">
             {cards.map((card) => (
@@ -107,7 +109,7 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="font-bold dark:text-[#fafafa]">
-                    {card.type} kartım
+                    {card.type} <AutoTranslate>kartım</AutoTranslate>
                   </span>
                   <span className="text-sm text-[#737373] dark:text-[#bebebe]">
                     {card.number}
@@ -125,26 +127,28 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
               checked={secure3D}
               onChange={(e) => setSecure3D(e.target.checked)}
             />
-            3D Secure ile ödemek istiyorum
+            <AutoTranslate>3D Secure ile ödemek istiyorum</AutoTranslate>
           </label>
         </div>
 
         <div className="flex flex-col gap-4">
           <h2 className="font-semibold text-2xl text-[#252b42] dark:text-[#fafafa]">
-            Taksit Seçenekleri
+            <AutoTranslate>Taksit Seçenekleri</AutoTranslate>
           </h2>
           <h5 className="font-semibold text-sm text-[#737373] dark:text-[#bebebe]">
-            Kartınıza uygun taksit seçeneğini seçiniz.
+            <AutoTranslate>
+              Kartınıza uygun taksit seçeneğini seçiniz.
+            </AutoTranslate>
           </h5>
 
           <table className="w-full text-left border border-[#d1d5db] rounded-md dark:border-[#5a5f72]">
             <thead className="bg-[#f5f5f5] dark:bg-[#babdc7]">
               <tr>
                 <th className="py-2 px-4 border-b border-[#d1d5db] dark:border-[#5a5f72] text-[#252b42]">
-                  Taksit Sayısı
+                  <AutoTranslate>Taksit Sayısı</AutoTranslate>
                 </th>
                 <th className="py-2 px-4 border-b border-[#d1d5db] dark:border-[#5a5f72] text-[#252b42]">
-                  Aylık Ödeme
+                  <AutoTranslate>Aylık Ödeme</AutoTranslate>
                 </th>
               </tr>
             </thead>
@@ -159,7 +163,7 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
                   }`}
                   onClick={() => handleSelectInstallment(item)}
                 >
-                  <td className="py-3 px-4  border-[#d1d5db] cursor-pointer ">
+                  <td className="py-3 px-4 border-[#d1d5db] cursor-pointer">
                     <label className="flex items-center gap-2 cursor-pointer dark:text-[#fafafa]">
                       <input
                         type="radio"
@@ -168,18 +172,23 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
                         checked={selectedInstallment.name === item.name}
                         onChange={() => handleSelectInstallment(item)}
                       />
-                      {item.name}
+                      <AutoTranslate>{item.name}</AutoTranslate>
                     </label>
                   </td>
-                  <td className="py-3 px-4  border-[#d1d5db] flex gap-2 items-center  cursor-pointer">
+                  <td className="py-3 px-4 border-[#d1d5db] flex gap-2 items-center cursor-pointer">
                     <span className="font-bold text-[#24a5f0]">
                       ${item.monthlyPayment.toFixed(2)}
                     </span>
 
                     <span className="text-xs font-medium text-[#737373] dark:text-[#bababa]">
-                      {item.rate === 0
-                        ? "Faizsiz"
-                        : `+%${(item.rate * 100).toFixed(0)} vade farkı`}
+                      {item.rate === 0 ? (
+                        <AutoTranslate>Faizsiz</AutoTranslate>
+                      ) : (
+                        <span>
+                          +%{(item.rate * 100).toFixed(0)}{" "}
+                          <AutoTranslate>vade farkı</AutoTranslate>
+                        </span>
+                      )}
                     </span>
                   </td>
                 </tr>
@@ -188,9 +197,9 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
           </table>
 
           <div className="mt-2 text-right text-sm text-[#252b42] dark:text-[#fafafa]">
-            Toplam Ödenecek:{" "}
+            <AutoTranslate>Toplam Ödenecek:</AutoTranslate>{" "}
             <span className="font-bold text-[#24a5f0]">
-              ${totalPayable.toFixed(2)}{" "}
+              ${totalPayable.toFixed(2)}
             </span>
           </div>
         </div>

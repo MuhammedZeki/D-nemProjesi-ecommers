@@ -10,6 +10,7 @@ import {
   setDefaultAddress,
   loadAddresses,
 } from "../../store/actions/addressActions";
+import AutoTranslate from "../../AutoTranslate";
 
 const AddressInformation = () => {
   const [showForm, setShowForm] = useState(false);
@@ -48,12 +49,12 @@ const AddressInformation = () => {
     <div className="border border-[#737373] p-4 rounded-md flex flex-col gap-2 font-montserrat">
       <div className="flex items-center justify-between">
         <h2 className="font-bold text-xl text-[#252b42] leading-6 tracking-[0.1px]">
-          Teslimat Adresi
+          <AutoTranslate>Teslimat Adresi</AutoTranslate>
         </h2>
         <div className="text-[#737373] dark:text-[#e6e6e6]">
           <label htmlFor="check1" className="flex gap-2 cursor-pointer">
             <input type="checkbox" name="check1" id="check1" />
-            Faturama Aynı Adrese Gönder
+            <AutoTranslate>Faturama Aynı Adrese Gönder</AutoTranslate>
           </label>
         </div>
       </div>
@@ -69,7 +70,7 @@ const AddressInformation = () => {
         >
           <span className="text-4xl text-[#23a6f0] font-bold">+</span>
           <span className="text-[#252b42] font-medium dark:text-[#e6e6e6]">
-            Yeni Adres Ekle
+            <AutoTranslate>Yeni Adres Ekle</AutoTranslate>
           </span>
         </div>
       ) : (
@@ -105,7 +106,8 @@ const AddressInformation = () => {
 
             {defaultIndex === index && (
               <span className="text-xs my-2 text-[#f0b000] font-bold flex items-center gap-2">
-                <FaStar className="w-4 h-4" /> Varsayılan Adres
+                <FaStar className="w-4 h-4" />{" "}
+                <AutoTranslate>Varsayılan Adres</AutoTranslate>
               </span>
             )}
           </div>
