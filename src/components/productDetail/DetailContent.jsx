@@ -78,7 +78,7 @@ const DetailContent = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex lg:flex-row lg:gap-10">
+    <div className="flex flex-col lg:flex lg:flex-row gap-8 lg:gap-10">
       <div className="lg:w-1/3 w-full flex flex-col gap-4">
         <div>
           <Slider
@@ -114,7 +114,7 @@ const DetailContent = () => {
         </div>
       </div>
 
-      <div className="lg:w-2/3 w-full font-montserrat flex flex-col gap-6">
+      <div className="lg:w-2/3 w-full font-montserrat flex flex-col items-center sm:items-start gap-6">
         <h4 className="font-semibold text-xl leading-7 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
           {newProduct.name}
         </h4>
@@ -141,12 +141,12 @@ const DetailContent = () => {
             In Stock
           </p>
         </div>
-        <p className="font-normal border-b py-6 border-b-[#BDBDBD] leading-5 tracking-[0.2px] text-[#858585] dark:text-[#dbdbdb] max-w-2/3">
+        <p className="font-normal border-b py-6 border-b-[#BDBDBD] leading-5 tracking-[0.2px] text-[#858585] dark:text-[#dbdbdb] max-w-2/3 text-center sm:text-start">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           RELIT official consequent door ENIM RELIT Mollie. Excitation venial
           consequent sent nostrum met.
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center sm:justify-start">
           <button
             onClick={() => descrement()}
             className="cursor-pointer bg-[#076297] px-6 py-2 flex items-center justify-center text-[#FAFAFA] text-xl"
@@ -163,33 +163,34 @@ const DetailContent = () => {
             +
           </button>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="sm:flex sm:flex-row sm:items-center flex flex-col gap-3">
           <button className="bg-[#23A6F0] hover:bg-[#79c9f8] transition duration-300 cursor-pointer rounded-sm text-white px-5 py-4 font-bold leading-6 tracking-[0.2px]">
             Select Options
           </button>
-          <div
-            onClick={() => toggleFav(newProduct)}
-            className={`group hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full transition duration-300 ${
-              isHeart
-                ? "border border-[#CB0404] bg-[#f8c0c0] "
-                : "border border-[#E8E8E8]"
-            }`}
-          >
-            <CiHeart
-              className={`w-6 h-6 group-hover:text-[#CB0404] transition duration-300 ${
+          <div className="flex flex-col gap-3 sm:flex sm:flex-row">
+            <div
+              onClick={() => toggleFav(newProduct)}
+              className={`group hover:border-[#CB0404] cursor-pointer hover:bg-[#f8c0c0] flex items-center p-2 justify-center rounded-full transition duration-300 ${
                 isHeart
-                  ? "text-[#CB0404]"
-                  : "text-[#737373] dark:text-[#fafafa]"
+                  ? "border border-[#CB0404] bg-[#f8c0c0] "
+                  : "border border-[#E8E8E8]"
               }`}
-            />
-          </div>
-
-          <div
-            onClick={() => addToBasket(newProduct)}
-            className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300 gap-2 text-[#737373] tracking-[0.1px] leading-6 hover:text-[#23A6F0]"
-          >
-            <CiShoppingBasket className="w-6 h-6 text-[#737373] dark:text-[#fafafa] group-hover:text-[#23A6F0] transition duration-300" />
-            Sepete Ekle
+            >
+              <CiHeart
+                className={`w-6 h-6 group-hover:text-[#CB0404] transition duration-300 ${
+                  isHeart
+                    ? "text-[#CB0404]"
+                    : "text-[#737373] dark:text-[#fafafa]"
+                }`}
+              />
+            </div>
+            <div
+              onClick={() => addToBasket(newProduct)}
+              className="group border border-[#E8E8E8] hover:border-[#23A6F0] cursor-pointer hover:bg-[#c2e9ff] flex items-center p-2 justify-center rounded-full transition duration-300 gap-2 text-[#737373] dark:text-[#fafafa] tracking-[0.1px] leading-6 hover:text-[#23A6F0]"
+            >
+              <CiShoppingBasket className="w-6 h-6 text-[#737373] dark:text-[#fafafa] group-hover:text-[#23A6F0] transition duration-300" />
+              Sepete Ekle
+            </div>
           </div>
           {/* <div className="border border-[#E8E8E8] flex items-center p-2 justify-center rounded-full">
             <FaEye className="w-6 h-6" />

@@ -34,7 +34,7 @@ const ContactHero = () => {
           <h1 className="font-bold text-center lg:text-start text-6xl leading-20 tracking-[0.2px] dark:text-[#fafafa] text-[#252B42]">
             {t.title}
           </h1>
-          <p className="font-medium text-xl leading-8 tracking-[0.2px] text-[#737373] dark:text-[#fafafa]">
+          <p className="font-medium text-xl leading-8 tracking-[0.2px] text-[#737373] dark:text-[#fafafa] text-center sm:text-start">
             {t.desc}
           </p>
           <div className="flex flex-col gap-4">

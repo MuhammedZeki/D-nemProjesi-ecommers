@@ -48,7 +48,7 @@ const AddressInformation = () => {
   return (
     <div className="border border-[#737373] p-4 rounded-md flex flex-col gap-2 font-montserrat">
       <div className="flex items-center justify-between">
-        <h2 className="font-bold text-xl text-[#252b42] leading-6 tracking-[0.1px]">
+        <h2 className="font-bold text-xl text-[#252b42] leading-6 tracking-[0.1px] dark:text-[#fafafa]">
           <AutoTranslate>Teslimat Adresi</AutoTranslate>
         </h2>
         <div className="text-[#737373] dark:text-[#e6e6e6]">

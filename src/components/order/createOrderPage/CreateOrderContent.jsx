@@ -34,7 +34,7 @@ const CreateOrderContent = () => {
               className="w-1/2 flex flex-col justify-between cursor-pointer"
             >
               <div
-                className={`flex gap-3 border border-[#24a5f0] grow rounded-tl-md rounded-tr-md font-montserrat p-2 h-[140px] ${
+                className={`flex gap-3 border grow rounded-tl-md rounded-tr-md font-montserrat p-2 h-[140px] ${
                   tabs === 1
                     ? "border-[#24a5f0] bg-[#24a5f0]/10"
                     : "border-[#737373] bg-[#737373]/10"
@@ -78,9 +78,9 @@ const CreateOrderContent = () => {
               className="w-1/2 flex flex-col cursor-pointer"
             >
               <div
-                className={`flex gap-3 border grow rounded-tl-md rounded-tr-md font-montserrat p-2 h-[140px]${
+                className={`flex gap-3 border grow rounded-tl-md rounded-tr-md font-montserrat p-2 h-[140px] ${
                   tabs === 2
-                    ? " border-[#24a5f0] bg-[#24a5f0]/10"
+                    ? "border-[#24a5f0] bg-[#24a5f0]/10"
                     : "border-[#737373] bg-[#737373]/10"
                 }`}
               >

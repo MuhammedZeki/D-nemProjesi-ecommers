@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ModelOpenProvider from "./context/ModelOpen";
-import ProductDetails from "./pages/ProductDetails";
 import ProductDetails1 from "./pages/ProductDetails1";
 import Contact1 from "./pages/Contact1";
 import Team from "./pages/Team";
@@ -18,6 +17,7 @@ import { LangProvider } from "./context/LangContext";
 import { CreateOrder } from "./pages/CreateOrder";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import AuthRedirectRoute from "./components/routes/AuthRedirectRoute";
+import Success from "./pages/Success";
 
 const App = () => {
   return (
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="/contact1" element={<Contact1 />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/successOrder" element={<Success />} />
             <Route
               path="/createOrder"
               element={

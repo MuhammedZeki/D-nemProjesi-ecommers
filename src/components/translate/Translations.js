@@ -1,12 +1,12 @@
 export const translations = {
     en: {
         "Banka/Kredi Kartı": "Credit/Debit Card",
-        veya: "or",
+        "veya": "or",
         "Alışveriş Kredisi": "Shopping Credit",
         "ile ödemenizi güvenle yapabilirsiniz.":
             "You can safely make your payment.",
         "Adres Bilgileri": "Address Information",
-        Ev: "Home",
+        "Ev": "Home",
         "Ödeme Seçenekleri": "Payment Options",
         'Kurumsal faturalı alışveriş yapmak için "Faturamı Aynı Adrese Gönder" tikini kaldırın ve Fatura adresi olarak kayıtlı Kurumsal Fatura adresinizi seçin.':
             "For corporate invoiced shopping, uncheck 'Send my invoice to the same address' and select your registered Corporate Invoice address as the billing address.",
@@ -15,7 +15,7 @@ export const translations = {
         "Sipariş Özeti": "Order Summary",
         "Ürünün Toplamı": "Product Total",
         "Kargo Toplam": "Shipping Total",
-        Toplam: "Total",
+        "Toplam": "Total",
         "Kaydet ve Devam Et": "Save and Continue",
         "Ödeme Yap": "Pay Now",
         "Yeni Adres Ekle": "Add New Address",
@@ -26,14 +26,14 @@ export const translations = {
         "Kart ile ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi güvenle yapabilirsiniz.":
             "You have selected card payment. You can safely pay using a Bank or Credit Card.",
         "Kart Bilgileri": "Card Information",
-        kartım: "card",
+        "kartım": "card",
         "3D Secure ile ödemek istiyorum": "I want to pay with 3D Secure",
         "Taksit Seçenekleri": "Installment Options",
         "Kartınıza uygun taksit seçeneğini seçiniz.":
             "Choose the installment option suitable for your card.",
         "Taksit Sayısı": "Installment Count",
         "Aylık Ödeme": "Monthly Payment",
-        Faizsiz: "No Interest",
+        "Faizsiz": "No Interest",
         "Toplam Ödenecek:": "Total Payable:",
         "Tek Çekim": "Single Payment",
         "3 Taksit": "3 Installments",

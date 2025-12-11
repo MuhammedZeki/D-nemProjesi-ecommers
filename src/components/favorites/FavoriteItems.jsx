@@ -3,14 +3,12 @@ import { deleteFav } from "../store/actions/favoritesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { ModelOpenContext } from "../../context/ModelOpen";
 import { MdOutlineCancel } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 
 const FavoriteItems = () => {
   const { setFavModal } = useContext(ModelOpenContext);
   const { favorites } = useSelector((state) => state.favorite);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   return (
     <div className="absolute top-16 right-10 w-80 bg-[#FAFAFA] shadow-xl rounded-xl px-6 py-2 flex flex-col gap-4 z-50">
       <div className="w-full flex justify-end cursor-pointer">
@@ -27,7 +25,6 @@ const FavoriteItems = () => {
       {favorites.length > 0 &&
         favorites.map((item, i) => (
           <div
-            onClick={() => navigate(`/productDetails/${item?.id}`)}
             key={i}
             className="flex gap-3 cursor-pointer px-1 py-3 hover:bg-[#f1f1f1] transition duration-300"
           >
