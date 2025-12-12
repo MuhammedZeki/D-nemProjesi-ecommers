@@ -36,7 +36,7 @@ const Sponsorship = () => {
 
   return (
     <div className=" bg-[#FAFAFA] dark:bg-[#3d445f]">
-      <div className="lg:flex lg:flex-row lg:gap-4 w-[75%] mx-auto lg:py-24 lg:px-4 flex flex-col py-10 items-center lg:items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 place-items-center lg:gap-4 w-[75%] mx-auto lg:py-24 lg:px-4  py-10 ">
         {data.map((item, i) => {
           const Icon = iconMap[item.icon];
           return (

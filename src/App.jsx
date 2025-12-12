@@ -18,6 +18,7 @@ import { CreateOrder } from "./pages/CreateOrder";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import AuthRedirectRoute from "./components/routes/AuthRedirectRoute";
 import Success from "./pages/Success";
+import Search from "./pages/Search";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="/productDetails/:id" element={<ProductDetails1 />} />
             <Route path="/contact1" element={<Contact1 />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/successOrder" element={<Success />} />

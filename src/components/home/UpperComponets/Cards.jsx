@@ -65,7 +65,7 @@ const Cards = () => {
           )}
         </div>
         <div>
-          <CiSearch className="w-6 h-6" />
+          <CiSearch onClick={() => navigate("/search")} className="w-6 h-6" />
         </div>
         <div
           onClick={() => setBasketModal((p) => !p)}
