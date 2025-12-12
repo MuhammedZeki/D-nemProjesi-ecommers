@@ -6,7 +6,7 @@ const BreadItem = ({ item, key }) => {
     <div
       key={key}
       onClick={() => navigate(`/productDetails/${item?.id}`)}
-      className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#FAFAFA] lg:w-[293px] dark:bg-[#3d445f] rounded-md"
+      className="flex cursor-pointer flex-col grow gap-2 p-2 items-center justify-center transform duration-500 hover:bg-[#525974] lg:w-[293px] dark:bg-[#3d445f] rounded-md"
     >
       <img
         src={item?.img}
