@@ -62,7 +62,7 @@ const CreateOrderContent = () => {
                   <h5 className="font-medium text-[#737373] tracking-[0.1px] leading-6 dark:text-[#bebebe]">
                     <AutoTranslate>Ev</AutoTranslate>
                   </h5>
-                  <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6 dark:text-[#bebebe]">
+                  <p className="font-medium text-sm text-[#737373] tracking-[0.1px] leading-6 dark:text-[#bebebe] truncate md:whitespace-normal md:line-clamp-none max-w-[150px] md:max-w-full">
                     {getAddress?.address}
                   </p>
                 </div>
@@ -103,7 +103,7 @@ const CreateOrderContent = () => {
                   >
                     <AutoTranslate>Ödeme Seçenekleri</AutoTranslate>
                   </h2>
-                  <div className="text-[#737373] leading-6 tracking-[0.1px] dark:text-[#bebebe]">
+                  <div className="text-[#737373] leading-6 tracking-[0.1px] dark:text-[#bebebe] truncate md:whitespace-normal md:line-clamp-none max-w-[150px] md:max-w-full">
                     <span className="text-[#252b42] font-medium underline tracking-[0.1px] leading-6 dark:text-[#e6e6e6]">
                       <AutoTranslate>Banka/Kredi Kartı</AutoTranslate>
                     </span>{" "}

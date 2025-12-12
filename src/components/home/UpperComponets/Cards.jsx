@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { MdLightMode } from "react-icons/md";
-import { CiLight, CiDark } from "react-icons/ci";
 import { useLang } from "../../../context/LangContext";
 import { FaMoon } from "react-icons/fa6";
 const Cards = () => {
@@ -125,7 +124,7 @@ const Cards = () => {
       </div>
       <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#FAFAFA] flex  items-center gap-4 cursor-pointer xl:hidden">
         <div>
-          <CiSearch className="w-6 h-6" />
+          <CiSearch onClick={() => navigate("/search")} className="w-6 h-6" />
         </div>
         <div
           onClick={() => setBasketModal((p) => !p)}
@@ -141,7 +140,7 @@ const Cards = () => {
           className="flex items-center gap-2 relative group"
         >
           <CiHeart className="w-6 h-6 group-hover:text-[#CB0404] transition duration-300" />
-          <span className="font-light absolute bg-[#23A6F0] dark:bg-[#fafafa] dark:text-[#252b42] text-[#FAFAFA] transition duration-300 group-hover:bg-[#CB0404] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-2">
+          <span className="font-light absolute bg-[#252b42] dark:bg-[#fafafa] dark:text-[#252b42] text-[#FAFAFA] transition duration-300 group-hover:bg-[#CB0404] rounded-full flex items-center justify-center p-1 w-4 h-4 text-xs -top-1 -right-2">
             {favorites.length}
           </span>
         </div>
@@ -158,9 +157,9 @@ const Cards = () => {
           className="p-2 rounded cursor-pointer bg-gray-200 dark:bg-gray-700"
         >
           {theme === "light" ? (
-            <CiDark className="w-5 h-5" />
+            <FaMoon className="w-5 h-5" />
           ) : (
-            <CiLight className="w-5 h-5 text-yellow-600" />
+            <MdLightMode className="w-5 h-5 text-[#fafafa]" />
           )}
         </button>
         <div className="sm:flex sm:flex-row hidden gap-2">
