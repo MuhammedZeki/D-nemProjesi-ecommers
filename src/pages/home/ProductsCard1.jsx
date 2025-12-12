@@ -72,18 +72,18 @@ const ProductsCard1 = () => {
   const p = products[lang];
 
   return (
-    <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
+    <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 mt-10">
       <div className="lg:flex lg:flex-row flex flex-col">
         <div className=" lg:w-2/3 w-full">
           <img src="/products/p1.jpg" className="object-cover w-full h-full" />
         </div>
 
-        <div className=" lg:w-1/3 bg-[#FAFAFA] flex flex-col gap-10 mt-5 lg:mt-0 lg:gap-2 items-center px-12 py-6 justify-center font-montserrat">
+        <div className=" lg:w-1/3 bg-[#FAFAFA] dark:bg-[#3d445f] flex flex-col gap-10 lg:gap-2 items-center px-12 py-6 justify-center font-montserrat">
           <div className="flex flex-col gap-2 items-center text-center">
-            <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42]">
+            <h5 className="font-bold text-2xl leading-8 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
               {t.title}
             </h5>
-            <p className="font-normal text-md leading-5 tracking-[0.2px] text-[#737373]">
+            <p className="font-normal text-md leading-5 tracking-[0.2px] text-[#737373] dark:text-[#bababa]">
               {t.desc}
             </p>
           </div>
@@ -93,7 +93,7 @@ const ProductsCard1 = () => {
           </div>
 
           <div className="flex flex-col gap-6 items-center text-center">
-            <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42]">
+            <p className="font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#fafafa]">
               {t.department}
             </p>
 

@@ -25,7 +25,7 @@ const Breads = () => {
           <div className=" pb-5 px-2 border-b-2 border-b-[#ECECEC]">
             <BreadNav />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24 xl:gap-6 mt-6 xl:mt-0 py-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-6 mt-6 xl:mt-0 py-2 place-items-center">
             {data.slice(0, 6).map((item, i) => (
               <BreadItem key={i} item={item} />
             ))}

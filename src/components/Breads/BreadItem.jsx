@@ -10,7 +10,7 @@ const BreadItem = ({ item, key }) => {
     >
       <img
         src={item?.img}
-        className="w-full h-[200px] rounded-sm object-cover"
+        className="w-[270px] h-[200px] rounded-sm object-cover"
       />
       <div className="font-bold text-md leading-6 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
         {item?.name}

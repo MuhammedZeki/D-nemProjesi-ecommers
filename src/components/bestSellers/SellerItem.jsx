@@ -10,7 +10,7 @@ const SellerItem = ({ key, item }) => {
     >
       <img
         src={item?.img}
-        className="object-cover w-[300px] h-[250px] rounded-sm"
+        className="object-cover w-full h-[250px] rounded-sm"
       />
       <div className="flex flex-col items-center lg:items-start gap-4 py-1 font-montserrat">
         <h5 className="font-bold text-lg leading-6 tracking-[0.1px] text-[#252B42] dark:text-[#fafafa]">
