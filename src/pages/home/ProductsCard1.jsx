@@ -75,7 +75,7 @@ const ProductsCard1 = () => {
     <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
       <div className="lg:flex lg:flex-row flex flex-col">
         <div className=" lg:w-2/3 w-full">
-          <img src="/products/p1.jpg" className="object-contain w-full" />
+          <img src="/products/p1.jpg" className="object-cover w-full h-full" />
         </div>
 
         <div className=" lg:w-1/3 bg-[#FAFAFA] flex flex-col gap-10 mt-5 lg:mt-0 lg:gap-2 items-center px-12 py-6 justify-center font-montserrat">
@@ -116,7 +116,7 @@ const ProductsCard1 = () => {
         </div>
       </div>
 
-      <div className="font-montserrat lg:flex lg:flex-row flex flex-col ">
+      <div className="font-montserrat grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
         {p.productsItem.map((item, i) => (
           <ProductCardItem key={i} item={item} />
         ))}

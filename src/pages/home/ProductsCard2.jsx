@@ -63,7 +63,7 @@ const ProductsCard2 = () => {
         <div className=" lg:w-2/3 w-full">
           <img
             src="/products/yemek.jpg"
-            className="object-contain w-full h-full"
+            className="object-cover w-full h-full"
           />
         </div>
       </div>

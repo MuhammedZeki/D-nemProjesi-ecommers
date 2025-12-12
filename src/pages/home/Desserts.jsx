@@ -10,17 +10,15 @@ const Desserts = () => {
 
   return (
     <div className="lg:w-[75%] lg:mx-auto lg:py-8 lg:px-4 flex flex-col gap-4 ">
-      <div className="lg:flex lg:flex-row flex flex-col-reverse gap-2.5">
-        <div className="lg:w-2/3 w-full  font-montserrat ">
-          <div className=" pb-5 px-1 border-b-2 border-b-[#ECECEC]">
+      <div className="lg:flex lg:flex-row flex flex-col-reverse gap-2.5 xl:gap-24">
+        <div className="lg:w-2/3 w-full font-montserrat ">
+          <div className=" pb-5 px-2 border-b-2 border-b-[#ECECEC]">
             <BreadNav />
           </div>
-          <div className="flex flex-col gap-4 font-montserrat">
-            <div className="lg:flex lg:flex-row lg:items-center lg:gap-1 gap-6 mt-6 lg:mt-0 flex-wrap flex flex-col py-2 ">
-              {data.slice(5, 11).map((item, i) => (
-                <DessertsItem key={i} item={item} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24 xl:gap-6 mt-6 xl:mt-0 py-2">
+            {data.slice(5, 11).map((item, i) => (
+              <DessertsItem key={i} item={item} />
+            ))}
           </div>
         </div>
         <div className="lg:w-1/3 w-full relative">

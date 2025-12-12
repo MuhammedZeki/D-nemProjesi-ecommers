@@ -15,7 +15,7 @@ const BestSellerProducts = () => {
             BESTSELLER PRODUCTS
           </h3>
         </div>
-        <div className="py-2 lg:flex lg:flex-row lg:gap-4 flex flex-col gap-10">
+        <div className="py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {data.slice(12, 16).map((item, i) => (
             <SellerItem key={i} item={item} />
           ))}

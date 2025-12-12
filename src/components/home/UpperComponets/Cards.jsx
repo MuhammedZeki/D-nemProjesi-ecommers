@@ -49,7 +49,7 @@ const Cards = () => {
   };
   return (
     <>
-      <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] dark:text-[#FAFAFA] lg:flex lg:items-center lg:gap-4 cursor-pointer">
+      <div className="font-montserrat hidden font-bold text-md leading-6 tracking-[0.2px] text-[#23A6F0] dark:text-[#FAFAFA] xl:flex xl:items-center xl:gap-4 cursor-pointer">
         <div className="flex items-center gap-1">
           {!user && (
             <>
@@ -123,7 +123,7 @@ const Cards = () => {
           </button>
         </div>
       </div>
-      <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#FAFAFA] flex  items-center gap-4 cursor-pointer lg:hidden">
+      <div className="font-montserrat font-bold text-md leading-6 tracking-[0.2px] text-[#252B42] dark:text-[#FAFAFA] flex  items-center gap-4 cursor-pointer xl:hidden">
         <div>
           <CiSearch className="w-6 h-6" />
         </div>
