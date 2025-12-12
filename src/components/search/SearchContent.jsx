@@ -42,7 +42,7 @@ const SearchContent = () => {
               dark:bg-[#3c435e] 
               dark:border-[#525a78]
               dark:text-white
-              dark:placeholder-[#333]
+              dark:placeholder-gray-300
             "
           />
         </div>

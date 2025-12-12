@@ -63,7 +63,7 @@ const SignIn = () => {
     }
     toast.success("Giriş başarılı!");
     const redirectPath = location.state?.from || "/";
-    navigate(redirectPath);
+    navigate(redirectPath, { replace: true });
   };
   return (
     <div className="bg-[#FCF6D9] flex items-center justify-center h-screen">
