@@ -189,92 +189,93 @@ const PaymentOptions = ({ totalAmount, onInstallmentChange }) => {
               </button>
             </div>
           ) : (
-            cards.map((card) => (
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div
-                      className={`md:w-6 md:h-6 w-4 h-4 rounded-full border-2  flex items-center justify-center ${
-                        selectedCardId === card.id
-                          ? "border-[#24a5f0]"
-                          : "border-[#737373]"
-                      }`}
-                    >
-                      {selectedCardId === card.id ? (
-                        <div className="md:w-3 md:h-3 w-2 h-2 rounded-full bg-[#24a5f0]"></div>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                    <p
-                      className={`${
-                        selectedCardId === card.id
-                          ? "text-[#24a5f0]"
-                          : "text-[#252b42]"
-                      }`}
-                    >
-                      {card.type} kartım
-                    </p>
-                  </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openEditModal(card);
-                      }}
-                      className="p-1.5 cursor-pointer rounded-full hover:bg-[#24a5f0]/10 text-[#24a5f0] transition-colors"
-                    >
-                      <FiEdit2 className="w-5 h-5" />
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDeleteCard(card.id);
-                      }}
-                      className="p-1.5  cursor-pointer rounded-full hover:bg-red-50 text-red-500 transition-colors"
-                    >
-                      <FiTrash2 className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-                <div
-                  key={card.id}
-                  onClick={() => handleSelectCard(card.id)}
-                  className={`border-2 rounded-lg w-full px-4 py-8 cursor-pointer transition-all relative ${
-                    selectedCardId === card.id
-                      ? "border-[#24a5f0] bg-[#24a5f0]/5"
-                      : "border-[#e5e5e5] dark:border-[#737373] hover:border-[#24a5f0]/50"
-                  }`}
-                >
-                  <div className="flex items-center  justify-between gap-3 mb-3">
+            <div
+              className={`mt-4 gap-5 ${
+                cards.length === 1
+                  ? " w-full"
+                  : "grid grid-cols-1 sm:grid-cols-2"
+              }`}
+            >
+              {cards.map((card) => (
+                <div key={card.id} className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <FiCreditCard
-                        className={`text-2xl  ${
+                      <div
+                        className={`md:w-6 md:h-6 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                          selectedCardId === card.id
+                            ? "border-[#24a5f0]"
+                            : "border-[#737373]"
+                        }`}
+                      >
+                        {selectedCardId === card.id && (
+                          <div className="md:w-3 md:h-3 w-2 h-2 rounded-full bg-[#24a5f0]" />
+                        )}
+                      </div>
+                      <p
+                        className={`text-sm ${
                           selectedCardId === card.id
                             ? "text-[#24a5f0]"
-                            : "text-[#737373]"
+                            : "text-[#252b42]"
                         }`}
-                      />
-                      <span className="font-bold text-[#252b42] dark:text-[#fafafa]">
-                        {card.type}
-                      </span>
+                      >
+                        {card.type} kartım
+                      </p>
                     </div>
-                    <img
-                      src="/order/mastercard.svg"
-                      className="h-15 w-15 object-cover"
-                    />
+
+                    <div className="flex gap-0.5">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openEditModal(card);
+                        }}
+                        className="cursor-pointer rounded-full hover:bg-[#24a5f0]/10 text-[#24a5f0]"
+                      >
+                        <FiEdit2 className="w-4 h-4" />
+                      </button>
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteCard(card.id);
+                        }}
+                        className="cursor-pointer  rounded-full hover:bg-red-50 text-red-500"
+                      >
+                        <FiTrash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
-                  <div className="text-sm text-[#737373]  flex flex-col items-end  dark:text-[#bebebe] gap-2">
-                    <p className="font-mono">{card.number}</p>
-                    <div className="flex items-center gap-0.5">
-                      <p>{card.expiryMonth}</p>
-                      <p>/</p>
-                      <p>{card.expiryYear}</p>
+
+                  <div
+                    onClick={() => handleSelectCard(card.id)}
+                    className={`border-2 rounded-lg w-full px-4 py-8 cursor-pointer transition-all ${
+                      selectedCardId === card.id
+                        ? "border-[#24a5f0] bg-[#24a5f0]/5"
+                        : "border-[#e5e5e5] dark:border-[#737373] hover:border-[#24a5f0]/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <FiCreditCard
+                          className={`text-2xl ${
+                            selectedCardId === card.id
+                              ? "text-[#24a5f0]"
+                              : "text-[#737373]"
+                          }`}
+                        />
+                        <span className="font-bold">{card.type}</span>
+                      </div>
+
+                      <img src="/order/mastercard.svg" className="h-10 w-10" />
+                    </div>
+
+                    <div className="text-sm text-[#737373] flex flex-col items-end gap-2">
+                      <p className="font-mono">{card.number}</p>
+                      <p>{card.expiry}</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))
+              ))}
+            </div>
           )}
 
           <label className="flex items-center gap-2 text-sm text-[#737373] dark:text-[#bebebe] cursor-pointer">
