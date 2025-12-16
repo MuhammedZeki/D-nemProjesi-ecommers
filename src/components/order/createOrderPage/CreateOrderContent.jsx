@@ -17,7 +17,8 @@ const CreateOrderContent = () => {
   const productTotal = total;
   const cargo =
     items.length === 0 ? 0 : productTotal >= freeCargoLimit ? 0 : cargoFee;
-
+  const cards = useSelector((state) => state.card.cards);
+  const isPaymentDisabled = tabs === 2 && cards.length === 0;
   const totalAmount = productTotal + cargo;
 
   const getIndex = JSON.parse(localStorage.getItem("selectedIndex"));
@@ -203,18 +204,34 @@ const CreateOrderContent = () => {
           </div>
 
           <button
-            onClick={() => setTabs(2)}
-            className="px-2 py-3 flex items-center justify-center font-montserrat font-bold leading-6 gap-2 tracking-[0.1px] text-[#fafafa] cursor-pointer bg-[#23a6f0] rounded-md"
+            disabled={isPaymentDisabled}
+            onClick={() => {
+              if (isPaymentDisabled) return;
+
+              if (tabs !== 2) {
+                setTabs(2);
+              } else {
+                navigate("/successOrder");
+              }
+            }}
+            className={`px-2 py-3 flex items-center justify-center font-montserrat font-bold
+    leading-6 gap-2 tracking-[0.1px] rounded-md transition
+    ${
+      isPaymentDisabled
+        ? "bg-[#bababa] cursor-not-allowed text-[#737373] opacity-60"
+        : "bg-[#23a6f0] text-[#fafafa] hover:bg-[#1e90d6]"
+    }
+  `}
           >
             {tabs !== 2 ? (
               <>
                 <span>
                   <AutoTranslate>Kaydet ve Devam Et</AutoTranslate>
                 </span>
-                <IoIosArrowForward className="w-6 h-6 text-[#fafafa]" />
+                <IoIosArrowForward className="w-6 h-6" />
               </>
             ) : (
-              <span onClick={() => navigate("/successOrder")}>
+              <span>
                 <AutoTranslate>Ödeme Yap</AutoTranslate>
               </span>
             )}
