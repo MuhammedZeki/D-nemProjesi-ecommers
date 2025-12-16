@@ -3,7 +3,16 @@ export const translations = {
     en: {
         "Banka/Kredi Kartı": "Credit/Debit Card",
         "veya": "or",
+        "Kart ile Ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi güvenle yapabilirsiniz.": "You have selected Payment by Card. You can make your payment using a Bank or Credit Card.",
         "Alışveriş Kredisi": "Shopping Credit",
+        "Başka bir Kart ile Ödeme Yap": "Pay with another card",
+        "Kartı Düzenle": "Edit Card",
+        "Kart Numarası": "Card Number",
+        "Son Kullanma": "Expiration",
+        "Banka Adı": "Bank Name",
+        "Güncelle": "Update",
+        "İptal": "Cancel",
+        "Kartı Kaydet ve Devam Et": "Save Card and Continue",
         "ile ödemenizi güvenle yapabilirsiniz.":
             "You can safely make your payment.",
         "Adres Bilgileri": "Address Information",

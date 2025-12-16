@@ -106,7 +106,7 @@ const AddressInformation = () => {
 
             {defaultIndex === index && (
               <span className="text-xs my-2 text-[#f0b000] font-bold flex items-center gap-2">
-                <FaStar className="w-4 h-4" />{" "}
+                <FaStar className="w-4 h-4" />
                 <AutoTranslate>Varsayılan Adres</AutoTranslate>
               </span>
             )}

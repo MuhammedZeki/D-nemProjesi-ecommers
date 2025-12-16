@@ -16,7 +16,7 @@ const CreateOrderContent = () => {
   const navigate = useNavigate();
   const productTotal = total;
   const cargo =
-    items.length === 0 ? 0 : productTotal >= freeCargoLimit ? cargoFee : 0;
+    items.length === 0 ? 0 : productTotal >= freeCargoLimit ? 0 : cargoFee;
 
   const totalAmount = productTotal + cargo;
 

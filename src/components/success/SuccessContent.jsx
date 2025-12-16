@@ -27,7 +27,7 @@ const SuccessContent = () => {
     )} - ${maxTime.toLocaleTimeString([], options)}`;
   };
 
-  const cargo = total >= 9.99 ? 9.99 : 0;
+  const cargo = total >= 9.99 ? 0 : 9.99;
   const finalTotal = total + cargo;
 
   return (
